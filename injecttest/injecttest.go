@@ -472,6 +472,31 @@ func TestInjectInline() {
 	}
 }
 
+func TestInjectInlineOnPointer() {
+	var v struct {
+		Inline *struct {
+			A *TypeAnswerStruct `inject:""`
+			B *TypeNestedStruct `inject:""`
+		} `inject:""`
+	}
+
+	if err := inject.Populate(&v); err != nil {
+		fmt.Println(err)
+	}
+	if v.Inline.A == nil {
+		fmt.Println("v.Inline.A is nil")
+	}
+	if v.Inline.B == nil {
+		fmt.Println("v.Inline.B is nil")
+	}
+	if v.Inline.B.A == nil {
+		fmt.Println("v.Inline.B.A is nil")
+	}
+	if v.Inline.A != v.Inline.B.A {
+		fmt.Println("got different instances of A")
+	}
+}
+
 type TypeWithInlineStructWithPrivate struct {
 	Inline struct {
 		A *TypeAnswerStruct `inject:"private"`
@@ -687,6 +712,9 @@ type logger struct {
 
 func (l *logger) Debugf(f string, v ...interface{}) {
 	actual := fmt.Sprintf(f, v...)
+
+	fmt.Println(actual)
+
 	if l.next == len(l.Expected) {
 		fmt.Printf(`unexpected log "%s"`, actual)
 	}
@@ -717,13 +745,46 @@ type TypeForLogging struct {
 	TypeForLoggingCreated  *TypeForLoggingCreated `inject:""`
 }
 
+func TestInjectLogging() {
+	g := inject.Graph{
+		Logger: &logger{
+			Expected: []string{
+				"provided *main.TypeForLoggingCreated named name_for_logging",
+				"provided *main.TypeForLogging",
+				"provided embedded *main.TypeForLoggingEmbedded",
+				"created *main.TypeForLoggingCreated",
+				"assigned newly created *main.TypeForLoggingCreated to field TypeForLoggingCreated in *main.TypeForLogging",
+				"assigned existing *main.TypeForLoggingCreated to field TypeForLoggingCreated in *main.TypeForLoggingEmbedded",
+				"assigned *main.TypeForLoggingCreated named name_for_logging to field TypeForLoggingCreatedNamed in *main.TypeForLoggingEmbedded",
+				"made map for field Map in *main.TypeForLoggingEmbedded",
+				"assigned existing *main.TypeForLoggingCreated to interface field TypeForLoggingInterface in *main.TypeForLoggingEmbedded",
+			},
+		},
+	}
+	var v TypeForLogging
+
+	err := g.Provide(
+		&inject.Object{Value: &TypeForLoggingCreated{}, Name: "name_for_logging"},
+		&inject.Object{Value: &v},
+	)
+	if err != nil {
+		fmt.Println(err)
+	}
+	if err := g.Populate(); err != nil {
+		fmt.Println(err)
+	}
+}
+
 func main() {
+
+	//TestInjectLogging()
 	//TestInjectOnPrivateField()//注意大小写
 	//TestInjectOnPrivateInterfaceField()
 	//TestInjectPrivateInterface()
 	//TestInjectNamedTwoSatisfyInterface()
 	//TestErrorOnNonPointerNamedInject()
 	//TestInjectInline()
+	//TestInjectInlineOnPointer()
 	//TestInjectInlinePrivate()
 	//TestInjectWithStructValue()
 	//TestInjectWithNonpointerStructValue()
@@ -754,6 +815,8 @@ func main() {
 	//TestInjectTwoSatisfyInterface()
 	*/
 	//TestInvalidNamedInstanceType() //类型不一致
+
+	//injectTest()
 
 }
 
@@ -786,6 +849,14 @@ func injectTest() {
 	if err := g.Populate(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
+	}
+
+	fmt.Printf("a = %#v\n", a)
+	fmt.Printf("http.DefaultTransport = %#v\n", http.DefaultTransport)
+
+	for _, o := range g.Objects() {
+		fmt.Printf(" = %#v\n", o)
+
 	}
 
 	// There is a shorthand API for the simple case which combines the
