@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://golang-china.appspot.com/pkg/net/http/pprof/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<!--
+  <title>pprof - The Go Programming Language</title>
+-->
+  <title>pprof - Go 编程语言</title>
+
+<link type="text/css" rel="stylesheet" href="./pprof - Go 编程语言(2)_files/style.css">
+
+<link rel="search" type="application/opensearchdescription+xml" title="godoc" href="https://golang-china.appspot.com/opensearch.xml">
+
+<link rel="stylesheet" href="https://golang-china.appspot.com/lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id="lowframe" style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+
+<form method="GET" action="https://golang-china.appspot.com/search" id="1256735544">
+<div id="menu" style="min-width: 650px;">
+<!--
+<a href="/doc/">Documents</a>
+<a href="/pkg/">Packages</a>
+<a href="/project/">The Project</a>
+<a href="/help/">Help</a>
+<a href="/blog/">Blog</a>
+-->
+<a href="https://golang-china.appspot.com/doc/">文档</a>
+<a href="https://golang-china.appspot.com/pkg/">包</a>
+<a href="https://golang-china.appspot.com/project/">项目</a>
+<a href="https://golang-china.appspot.com/help/">帮助</a>
+<a href="https://golang-china.appspot.com/blog/">博客</a>
+
+<!--
+<a id="playgroundButton" href="http://play.golang.org/" title="Show Go Playground">Play</a>
+-->
+<a id="playgroundButton" href="http://play.golang.org/" title="显示 Go 操场" style="display: inline;">运行</a>
+
+<!--
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+-->
+<input type="text" id="search" name="q" class="inactive" value="搜索" placeholder="搜索">
+</div>
+<!--
+<div id="heading"><a href="/">The Go Programming Language</a></div>
+-->
+<div id="heading"><a href="https://golang-china.appspot.com/">Go 编程语言</a></div>
+</form>
+
+</div></div>
+
+
+<div id="playground" class="play">
+	<div class="input"><textarea class="code">package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}</textarea></div>
+	<div class="output"></div>
+	<div class="buttons">
+<!--
+		<a class="run" title="Run this code [shift-enter]">Run</a>
+		<a class="fmt" title="Format this code">Format</a>
+		<a class="share" title="Share this code">Share</a>
+-->
+		<a class="run" title="运行此代码[Shift-Enter]">运行</a>
+		<a class="fmt" title="格式化此代码">格式化</a>
+		<a class="share" title="分享此代码">分享</a>
+	</div>
+</div>
+
+
+<div id="page" class="wide" tabindex="-1" style="outline: 0px;">
+<div class="container">
+
+
+<div class="lang-switch-button-group" role="group">
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;, &quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;, &quot;none&quot;);console.log(&quot;lang-en&quot;);">英文</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-en-zh&quot;);">对照</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;none&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-zh&quot;);">中文</button>
+</div>
+
+
+
+  <h1>Package pprof</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type="text/javascript">
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "net/http/pprof"</code></dd>
+			</dl>
+			<dl>
+<!--
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+-->
+			<dd><a href="https://golang-china.appspot.com/pkg/net/http/pprof/#pkg-overview" class="overviewLink">概览</a></dd>
+			<dd><a href="https://golang-china.appspot.com/pkg/net/http/pprof/#pkg-index" class="indexLink">索引</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+<!--
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+-->
+				<h2 class="toggleButton" title="点此显示概览">概览 ▹</h2>
+			</div>
+			<div class="expanded">
+<!--
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+-->
+				<h2 class="toggleButton" title="点此隐藏概览">概览 ▾</h2>
+				<p>
+pprof
+包通过提供HTTP服务返回runtime的统计数据，这个数据是以pprof可视化工具规定的返回格式返回的.
+了解更多的pprof的知识，请参考：<a href="http://code.google.com/p/google-perftools/">http://code.google.com/p/google-perftools/</a>。
+</p>
+<p>
+导入这个包就会在HTTP服务端的handlers注册这个包自己的处理器。
+处理的路径全是以/debug/pprof/开头的。
+</p>
+<p>
+使用pprof，只要将这个包引入到你的程序中：
+</p>
+<pre>import _ "net/http/pprof"
+</pre>
+<p>
+如果你的应用并不是运行在http server上，你需要开启一个http服务。
+开启方法就是增加"net/http"和"log"包到你的imports中，然后增加下面的方法到你的main函数中。
+</p>
+<pre>go func() {
+	log.Println(http.ListenAndServe("localhost:6060", nil))
+}()
+</pre>
+<p>
+然后使用pprof工具查看heap统计：
+</p>
+<pre>go tool pprof <a href="http://localhost:6060/debug/pprof/heap">http://localhost:6060/debug/pprof/heap</a>
+</pre>
+<p>
+或者查看30秒内的CPU统计：
+</p>
+<pre>go tool pprof <a href="http://localhost:6060/debug/pprof/profile">http://localhost:6060/debug/pprof/profile</a>
+</pre>
+<p>
+也可以查看阻塞中的goroutine统计：
+</p>
+<pre>go tool pprof <a href="http://localhost:6060/debug/pprof/block">http://localhost:6060/debug/pprof/block</a>
+</pre>
+<p>
+要查看所有的可查看的统计，在浏览器中打开http://localhost:6060/debug/pprof/
+</p>
+<p>
+要进一步了解profile的功能，请浏览
+</p>
+<pre><a href="http://blog.golang.org/2011/06/profiling-go-programs.html">http://blog.golang.org/2011/06/profiling-go-programs.html</a>
+</pre>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示素引">索引 ▹</h2>
+		</div>
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏索引">索引 ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/net/http/pprof/#Cmdline">func Cmdline(w http.ResponseWriter, r *http.Request)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/net/http/pprof/#Handler">func Handler(name string) http.Handler</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/net/http/pprof/#Index">func Index(w http.ResponseWriter, r *http.Request)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/net/http/pprof/#Profile">func Profile(w http.ResponseWriter, r *http.Request)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/net/http/pprof/#Symbol">func Symbol(w http.ResponseWriter, r *http.Request)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/net/http/pprof/#Trace">func Trace(w http.ResponseWriter, r *http.Request)</a></dd>
+			
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+<!--
+			<h4>Package files</h4>
+-->
+			<h4>包文件</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="https://golang-china.appspot.com/src/net/http/pprof/pprof.go">pprof.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示内部调用图">内部调用图 ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏内部调用图">内部调用图 ▾</h2>
+<!--
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+-->
+			<p>
+			在下面的调用图查看器中，每个节点都是一个属于本包的函数，其子节点即为它所调用的函数——或许是动态的。
+			</p>
+			<p>
+			根节点为包的入口点：函数可从包的外部调用。若这些函数被其它包动态地调用，
+			那么它们可能是未导出的或匿名的。
+			</p>
+			<p>
+			点击一个节点来查看该函数的源码。在源码中，可以点击它的 <code>func</code>
+			声明标记来查看其调用者。
+			</p>
+			<p>
+			在分析特定程序或测试时，被认定为无法访问的函数会被忽略。
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+		
+			
+			
+			<h2 id="Cmdline">func <a href="https://golang-china.appspot.com/src/net/http/pprof/pprof.go?s=2197:2249#L67">Cmdline</a></h2>
+			<pre>func Cmdline(w <a href="https://golang-china.appspot.com/pkg/net/http/">http</a>.<a href="https://golang-china.appspot.com/pkg/net/http/#ResponseWriter">ResponseWriter</a>, r *<a href="https://golang-china.appspot.com/pkg/net/http/">http</a>.<a href="https://golang-china.appspot.com/pkg/net/http/#Request">Request</a>)</pre>
+			<p>
+Cmdline返回正在运行的程序的命令行结构，包括被空字节分隔的参数。
+这个包的初始化函数将这个函数注册为/debug/pprof/cmdline的处理函数。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Handler">func <a href="https://golang-china.appspot.com/src/net/http/pprof/pprof.go?s=5513:5551#L169">Handler</a></h2>
+			<pre>func Handler(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/net/http/">http</a>.<a href="https://golang-china.appspot.com/pkg/net/http/#Handler">Handler</a></pre>
+			<p>
+Handler返回HTTP handler，这个handler会处理参数name的统计。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Index">func <a href="https://golang-china.appspot.com/src/net/http/pprof/pprof.go?s=6273:6323#L196">Index</a></h2>
+			<pre>func Index(w <a href="https://golang-china.appspot.com/pkg/net/http/">http</a>.<a href="https://golang-china.appspot.com/pkg/net/http/#ResponseWriter">ResponseWriter</a>, r *<a href="https://golang-china.appspot.com/pkg/net/http/">http</a>.<a href="https://golang-china.appspot.com/pkg/net/http/#Request">Request</a>)</pre>
+			<p>
+Index 返回请求处理中格式化的pprof的统计数据。 例如，“/debug/pprof/heap”
+展示的是“heap”统计信息。
+Index对请求“/debug/pprof/”返回一个HTML页面，这个页面展示了所有可见的统计。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Profile">func <a href="https://golang-china.appspot.com/src/net/http/pprof/pprof.go?s=2489:2541#L74">Profile</a></h2>
+			<pre>func Profile(w <a href="https://golang-china.appspot.com/pkg/net/http/">http</a>.<a href="https://golang-china.appspot.com/pkg/net/http/#ResponseWriter">ResponseWriter</a>, r *<a href="https://golang-china.appspot.com/pkg/net/http/">http</a>.<a href="https://golang-china.appspot.com/pkg/net/http/#Request">Request</a>)</pre>
+			<p>
+Profile返回pprof格式的cpu统计信息。
+这个包的初始化函数将这个函数注册为/debug/pprof/profile的处理函数。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Symbol">func <a href="https://golang-china.appspot.com/src/net/http/pprof/pprof.go?s=4337:4388#L123">Symbol</a></h2>
+			<pre>func Symbol(w <a href="https://golang-china.appspot.com/pkg/net/http/">http</a>.<a href="https://golang-china.appspot.com/pkg/net/http/#ResponseWriter">ResponseWriter</a>, r *<a href="https://golang-china.appspot.com/pkg/net/http/">http</a>.<a href="https://golang-china.appspot.com/pkg/net/http/#Request">Request</a>)</pre>
+			<p>
+Symbol查询当前请求的程序计数器（PC），
+返回的是一个程序计数器和函数名字的映射表。
+这个包的初始化函数将这个函数注册为/debug/pprof/symbol的处理函数。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Trace">func <a href="https://golang-china.appspot.com/src/net/http/pprof/pprof.go?s=3442:3492#L99">Trace</a></h2>
+			<pre>func Trace(w <a href="https://golang-china.appspot.com/pkg/net/http/">http</a>.<a href="https://golang-china.appspot.com/pkg/net/http/#ResponseWriter">ResponseWriter</a>, r *<a href="https://golang-china.appspot.com/pkg/net/http/">http</a>.<a href="https://golang-china.appspot.com/pkg/net/http/#Request">Request</a>)</pre>
+			<p>
+Trace responds with the execution trace in binary form.
+Tracing lasts for duration specified in seconds GET parameter, or for 1 second if not specified.
+The package initialization registers it as /debug/pprof/trace.
+</p>
+
+			
+			
+
+		
+		
+	
+
+	
+
+
+
+
+
+
+
+<!--
+<div id="footer">
+Build version go1.4.2 (appengine-1.9.21).<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="/LICENSE">BSD license</a>.<br>
+<a href="/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+-->
+<div id="footer">
+构建版本 go1.4.2 (appengine-1.9.21).<br>
+除<a href="https://developers.google.com/site-policies#restrictions">特别注明</a>外，
+本页内容均采用知识共享-署名（CC-BY）3.0协议授权，代码采用<a href="https://golang-china.appspot.com/LICENSE">BSD协议</a>授权。<br>
+<a href="https://golang-china.appspot.com/doc/tos.html">服务条款</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">隐私政策</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="./pprof - Go 编程语言(2)_files/jquery.js"></script>
+<script type="text/javascript" src="./pprof - Go 编程语言(2)_files/jquery.treeview.js"></script>
+<script type="text/javascript" src="./pprof - Go 编程语言(2)_files/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="./pprof - Go 编程语言(2)_files/playground.js"></script>
+
+<script type="text/javascript" src="./pprof - Go 编程语言(2)_files/godocs.js"></script>
+
+
+
+</body></html>

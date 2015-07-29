@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://golang-china.appspot.com/pkg/os/#File -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<!--
+  <title>os - The Go Programming Language</title>
+-->
+  <title>os - Go 编程语言</title>
+
+<link type="text/css" rel="stylesheet" href="./os - Go 编程语言_files/style.css">
+
+<link rel="search" type="application/opensearchdescription+xml" title="godoc" href="https://golang-china.appspot.com/opensearch.xml">
+
+<link rel="stylesheet" href="https://golang-china.appspot.com/lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id="lowframe" style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+
+<form method="GET" action="https://golang-china.appspot.com/search" id="870072744">
+<div id="menu" style="min-width: 650px;">
+<!--
+<a href="/doc/">Documents</a>
+<a href="/pkg/">Packages</a>
+<a href="/project/">The Project</a>
+<a href="/help/">Help</a>
+<a href="/blog/">Blog</a>
+-->
+<a href="https://golang-china.appspot.com/doc/">文档</a>
+<a href="https://golang-china.appspot.com/pkg/">包</a>
+<a href="https://golang-china.appspot.com/project/">项目</a>
+<a href="https://golang-china.appspot.com/help/">帮助</a>
+<a href="https://golang-china.appspot.com/blog/">博客</a>
+
+<!--
+<a id="playgroundButton" href="http://play.golang.org/" title="Show Go Playground">Play</a>
+-->
+<a id="playgroundButton" href="http://play.golang.org/" title="显示 Go 操场" style="display: inline;">运行</a>
+
+<!--
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+-->
+<input type="text" id="search" name="q" class="inactive" value="搜索" placeholder="搜索">
+</div>
+<!--
+<div id="heading"><a href="/">The Go Programming Language</a></div>
+-->
+<div id="heading"><a href="https://golang-china.appspot.com/">Go 编程语言</a></div>
+</form>
+
+</div></div>
+
+
+<div id="playground" class="play">
+	<div class="input"><textarea class="code">package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}</textarea></div>
+	<div class="output"></div>
+	<div class="buttons">
+<!--
+		<a class="run" title="Run this code [shift-enter]">Run</a>
+		<a class="fmt" title="Format this code">Format</a>
+		<a class="share" title="Share this code">Share</a>
+-->
+		<a class="run" title="运行此代码[Shift-Enter]">运行</a>
+		<a class="fmt" title="格式化此代码">格式化</a>
+		<a class="share" title="分享此代码">分享</a>
+	</div>
+</div>
+
+
+<div id="page" class="wide" tabindex="-1" style="outline: 0px;">
+<div class="container">
+
+
+<div class="lang-switch-button-group" role="group">
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;, &quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;, &quot;none&quot;);console.log(&quot;lang-en&quot;);">英文</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-en-zh&quot;);">对照</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;none&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-zh&quot;);">中文</button>
+</div>
+
+
+
+  <h1>Package os</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type="text/javascript">
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "os"</code></dd>
+			</dl>
+			<dl>
+<!--
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+-->
+			<dd><a href="https://golang-china.appspot.com/pkg/os/#pkg-overview" class="overviewLink">概览</a></dd>
+			<dd><a href="https://golang-china.appspot.com/pkg/os/#pkg-index" class="indexLink">索引</a></dd>
+			
+			
+<!--
+				<dd><a href="#pkg-subdirectories">Subdirectories</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#pkg-subdirectories">子目录</a></dd>
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+<!--
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+-->
+				<h2 class="toggleButton" title="点此显示概览">概览 ▹</h2>
+			</div>
+			<div class="expanded">
+<!--
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+-->
+				<h2 class="toggleButton" title="点此隐藏概览">概览 ▾</h2>
+				<p>
+os包提供了操作系统函数的不依赖平台的接口。设计为Unix风格的，虽然错误处理是go风格的；失败的调用会返回错误值而非错误码。通常错误值里包含更多信息。例如，如果某个使用一个文件名的调用（如Open、Stat）失败了，打印错误时会包含该文件名，错误类型将为*PathError，其内部可以解包获得更多信息。
+</p>
+<p>
+os包的接口规定为在所有操作系统中都是一致的。非公用的属性可以从操作系统特定的syscall包获取。
+</p>
+<p>
+下面是一个简单的例子，打开一个文件并从中读取一些数据：
+</p>
+<pre>file, err := os.Open("file.go") // For read access.
+if err != nil {
+	log.Fatal(err)
+}
+</pre>
+<p>
+如果打开失败，错误字符串是自解释的，例如：
+</p>
+<pre>open file.go: no such file or directory
+</pre>
+<p>
+文件的信息可以读取进一个[]byte切片。Read和Write方法从切片参数获取其内的字节数。
+</p>
+<pre>data := make([]byte, 100)
+count, err := file.Read(data)
+if err != nil {
+	log.Fatal(err)
+}
+fmt.Printf("read %d bytes: %q\n", count, data[:count])
+</pre>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示素引">索引 ▹</h2>
+		</div>
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏索引">索引 ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+<!--
+				<dd><a href="#pkg-constants">Constants</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#pkg-constants">常量</a></dd>
+			
+			
+<!--
+				<dd><a href="#pkg-variables">Variables</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#pkg-variables">变量</a></dd>
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Chdir">func Chdir(dir string) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Chmod">func Chmod(name string, mode FileMode) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Chown">func Chown(name string, uid, gid int) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Chtimes">func Chtimes(name string, atime time.Time, mtime time.Time) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Clearenv">func Clearenv()</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Environ">func Environ() []string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Exit">func Exit(code int)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Expand">func Expand(s string, mapping func(string) string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#ExpandEnv">func ExpandEnv(s string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Getegid">func Getegid() int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Getenv">func Getenv(key string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Geteuid">func Geteuid() int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Getgid">func Getgid() int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Getgroups">func Getgroups() ([]int, error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Getpagesize">func Getpagesize() int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Getpid">func Getpid() int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Getppid">func Getppid() int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Getuid">func Getuid() int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Getwd">func Getwd() (dir string, err error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Hostname">func Hostname() (name string, err error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#IsExist">func IsExist(err error) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#IsNotExist">func IsNotExist(err error) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#IsPathSeparator">func IsPathSeparator(c uint8) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#IsPermission">func IsPermission(err error) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Lchown">func Lchown(name string, uid, gid int) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Link">func Link(oldname, newname string) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#LookupEnv">func LookupEnv(key string) (string, bool)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Mkdir">func Mkdir(name string, perm FileMode) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#MkdirAll">func MkdirAll(path string, perm FileMode) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#NewSyscallError">func NewSyscallError(syscall string, err error) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Readlink">func Readlink(name string) (string, error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Remove">func Remove(name string) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#RemoveAll">func RemoveAll(path string) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Rename">func Rename(oldpath, newpath string) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#SameFile">func SameFile(fi1, fi2 FileInfo) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Setenv">func Setenv(key, value string) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Symlink">func Symlink(oldname, newname string) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#TempDir">func TempDir() string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Truncate">func Truncate(name string, size int64) error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Unsetenv">func Unsetenv(key string) error</a></dd>
+			
+			
+				
+				<dd><a href="./os - Go 编程语言_files/os - Go 编程语言.htm">type File</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#Create">func Create(name string) (file *File, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#NewFile">func NewFile(fd uintptr, name string) *File</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#Open">func Open(name string) (file *File, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#OpenFile">func OpenFile(name string, flag int, perm FileMode) (file *File, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#Pipe">func Pipe() (r *File, w *File, err error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Chdir">func (f *File) Chdir() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Chmod">func (f *File) Chmod(mode FileMode) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Chown">func (f *File) Chown(uid, gid int) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Close">func (f *File) Close() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Fd">func (f *File) Fd() uintptr</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Name">func (f *File) Name() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Read">func (f *File) Read(b []byte) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.ReadAt">func (f *File) ReadAt(b []byte, off int64) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Readdir">func (f *File) Readdir(n int) (fi []FileInfo, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Readdirnames">func (f *File) Readdirnames(n int) (names []string, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Seek">func (f *File) Seek(offset int64, whence int) (ret int64, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Stat">func (f *File) Stat() (fi FileInfo, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Sync">func (f *File) Sync() (err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Truncate">func (f *File) Truncate(size int64) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.Write">func (f *File) Write(b []byte) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.WriteAt">func (f *File) WriteAt(b []byte, off int64) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#File.WriteString">func (f *File) WriteString(s string) (ret int, err error)</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#FileInfo">type FileInfo</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#Lstat">func Lstat(name string) (fi FileInfo, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#Stat">func Stat(name string) (fi FileInfo, err error)</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#FileMode">type FileMode</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#FileMode.IsDir">func (m FileMode) IsDir() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#FileMode.IsRegular">func (m FileMode) IsRegular() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#FileMode.Perm">func (m FileMode) Perm() FileMode</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#FileMode.String">func (m FileMode) String() string</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#LinkError">type LinkError</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#LinkError.Error">func (e *LinkError) Error() string</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#PathError">type PathError</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#PathError.Error">func (e *PathError) Error() string</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#ProcAttr">type ProcAttr</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Process">type Process</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#FindProcess">func FindProcess(pid int) (p *Process, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#StartProcess">func StartProcess(name string, argv []string, attr *ProcAttr) (*Process, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#Process.Kill">func (p *Process) Kill() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#Process.Release">func (p *Process) Release() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#Process.Signal">func (p *Process) Signal(sig Signal) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#Process.Wait">func (p *Process) Wait() (*ProcessState, error)</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#ProcessState">type ProcessState</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#ProcessState.Exited">func (p *ProcessState) Exited() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#ProcessState.Pid">func (p *ProcessState) Pid() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#ProcessState.String">func (p *ProcessState) String() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#ProcessState.Success">func (p *ProcessState) Success() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#ProcessState.Sys">func (p *ProcessState) Sys() interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#ProcessState.SysUsage">func (p *ProcessState) SysUsage() interface{}</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#ProcessState.SystemTime">func (p *ProcessState) SystemTime() time.Duration</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#ProcessState.UserTime">func (p *ProcessState) UserTime() time.Duration</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#Signal">type Signal</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/os/#SyscallError">type SyscallError</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/os/#SyscallError.Error">func (e *SyscallError) Error() string</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+<!--
+			<h4>Package files</h4>
+-->
+			<h4>包文件</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="https://golang-china.appspot.com/src/os/dir_unix.go">dir_unix.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/doc.go">doc.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/env.go">env.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/error.go">error.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/error_unix.go">error_unix.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/exec.go">exec.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/exec_posix.go">exec_posix.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/exec_unix.go">exec_unix.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/file.go">file.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/file_posix.go">file_posix.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/file_unix.go">file_unix.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/getwd.go">getwd.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/path.go">path.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/path_unix.go">path_unix.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/pipe_linux.go">pipe_linux.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/proc.go">proc.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/stat_linux.go">stat_linux.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/sticky_notbsd.go">sticky_notbsd.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/str.go">str.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/sys_linux.go">sys_linux.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/sys_unix.go">sys_unix.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/types.go">types.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/os/types_notwin.go">types_notwin.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示内部调用图">内部调用图 ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏内部调用图">内部调用图 ▾</h2>
+<!--
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+-->
+			<p>
+			在下面的调用图查看器中，每个节点都是一个属于本包的函数，其子节点即为它所调用的函数——或许是动态的。
+			</p>
+			<p>
+			根节点为包的入口点：函数可从包的外部调用。若这些函数被其它包动态地调用，
+			那么它们可能是未导出的或匿名的。
+			</p>
+			<p>
+			点击一个节点来查看该函数的源码。在源码中，可以点击它的 <code>func</code>
+			声明标记来查看其调用者。
+			</p>
+			<p>
+			在分析特定程序或测试时，被认定为无法访问的函数会被忽略。
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+<!--
+			<h2 id="pkg-constants">Constants</h2>
+-->
+			<h2 id="pkg-constants">常量</h2>
+			
+				<pre>const (
+        <span id="O_RDONLY">O_RDONLY</span> <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a> = <a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#O_RDONLY">O_RDONLY</a> <span class="comment">// open the file read-only.</span>
+        <span id="O_WRONLY">O_WRONLY</span> <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a> = <a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#O_WRONLY">O_WRONLY</a> <span class="comment">// open the file write-only.</span>
+        <span id="O_RDWR">O_RDWR</span>   <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a> = <a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#O_RDWR">O_RDWR</a>   <span class="comment">// open the file read-write.</span>
+        <span id="O_APPEND">O_APPEND</span> <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a> = <a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#O_APPEND">O_APPEND</a> <span class="comment">// append data to the file when writing.</span>
+        <span id="O_CREATE">O_CREATE</span> <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a> = <a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#O_CREAT">O_CREAT</a>  <span class="comment">// create a new file if none exists.</span>
+        <span id="O_EXCL">O_EXCL</span>   <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a> = <a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#O_EXCL">O_EXCL</a>   <span class="comment">// used with O_CREATE, file must not exist</span>
+        <span id="O_SYNC">O_SYNC</span>   <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a> = <a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#O_SYNC">O_SYNC</a>   <span class="comment">// open for synchronous I/O.</span>
+        <span id="O_TRUNC">O_TRUNC</span>  <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a> = <a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#O_TRUNC">O_TRUNC</a>  <span class="comment">// if possible, truncate file when opened.</span>
+)</pre>
+				<p>
+用于包装底层系统的参数用于Open函数，不是所有的flag都能在特定系统里使用的。
+</p>
+<pre>const (
+    SEEK_SET int = 0 // 相对于文件起始位置seek
+    SEEK_CUR int = 1 // 相对于文件当前位置seek
+    SEEK_END int = 2 // 相对于文件结尾位置seek
+)
+</pre>
+<p>
+指定Seek函数从何处开始搜索（即相对位置）
+</p>
+<pre>const (
+    PathSeparator     = '/' // 操作系统指定的路径分隔符
+    PathListSeparator = ':' // 操作系统指定的表分隔符
+)
+
+const DevNull = "/dev/null"
+</pre>
+<p>
+DevNull是操作系统空设备的名字。在类似Unix的操作系统中，是"/dev/null"；在Windows中，为"NUL"。
+</p>
+
+			
+				<pre>const (
+        <span id="SEEK_SET">SEEK_SET</span> <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a> = 0 <span class="comment">// seek relative to the origin of the file</span>
+        <span id="SEEK_CUR">SEEK_CUR</span> <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a> = 1 <span class="comment">// seek relative to the current offset</span>
+        <span id="SEEK_END">SEEK_END</span> <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a> = 2 <span class="comment">// seek relative to the end</span>
+)</pre>
+				<p>
+Seek whence values.
+</p>
+
+			
+				<pre>const (
+        <span id="PathSeparator">PathSeparator</span>     = '/' <span class="comment">// OS-specific path separator</span>
+        <span id="PathListSeparator">PathListSeparator</span> = ':' <span class="comment">// OS-specific path list separator</span>
+)</pre>
+				
+			
+				<pre>const <span id="DevNull">DevNull</span> = "/dev/null"</pre>
+				<p>
+DevNull is the name of the operating system's “null device.”
+On Unix-like systems, it is "/dev/null"; on Windows, "NUL".
+</p>
+
+			
+		
+		
+<!--
+			<h2 id="pkg-variables">Variables</h2>
+-->
+			<h2 id="pkg-variables">变量</h2>
+			
+				<pre>var (
+        <span id="ErrInvalid">ErrInvalid</span>    = <a href="https://golang-china.appspot.com/pkg/errors/">errors</a>.<a href="https://golang-china.appspot.com/pkg/errors/#New">New</a>("invalid argument")
+        <span id="ErrPermission">ErrPermission</span> = <a href="https://golang-china.appspot.com/pkg/errors/">errors</a>.<a href="https://golang-china.appspot.com/pkg/errors/#New">New</a>("permission denied")
+        <span id="ErrExist">ErrExist</span>      = <a href="https://golang-china.appspot.com/pkg/errors/">errors</a>.<a href="https://golang-china.appspot.com/pkg/errors/#New">New</a>("file already exists")
+        <span id="ErrNotExist">ErrNotExist</span>   = <a href="https://golang-china.appspot.com/pkg/errors/">errors</a>.<a href="https://golang-china.appspot.com/pkg/errors/#New">New</a>("file does not exist")
+)</pre>
+				<p>
+一些可移植的、共有的系统调用错误。
+</p>
+<pre>var (
+    Stdin  = NewFile(uintptr(syscall.Stdin), "/dev/stdin")
+    Stdout = NewFile(uintptr(syscall.Stdout), "/dev/stdout")
+    Stderr = NewFile(uintptr(syscall.Stderr), "/dev/stderr")
+)
+</pre>
+<p>
+Stdin、Stdout和Stderr是指向标准输入、标准输出、标准错误输出的文件描述符。
+</p>
+<pre>var Args []string
+</pre>
+<p>
+Args保管了命令行参数，第一个是程序名。
+</p>
+
+			
+				<pre>var (
+        <span id="Stdin">Stdin</span>  = <a href="https://golang-china.appspot.com/pkg/os/#NewFile">NewFile</a>(<a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a>(<a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#Stdin">Stdin</a>), "/dev/stdin")
+        <span id="Stdout">Stdout</span> = <a href="https://golang-china.appspot.com/pkg/os/#NewFile">NewFile</a>(<a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a>(<a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#Stdout">Stdout</a>), "/dev/stdout")
+        <span id="Stderr">Stderr</span> = <a href="https://golang-china.appspot.com/pkg/os/#NewFile">NewFile</a>(<a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a>(<a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#Stderr">Stderr</a>), "/dev/stderr")
+)</pre>
+				<p>
+Stdin, Stdout, and Stderr are open Files pointing to the standard input,
+standard output, and standard error file descriptors.
+</p>
+
+			
+				<pre>var <span id="Args">Args</span> []<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				<p>
+Args hold the command-line arguments, starting with the program name.
+</p>
+
+			
+		
+		
+			
+			
+			<h2 id="Chdir">func <a href="https://golang-china.appspot.com/src/os/file.go?s=6307:6335#L211">Chdir</a></h2>
+			<pre>func Chdir(dir <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+Chdir将当前工作目录修改为dir指定的目录。如果出错，会返回*PathError底层类型的错误。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Chmod">func <a href="https://golang-china.appspot.com/src/os/file_posix.go?s=1266:1310#L40">Chmod</a></h2>
+			<pre>func Chmod(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, mode <a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+Chmod修改name指定的文件对象的mode。如果name指定的文件是一个符号链接，它会修改该链接的目的地文件的mode。如果出错，会返回*PathError底层类型的错误。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Chown">func <a href="https://golang-china.appspot.com/src/os/file_posix.go?s=1933:1976#L62">Chown</a></h2>
+			<pre>func Chown(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, uid, gid <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+Chmod修改name指定的文件对象的用户id和组id。如果name指定的文件是一个符号链接，它会修改该链接的目的地文件的用户id和组id。如果出错，会返回*PathError底层类型的错误。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Chtimes">func <a href="https://golang-china.appspot.com/src/os/file_posix.go?s=3699:3764#L123">Chtimes</a></h2>
+			<pre>func Chtimes(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, atime <a href="https://golang-china.appspot.com/pkg/time/">time</a>.<a href="https://golang-china.appspot.com/pkg/time/#Time">Time</a>, mtime <a href="https://golang-china.appspot.com/pkg/time/">time</a>.<a href="https://golang-china.appspot.com/pkg/time/#Time">Time</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+Chtimes修改name指定的文件对象的访问时间和修改时间，类似Unix的utime()或utimes()函数。底层的文件系统可能会截断/舍入时间单位到更低的精确度。如果出错，会返回*PathError底层类型的错误。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Clearenv">func <a href="https://golang-china.appspot.com/src/os/env.go?s=3213:3228#L99">Clearenv</a></h2>
+			<pre>func Clearenv()</pre>
+			<p>
+Clearenv删除所有环境变量。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Environ">func <a href="https://golang-china.appspot.com/src/os/env.go?s=3349:3372#L105">Environ</a></h2>
+			<pre>func Environ() []<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+Environ返回表示环境变量的格式为"key=value"的字符串的切片拷贝。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Exit">func <a href="https://golang-china.appspot.com/src/os/proc.go?s=1325:1344#L38">Exit</a></h2>
+			<pre>func Exit(code <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>)</pre>
+			<p>
+Exit让当前程序以给出的状态码code退出。一般来说，状态码0表示成功，非0表示出错。程序会立刻终止，defer的函数不会被执行。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Expand">func <a href="https://golang-china.appspot.com/src/os/env.go?s=379:436#L3">Expand</a></h2>
+			<pre>func Expand(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, mapping func(<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+Expand函数替换s中的${var}或$var为mapping(var)。例如，os.ExpandEnv(s)等价于os.Expand(s,
+os.Getenv)。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ExpandEnv">func <a href="https://golang-china.appspot.com/src/os/env.go?s=963:994#L22">ExpandEnv</a></h2>
+			<pre>func ExpandEnv(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+ExpandEnv函数替换s中的${var}或$var为名为var
+的环境变量的值。引用未定义环境变量会被替换为空字符串。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Getegid">func <a href="https://golang-china.appspot.com/src/os/proc.go?s=867:885#L27">Getegid</a></h2>
+			<pre>func Getegid() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+Getegid返回调用者的有效组ID。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Getenv">func <a href="https://golang-china.appspot.com/src/os/env.go?s=2368:2398#L69">Getenv</a></h2>
+			<pre>func Getenv(key <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+Getenv检索并返回名为key的环境变量的值。如果不存在该环境变量会返回空字符串。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Geteuid">func <a href="https://golang-china.appspot.com/src/os/proc.go?s=652:670#L21">Geteuid</a></h2>
+			<pre>func Geteuid() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+Geteuid返回调用者的有效用户ID。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Getgid">func <a href="https://golang-china.appspot.com/src/os/proc.go?s=755:772#L24">Getgid</a></h2>
+			<pre>func Getgid() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+Getgid返回调用者的组ID。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Getgroups">func <a href="https://golang-china.appspot.com/src/os/proc.go?s=1001:1032#L30">Getgroups</a></h2>
+			<pre>func Getgroups() ([]<a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Getgroups返回调用者所属的所有用户组的组ID。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Getpagesize">func <a href="https://golang-china.appspot.com/src/os/types.go?s=268:290#L3">Getpagesize</a></h2>
+			<pre>func Getpagesize() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+Getpagesize返回底层的系统内存页的尺寸。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Getpid">func <a href="https://golang-china.appspot.com/src/os/exec.go?s=2009:2026#L57">Getpid</a></h2>
+			<pre>func Getpid() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+Getpid返回调用者所在进程的进程ID。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Getppid">func <a href="https://golang-china.appspot.com/src/os/exec.go?s=2114:2132#L60">Getppid</a></h2>
+			<pre>func Getppid() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+Getppid返回调用者所在进程的父进程的进程ID。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Getuid">func <a href="https://golang-china.appspot.com/src/os/proc.go?s=541:558#L18">Getuid</a></h2>
+			<pre>func Getuid() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+Getuid返回调用者的用户ID。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Getwd">func <a href="https://golang-china.appspot.com/src/os/getwd.go?s=621:657#L16">Getwd</a></h2>
+			<pre>func Getwd() (dir <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Getwd返回一个对应当前工作目录的根路径。如果当前目录可以经过多条路径抵达（因为硬链接），Getwd会返回其中一个。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Hostname">func <a href="https://golang-china.appspot.com/src/os/doc.go?s=2934:2974#L82">Hostname</a></h2>
+			<pre>func Hostname() (name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Hostname返回内核提供的主机名。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="IsExist">func <a href="https://golang-china.appspot.com/src/os/error.go?s=1387:1415#L39">IsExist</a></h2>
+			<pre>func IsExist(err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+返回一个布尔值说明该错误是否表示一个文件或目录已经存在。ErrExist和一些系统调用错误会使它返回真。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="IsNotExist">func <a href="https://golang-china.appspot.com/src/os/error.go?s=1632:1663#L46">IsNotExist</a></h2>
+			<pre>func IsNotExist(err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+返回一个布尔值说明该错误是否表示一个文件或目录不存在。ErrNotExist和一些系统调用错误会使它返回真。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="IsPathSeparator">func <a href="https://golang-china.appspot.com/src/os/path_unix.go?s=441:475#L5">IsPathSeparator</a></h2>
+			<pre>func IsPathSeparator(c <a href="https://golang-china.appspot.com/pkg/builtin/#uint8">uint8</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+IsPathSeparator返回字符c是否是一个路径分隔符。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="IsPermission">func <a href="https://golang-china.appspot.com/src/os/error.go?s=1873:1906#L53">IsPermission</a></h2>
+			<pre>func IsPermission(err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+返回一个布尔值说明该错误是否表示因权限不足要求被拒绝。ErrPermission和一些系统调用错误会使它返回真。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Lchown">func <a href="https://golang-china.appspot.com/src/os/file_posix.go?s=2285:2329#L72">Lchown</a></h2>
+			<pre>func Lchown(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, uid, gid <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+Chmod修改name指定的文件对象的用户id和组id。如果name指定的文件是一个符号链接，它会修改该符号链接自身的用户id和组id。如果出错，会返回*PathError底层类型的错误。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Link">func <a href="https://golang-china.appspot.com/src/os/file_unix.go?s=9433:9473#L333">Link</a></h2>
+			<pre>func Link(oldname, newname <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+Link创建一个名为newname指向oldname的硬链接。如果出错，会返回*
+LinkError底层类型的错误。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="LookupEnv">func <a href="https://golang-china.appspot.com/src/os/env.go?s=2722:2763#L79">LookupEnv</a></h2>
+			<pre>func LookupEnv(key <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) (<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>)</pre>
+			<p>
+LookupEnv retrieves the value of the environment variable named
+by the key. If the variable is present in the environment the
+value (which may be empty) is returned and the boolean is true.
+Otherwise the returned value will be empty and the boolean will
+be false.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Mkdir">func <a href="https://golang-china.appspot.com/src/os/file.go?s=5864:5908#L194">Mkdir</a></h2>
+			<pre>func Mkdir(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, perm <a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+Mkdir使用指定的权限和名称创建一个目录。如果出错，会返回*PathError底层类型的错误。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="MkdirAll">func <a href="https://golang-china.appspot.com/src/os/path.go?s=488:535#L9">MkdirAll</a></h2>
+			<pre>func MkdirAll(path <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, perm <a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+MkdirAll使用指定的权限和名称创建一个目录，包括任何必要的上级目录，并返回nil，否则返回错误。权限位perm会应用在每一个被本函数创建的目录上。如果path指定了一个已经存在的目录，MkdirAll不做任何操作并返回nil。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NewSyscallError">func <a href="https://golang-china.appspot.com/src/os/error.go?s=1075:1128#L29">NewSyscallError</a></h2>
+			<pre>func NewSyscallError(syscall <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+NewSyscallError返回一个指定系统调用名称和错误细节的SyscallError。如果err为nil，本函数会返回nil。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Readlink">func <a href="https://golang-china.appspot.com/src/os/file_posix.go?s=451:493#L8">Readlink</a></h2>
+			<pre>func Readlink(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) (<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Readlink获取name指定的符号链接文件指向的文件的路径。如果出错，会返回*PathError底层类型的错误。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Remove">func <a href="https://golang-china.appspot.com/src/os/file_unix.go?s=7878:7908#L271">Remove</a></h2>
+			<pre>func Remove(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+Remove删除name指定的文件或目录。如果出错，会返回*PathError底层类型的错误。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="RemoveAll">func <a href="https://golang-china.appspot.com/src/os/path.go?s=1635:1668#L56">RemoveAll</a></h2>
+			<pre>func RemoveAll(path <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+RemoveAll删除path指定的文件，或目录及它包含的任何下级对象。它会尝试删除所有东西，除非遇到错误并返回。如果path指定的对象不存在，RemoveAll会返回nil而不返回错误。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Rename">func <a href="https://golang-china.appspot.com/src/os/file.go?s=7566:7608#L252">Rename</a></h2>
+			<pre>func Rename(oldpath, newpath <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+Rename修改一个文件的名字，移动一个文件。可能会有一些个操作系统特定的限制。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="SameFile">func <a href="https://golang-china.appspot.com/src/os/types.go?s=3885:3922#L101">SameFile</a></h2>
+			<pre>func SameFile(fi1, fi2 <a href="https://golang-china.appspot.com/pkg/os/#FileInfo">FileInfo</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+SameFile返回fi1和fi2是否在描述同一个文件。例如，在Unix这表示二者底层结构的设备和索引节点是相同的；在其他系统中可能是根据路径名确定的。SameFile应只使用本包Stat函数返回的FileInfo类型值为参数，其他情况下，它会返回假。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Setenv">func <a href="https://golang-china.appspot.com/src/os/env.go?s=2900:2936#L85">Setenv</a></h2>
+			<pre>func Setenv(key, value <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+Setenv设置名为key的环境变量。如果出错会返回该错误。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Symlink">func <a href="https://golang-china.appspot.com/src/os/file_unix.go?s=9709:9752#L343">Symlink</a></h2>
+			<pre>func Symlink(oldname, newname <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+Symlink创建一个名为newname指向oldname的符号链接。如果出错，会返回*
+LinkError底层类型的错误。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TempDir">func <a href="https://golang-china.appspot.com/src/os/file_unix.go?s=9143:9164#L319">TempDir</a></h2>
+			<pre>func TempDir() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+TempDir返回一个用于保管临时文件的默认目录。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Truncate">func <a href="https://golang-china.appspot.com/src/os/file_unix.go?s=7619:7663#L262">Truncate</a></h2>
+			<pre>func Truncate(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, size <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+Truncate修改name指定的文件的大小。如果该文件为一个符号链接，将修改链接指向的文件的大小。如果出错，会返回*PathError底层类型的错误。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Unsetenv">func <a href="https://golang-china.appspot.com/src/os/env.go?s=3099:3130#L94">Unsetenv</a></h2>
+			<pre>func Unsetenv(key <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+Unsetenv unsets a single environment variable.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="File">type <a href="https://golang-china.appspot.com/src/os/file_unix.go?s=503:530#L14">File</a></h2>
+			<pre>type File struct {
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+File代表一个打开的文件对象。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="Create">func <a href="https://golang-china.appspot.com/src/os/file.go?s=7334:7382#L244">Create</a></h3>
+				<pre>func Create(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) (file *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Create采用模式0666（任何人都可读写，不可执行）创建一个名为name的文件，如果文件已存在会截断它（为空文件）。如果成功，返回的文件对象可用于I/O；对应的文件描述符具有O_RDWR模式。如果出错，错误底层类型是*PathError。
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewFile">func <a href="https://golang-china.appspot.com/src/os/file_unix.go?s=1231:1274#L39">NewFile</a></h3>
+				<pre>func NewFile(fd <a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a>, name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a></pre>
+				<p>
+NewFile使用给出的Unix文件描述符和名称创建一个文件。
+</p>
+
+				
+				
+			
+				
+				<h3 id="Open">func <a href="https://golang-china.appspot.com/src/os/file.go?s=6972:7018#L235">Open</a></h3>
+				<pre>func Open(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) (file *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Open打开一个文件用于读取。如果操作成功，返回的文件对象的方法可用于读取数据；对应的文件描述符具有O_RDONLY模式。如果出错，错误底层类型是*PathError。
+</p>
+
+				
+				
+			
+				
+				<h3 id="OpenFile">func <a href="https://golang-china.appspot.com/src/os/file_unix.go?s=2310:2385#L75">OpenFile</a></h3>
+				<pre>func OpenFile(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, flag <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, perm <a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a>) (file *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+OpenFile是一个更一般性的文件打开函数，大多数调用者都应用Open或Create代替本函数。它会使用指定的选项（如O_RDONLY等）、指定的模式（如0666等）打开指定名称的文件。如果操作成功，返回的文件对象可用于I/O。如果出错，错误底层类型是*PathError。
+</p>
+
+				
+				
+			
+				
+				<h3 id="Pipe">func <a href="https://golang-china.appspot.com/src/os/pipe_linux.go?s=319:360#L1">Pipe</a></h3>
+				<pre>func Pipe() (r *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>, w *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Pipe返回一对关联的文件对象。从r的读取将返回写入w的数据。本函数会返回两个文件对象和可能的错误。
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="File.Chdir">func (*File) <a href="https://golang-china.appspot.com/src/os/file.go?s=6579:6607#L221">Chdir</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Chdir() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Chdir将当前工作目录修改为f，f必须是一个目录。如果出错，错误底层类型是*PathError。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Chmod">func (*File) <a href="https://golang-china.appspot.com/src/os/file_posix.go?s=1532:1573#L49">Chmod</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Chmod(mode <a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Chmod修改文件的模式。如果出错，错误底层类型是*PathError。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Chown">func (*File) <a href="https://golang-china.appspot.com/src/os/file_posix.go?s=2557:2597#L81">Chown</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Chown(uid, gid <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Chown修改文件的用户ID和组ID。如果出错，错误底层类型是*PathError。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Close">func (*File) <a href="https://golang-china.appspot.com/src/os/file_unix.go?s=3085:3113#L104">Close</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Close() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Close关闭文件f，使文件不能用于读写。它返回可能出现的错误。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Fd">func (*File) <a href="https://golang-china.appspot.com/src/os/file_unix.go?s=1064:1091#L31">Fd</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Fd() <a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a></pre>
+				<p>
+Fd返回与文件f对应的整数类型的Unix文件描述符。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Name">func (*File) <a href="https://golang-china.appspot.com/src/os/file.go?s=1531:1559#L35">Name</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Name() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				<p>
+Name方法返回（提供给Open/Create等方法的）文件名称。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Read">func (*File) <a href="https://golang-china.appspot.com/src/os/file.go?s=3214:3262#L81">Read</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Read(b []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Read方法从f中读取最多len(b)字节数据并写入b。它返回读取的字节数和可能遇到的任何错误。文件终止标志是读取0个字节且返回值err为io.EOF。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.ReadAt">func (*File) <a href="https://golang-china.appspot.com/src/os/file.go?s=3716:3777#L102">ReadAt</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) ReadAt(b []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, off <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+ReadAt从指定的位置（相对于文件开始位置）读取len(b)字节数据并写入b。它返回读取的字节数和可能遇到的任何错误。当n&lt;len(b)时，本方法总是会返回错误；如果是因为到达文件结尾，返回值err会是io.EOF。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Readdir">func (*File) <a href="https://golang-china.appspot.com/src/os/doc.go?s=3807:3863#L101">Readdir</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Readdir(n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) (fi []<a href="https://golang-china.appspot.com/pkg/os/#FileInfo">FileInfo</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Readdir读取目录f的内容，返回一个有n个成员的[]FileInfo，这些FileInfo是被Lstat返回的，采用目录顺序。对本函数的下一次调用会返回上一次调用剩余未读取的内容的信息。
+</p>
+<p>
+如果n&gt;0，Readdir函数会返回一个最多n个成员的切片。这时，如果Readdir返回一个空切片，它会返回一个非nil的错误说明原因。如果到达了目录f的结尾，返回值err会是io.EOF。
+</p>
+<p>
+如果n&lt;=0，Readdir函数返回目录中剩余所有文件对象的FileInfo构成的切片。此时，如果Readdir调用成功（读取所有内容直到结尾），它会返回该切片和nil的错误值。如果在到达结尾前遇到错误，会返回之前成功读取的FileInfo构成的切片和该错误。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Readdirnames">func (*File) <a href="https://golang-china.appspot.com/src/os/doc.go?s=4579:4641#L120">Readdirnames</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Readdirnames(n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) (names []<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Readdir读取目录f的内容，返回一个有n个成员的[]string，切片成员为目录中文件对象的名字，采用目录顺序。对本函数的下一次调用会返回上一次调用剩余未读取的内容的信息。
+</p>
+<p>
+如果n&gt;0，Readdir函数会返回一个最多n个成员的切片。这时，如果Readdir返回一个空切片，它会返回一个非nil的错误说明原因。如果到达了目录f的结尾，返回值err会是io.EOF。
+</p>
+<p>
+如果n&lt;=0，Readdir函数返回目录中剩余所有文件对象的名字构成的切片。此时，如果Readdir调用成功（读取所有内容直到结尾），它会返回该切片和nil的错误值。如果在到达结尾前遇到错误，会返回之前成功读取的名字构成的切片和该错误。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Seek">func (*File) <a href="https://golang-china.appspot.com/src/os/file.go?s=5209:5277#L169">Seek</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Seek(offset <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, whence <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) (ret <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Seek设置下一次读/写的位置。offset为相对偏移量，而whence决定相对位置：0为相对文件开头，1为相对当前位置，2为相对文件结尾。它返回新的偏移量（相对开头）和可能的错误。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Stat">func (*File) <a href="https://golang-china.appspot.com/src/os/file_unix.go?s=3620:3666#L128">Stat</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Stat() (fi <a href="https://golang-china.appspot.com/pkg/os/#FileInfo">FileInfo</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Stat返回描述文件f的FileInfo类型值。如果出错，错误底层类型是*PathError。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Sync">func (*File) <a href="https://golang-china.appspot.com/src/os/file_posix.go?s=3250:3283#L107">Sync</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Sync() (err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Sync递交文件的当前内容进行稳定的存储。一般来说，这表示将文件系统的最近写入的数据在内存中的拷贝刷新到硬盘中稳定保存。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Truncate">func (*File) <a href="https://golang-china.appspot.com/src/os/file_posix.go?s=2884:2925#L94">Truncate</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Truncate(size <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Truncate改变文件的大小，它不会改变I/O的当前位置。
+如果截断文件，多出的部分就会被丢弃。如果出错，错误底层类型是*PathError。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.Write">func (*File) <a href="https://golang-china.appspot.com/src/os/file.go?s=4193:4242#L125">Write</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) Write(b []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Write向文件中写入len(b)字节数据。它返回写入的字节数和可能遇到的任何错误。如果返回值n!=len(b)，本方法会返回一个非nil的错误。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.WriteAt">func (*File) <a href="https://golang-china.appspot.com/src/os/file.go?s=4659:4721#L148">WriteAt</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) WriteAt(b []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, off <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+WriteAt在指定的位置（相对于文件开始位置）写入len(b)字节数据。它返回写入的字节数和可能遇到的任何错误。如果返回值n!=len(b)，本方法会返回一个非nil的错误。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="File.WriteString">func (*File) <a href="https://golang-china.appspot.com/src/os/file.go?s=5599:5656#L185">WriteString</a></h3>
+				<pre>func (f *<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>) WriteString(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) (ret <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+WriteString类似Write，但接受一个字符串参数。
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="FileInfo">type <a href="https://golang-china.appspot.com/src/os/types.go?s=391:752#L6">FileInfo</a></h2>
+			<pre>type FileInfo interface {
+        Name() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>       <span class="comment">// base name of the file</span>
+        Size() <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>        <span class="comment">// length in bytes for regular files; system-dependent for others</span>
+        Mode() <a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a>     <span class="comment">// file mode bits</span>
+        ModTime() <a href="https://golang-china.appspot.com/pkg/time/">time</a>.<a href="https://golang-china.appspot.com/pkg/time/#Time">Time</a> <span class="comment">// modification time</span>
+        IsDir() <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>        <span class="comment">// abbreviation for Mode().IsDir()</span>
+        Sys() interface{}   <span class="comment">// underlying data source (can return nil)</span>
+}</pre>
+			<p>
+FileInfo用来描述一个文件对象。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="Lstat">func <a href="https://golang-china.appspot.com/src/os/file_unix.go?s=4457:4505#L155">Lstat</a></h3>
+				<pre>func Lstat(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) (fi <a href="https://golang-china.appspot.com/pkg/os/#FileInfo">FileInfo</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Lstat返回一个描述name指定的文件对象的FileInfo。如果指定的文件对象是一个符号链接，返回的FileInfo描述该符号链接的信息，本函数不会试图跳转该链接。如果出错，返回的错误值为*PathError类型。
+</p>
+
+				
+				
+			
+				
+				<h3 id="Stat">func <a href="https://golang-china.appspot.com/src/os/file_unix.go?s=3995:4042#L142">Stat</a></h3>
+				<pre>func Stat(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) (fi <a href="https://golang-china.appspot.com/pkg/os/#FileInfo">FileInfo</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Stat返回一个描述name指定的文件对象的FileInfo。如果指定的文件对象是一个符号链接，返回的FileInfo描述该符号链接指向的文件的信息，本函数会尝试跳转该链接。如果出错，返回的错误值为*PathError类型。
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="FileMode">type <a href="https://golang-china.appspot.com/src/os/types.go?s=1044:1064#L20">FileMode</a></h2>
+			<pre>type FileMode <a href="https://golang-china.appspot.com/pkg/builtin/#uint32">uint32</a></pre>
+			<p>
+FileMode代表文件的模式和权限位。这些字位在所有的操作系统都有相同的含义，因此文件的信息可以在不同的操作系统之间安全的移植。不是所有的位都能用于所有的系统，唯一共有的是用于表示目录的ModeDir位。
+</p>
+<pre>const (
+    // 单字符是被String方法用于格式化的属性缩写。
+    ModeDir        FileMode = 1 &lt;&lt; (32 - 1 - iota) // d: 目录
+    ModeAppend                                     // a: 只能写入，且只能写入到末尾
+    ModeExclusive                                  // l: 用于执行
+    ModeTemporary                                  // T: 临时文件（非备份文件）
+    ModeSymlink                                    // L: 符号链接（不是快捷方式文件）
+    ModeDevice                                     // D: 设备
+    ModeNamedPipe                                  // p: 命名管道（FIFO）
+    ModeSocket                                     // S: Unix域socket
+    ModeSetuid                                     // u: 表示文件具有其创建者用户id权限
+    ModeSetgid                                     // g: 表示文件具有其创建者组id的权限
+    ModeCharDevice                                 // c: 字符设备，需已设置ModeDevice
+    ModeSticky                                     // t: 只有root/创建者能删除/移动文件
+    // 覆盖所有类型位（用于通过&amp;获取类型位），对普通文件，所有这些位都不应被设置
+    ModeType = ModeDir | ModeSymlink | ModeNamedPipe | ModeSocket | ModeDevice
+    ModePerm FileMode = 0777 // 覆盖所有Unix权限位（用于通过&amp;获取类型位）
+)
+</pre>
+<p>
+这些被定义的位是FileMode最重要的位。另外9个不重要的位为标准Unix
+rwxrwxrwx权限（任何人都可读、写、运行）。这些（重要）位的值应被视为公共API的一部分，可能会用于线路协议或硬盘标识：它们不能被修改，但可以添加新的位。
+</p>
+
+
+			
+				<pre>const (
+        <span class="comment">// The single letters are the abbreviations</span>
+        <span class="comment">// used by the String method's formatting.</span>
+        <span id="ModeDir">ModeDir</span>        <a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a> = 1 &lt;&lt; (32 - 1 - <a href="https://golang-china.appspot.com/pkg/builtin/#iota">iota</a>) <span class="comment">// d: is a directory</span>
+        <span id="ModeAppend">ModeAppend</span>                                     <span class="comment">// a: append-only</span>
+        <span id="ModeExclusive">ModeExclusive</span>                                  <span class="comment">// l: exclusive use</span>
+        <span id="ModeTemporary">ModeTemporary</span>                                  <span class="comment">// T: temporary file (not backed up)</span>
+        <span id="ModeSymlink">ModeSymlink</span>                                    <span class="comment">// L: symbolic link</span>
+        <span id="ModeDevice">ModeDevice</span>                                     <span class="comment">// D: device file</span>
+        <span id="ModeNamedPipe">ModeNamedPipe</span>                                  <span class="comment">// p: named pipe (FIFO)</span>
+        <span id="ModeSocket">ModeSocket</span>                                     <span class="comment">// S: Unix domain socket</span>
+        <span id="ModeSetuid">ModeSetuid</span>                                     <span class="comment">// u: setuid</span>
+        <span id="ModeSetgid">ModeSetgid</span>                                     <span class="comment">// g: setgid</span>
+        <span id="ModeCharDevice">ModeCharDevice</span>                                 <span class="comment">// c: Unix character device, when ModeDevice is set</span>
+        <span id="ModeSticky">ModeSticky</span>                                     <span class="comment">// t: sticky</span>
+
+        <span class="comment">// Mask for the type bits. For regular files, none will be set.</span>
+        <span id="ModeType">ModeType</span> = <a href="https://golang-china.appspot.com/pkg/os/#ModeDir">ModeDir</a> | <a href="https://golang-china.appspot.com/pkg/os/#ModeSymlink">ModeSymlink</a> | <a href="https://golang-china.appspot.com/pkg/os/#ModeNamedPipe">ModeNamedPipe</a> | <a href="https://golang-china.appspot.com/pkg/os/#ModeSocket">ModeSocket</a> | <a href="https://golang-china.appspot.com/pkg/os/#ModeDevice">ModeDevice</a>
+
+        <span id="ModePerm">ModePerm</span> <a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a> = 0777 <span class="comment">// Unix permission bits</span>
+)</pre>
+				<p>
+The defined file mode bits are the most significant bits of the FileMode. The
+nine least-significant bits are the standard Unix rwxrwxrwx permissions. The
+values of these bits should be considered part of the public API and may be used
+in wire protocols or disk representations: they must not be changed, although
+new bits might be added.
+</p>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="FileMode.IsDir">func (FileMode) <a href="https://golang-china.appspot.com/src/os/types.go?s=3075:3105#L77">IsDir</a></h3>
+				<pre>func (m <a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a>) IsDir() <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+				<p>
+IsDir报告m是否是一个目录。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="FileMode.IsRegular">func (FileMode) <a href="https://golang-china.appspot.com/src/os/types.go?s=3244:3278#L83">IsRegular</a></h3>
+				<pre>func (m <a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a>) IsRegular() <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+				<p>
+IsRegular报告m是否是一个普通文件。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="FileMode.Perm">func (FileMode) <a href="https://golang-china.appspot.com/src/os/types.go?s=3355:3388#L88">Perm</a></h3>
+				<pre>func (m <a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a>) Perm() <a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a></pre>
+				<p>
+Perm方法返回m的Unix权限位。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="FileMode.String">func (FileMode) <a href="https://golang-china.appspot.com/src/os/types.go?s=2563:2596#L49">String</a></h3>
+				<pre>func (m <a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a>) String() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="LinkError">type <a href="https://golang-china.appspot.com/src/os/file.go?s=2868:2940#L67">LinkError</a></h2>
+			<pre>type LinkError struct {
+        Op  <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>
+        Old <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>
+        New <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>
+        Err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>
+}</pre>
+			<p>
+LinkError记录在Link、Symlink、Rename系统调用时出现的错误，以及导致错误的路径。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="LinkError.Error">func (*LinkError) <a href="https://golang-china.appspot.com/src/os/file.go?s=2942:2976#L74">Error</a></h3>
+				<pre>func (e *<a href="https://golang-china.appspot.com/pkg/os/#LinkError">LinkError</a>) Error() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="PathError">type <a href="https://golang-china.appspot.com/src/os/error.go?s=535:598#L10">PathError</a></h2>
+			<pre>type PathError struct {
+        Op   <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>
+        Path <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>
+        Err  <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>
+}</pre>
+			<p>
+PathError记录一个错误，以及导致错误的路径。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="PathError.Error">func (*PathError) <a href="https://golang-china.appspot.com/src/os/error.go?s=600:634#L16">Error</a></h3>
+				<pre>func (e *<a href="https://golang-china.appspot.com/pkg/os/#PathError">PathError</a>) Error() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ProcAttr">type <a href="https://golang-china.appspot.com/src/os/exec.go?s=818:1712#L26">ProcAttr</a></h2>
+			<pre>type ProcAttr struct {
+        <span class="comment">// If Dir is non-empty, the child changes into the directory before</span>
+        <span class="comment">// creating the process.</span>
+        Dir <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>
+        <span class="comment">// If Env is non-nil, it gives the environment variables for the</span>
+        <span class="comment">// new process in the form returned by Environ.</span>
+        <span class="comment">// If it is nil, the result of Environ will be used.</span>
+        Env []<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>
+        <span class="comment">// Files specifies the open files inherited by the new process.  The</span>
+        <span class="comment">// first three entries correspond to standard input, standard output, and</span>
+        <span class="comment">// standard error.  An implementation may support additional entries,</span>
+        <span class="comment">// depending on the underlying operating system.  A nil entry corresponds</span>
+        <span class="comment">// to that file being closed when the process starts.</span>
+        Files []*<a href="./os - Go 编程语言_files/os - Go 编程语言.htm">File</a>
+
+        <span class="comment">// Operating system-specific process creation attributes.</span>
+        <span class="comment">// Note that setting this field means that your program</span>
+        <span class="comment">// may not execute properly or even compile on some</span>
+        <span class="comment">// operating systems.</span>
+        Sys *<a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#SysProcAttr">SysProcAttr</a>
+}</pre>
+			<p>
+ProcAttr保管将被StartProcess函数用于一个新进程的属性。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Process">type <a href="https://golang-china.appspot.com/src/os/exec.go?s=296:423#L4">Process</a></h2>
+			<pre>type Process struct {
+        Pid <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Process保管一个被StarProcess创建的进程的信息。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="FindProcess">func <a href="https://golang-china.appspot.com/src/os/doc.go?s=352:401#L2">FindProcess</a></h3>
+				<pre>func FindProcess(pid <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) (p *<a href="https://golang-china.appspot.com/pkg/os/#Process">Process</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+FindProcess根据进程id查找一个运行中的进程。函数返回的进程对象可以用于获取其关于底层操作系统进程的信息。
+</p>
+
+				
+				
+			
+				
+				<h3 id="StartProcess">func <a href="https://golang-china.appspot.com/src/os/doc.go?s=710:789#L13">StartProcess</a></h3>
+				<pre>func StartProcess(name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, argv []<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, attr *<a href="https://golang-china.appspot.com/pkg/os/#ProcAttr">ProcAttr</a>) (*<a href="https://golang-china.appspot.com/pkg/os/#Process">Process</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+StartProcess使用提供的属性、程序名、命令行参数开始一个新进程。StartProcess函数是一个低水平的接口。os/exec包提供了高水平的接口，应该尽量使用该包。如果出错，错误的底层类型会是*PathError。
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Process.Kill">func (*Process) <a href="https://golang-china.appspot.com/src/os/doc.go?s=1097:1127#L25">Kill</a></h3>
+				<pre>func (p *<a href="https://golang-china.appspot.com/pkg/os/#Process">Process</a>) Kill() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Kill让进程立刻退出。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Process.Release">func (*Process) <a href="https://golang-china.appspot.com/src/os/doc.go?s=990:1023#L20">Release</a></h3>
+				<pre>func (p *<a href="https://golang-china.appspot.com/pkg/os/#Process">Process</a>) Release() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Release释放进程p绑定的所有资源，
+使它们（资源）不能再被（进程p）使用。只有没有调用Wait方法时才需要调用本方法。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Process.Signal">func (*Process) <a href="https://golang-china.appspot.com/src/os/doc.go?s=1605:1647#L40">Signal</a></h3>
+				<pre>func (p *<a href="https://golang-china.appspot.com/pkg/os/#Process">Process</a>) Signal(sig <a href="https://golang-china.appspot.com/pkg/os/#Signal">Signal</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Signal方法向进程发送一个信号。在windows中向进程发送Interrupt信号尚未实现。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Process.Wait">func (*Process) <a href="https://golang-china.appspot.com/src/os/doc.go?s=1442:1489#L34">Wait</a></h3>
+				<pre>func (p *<a href="https://golang-china.appspot.com/pkg/os/#Process">Process</a>) Wait() (*<a href="https://golang-china.appspot.com/pkg/os/#ProcessState">ProcessState</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Wait方法阻塞直到进程退出，然后返回一个描述ProcessState描述进程的状态和可能的错误。Wait方法会释放绑定到进程p的所有资源。在大多数操作系统中，进程p必须是当前进程的子进程，否则会返回错误。
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ProcessState">type <a href="https://golang-china.appspot.com/src/os/exec_posix.go?s=1457:1617#L47">ProcessState</a></h2>
+			<pre>type ProcessState struct {
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+ProcessState保管Wait函数报告的某个已退出进程的信息。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="ProcessState.Exited">func (*ProcessState) <a href="https://golang-china.appspot.com/src/os/doc.go?s=2037:2073#L55">Exited</a></h3>
+				<pre>func (p *<a href="https://golang-china.appspot.com/pkg/os/#ProcessState">ProcessState</a>) Exited() <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Exited报告进程是否已退出。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ProcessState.Pid">func (*ProcessState) <a href="https://golang-china.appspot.com/src/os/exec_posix.go?s=1672:1704#L54">Pid</a></h3>
+				<pre>func (p *<a href="https://golang-china.appspot.com/pkg/os/#ProcessState">ProcessState</a>) Pid() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+				<p>
+Pi返回一个已退出的进程的进程id。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ProcessState.String">func (*ProcessState) <a href="https://golang-china.appspot.com/src/os/exec_posix.go?s=2001:2039#L74">String</a></h3>
+				<pre>func (p *<a href="https://golang-china.appspot.com/pkg/os/#ProcessState">ProcessState</a>) String() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="ProcessState.Success">func (*ProcessState) <a href="https://golang-china.appspot.com/src/os/doc.go?s=2197:2234#L61">Success</a></h3>
+				<pre>func (p *<a href="https://golang-china.appspot.com/pkg/os/#ProcessState">ProcessState</a>) Success() <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Success报告进程是否成功退出，如在Unix里以状态码0退出。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ProcessState.Sys">func (*ProcessState) <a href="https://golang-china.appspot.com/src/os/doc.go?s=2442:2482#L68">Sys</a></h3>
+				<pre>func (p *<a href="https://golang-china.appspot.com/pkg/os/#ProcessState">ProcessState</a>) Sys() interface{}</pre>
+				<p>
+Sys返回该已退出进程系统特定的退出信息。需要将其类型转换为适当的底层类型，如Unix里转换为*syscall.WaitStatus类型以获取其内容。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ProcessState.SysUsage">func (*ProcessState) <a href="https://golang-china.appspot.com/src/os/doc.go?s=2804:2849#L77">SysUsage</a></h3>
+				<pre>func (p *<a href="https://golang-china.appspot.com/pkg/os/#ProcessState">ProcessState</a>) SysUsage() interface{}</pre>
+				<p>
+SysUsage返回该已退出进程系统特定的资源使用信息。需要将其类型转换为适当的底层类型，如Unix里转换为*syscall.Rusage类型以获取其内容。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ProcessState.SystemTime">func (*ProcessState) <a href="https://golang-china.appspot.com/src/os/doc.go?s=1909:1958#L50">SystemTime</a></h3>
+				<pre>func (p *<a href="https://golang-china.appspot.com/pkg/os/#ProcessState">ProcessState</a>) SystemTime() <a href="https://golang-china.appspot.com/pkg/time/">time</a>.<a href="https://golang-china.appspot.com/pkg/time/#Duration">Duration</a></pre>
+				<p>
+SystemTime返回已退出进程及其子进程耗费的系统CPU时间。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="ProcessState.UserTime">func (*ProcessState) <a href="https://golang-china.appspot.com/src/os/doc.go?s=1753:1800#L45">UserTime</a></h3>
+				<pre>func (p *<a href="https://golang-china.appspot.com/pkg/os/#ProcessState">ProcessState</a>) UserTime() <a href="https://golang-china.appspot.com/pkg/time/">time</a>.<a href="https://golang-china.appspot.com/pkg/time/#Duration">Duration</a></pre>
+				<p>
+UserTime返回已退出进程及其子进程耗费的用户CPU时间。
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Signal">type <a href="https://golang-china.appspot.com/src/os/exec.go?s=1868:1959#L51">Signal</a></h2>
+			<pre>type Signal interface {
+        String() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>
+        Signal() <span class="comment">// to distinguish from other Stringers</span>
+}</pre>
+			<p>
+Signal代表一个操作系统信号。一般其底层实现是依赖于操作系统的：在Unix中，它是syscall.Signal类型。
+</p>
+<pre>var (
+    Interrupt Signal = syscall.SIGINT
+    Kill      Signal = syscall.SIGKILL
+)
+</pre>
+<p>
+仅有的肯定会被所有操作系统提供的信号，Interrupt（中断信号）和Kill（强制退出信号）。
+</p>
+
+
+			
+
+			
+				<pre>var (
+        <span id="Interrupt">Interrupt</span> <a href="https://golang-china.appspot.com/pkg/os/#Signal">Signal</a> = <a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#SIGINT">SIGINT</a>
+        <span id="Kill">Kill</span>      <a href="https://golang-china.appspot.com/pkg/os/#Signal">Signal</a> = <a href="https://golang-china.appspot.com/pkg/syscall/">syscall</a>.<a href="https://golang-china.appspot.com/pkg/syscall/#SIGKILL">SIGKILL</a>
+)</pre>
+				<p>
+The only signal values guaranteed to be present on all systems are Interrupt
+(send the process an interrupt) and Kill (force the process to exit).
+</p>
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SyscallError">type <a href="https://golang-china.appspot.com/src/os/error.go?s=752:811#L19">SyscallError</a></h2>
+			<pre>type SyscallError struct {
+        Syscall <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>
+        Err     <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>
+}</pre>
+			<p>
+SyscallError记录某个系统调用出现的错误。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="SyscallError.Error">func (*SyscallError) <a href="https://golang-china.appspot.com/src/os/error.go?s=813:850#L24">Error</a></h3>
+				<pre>func (e *<a href="https://golang-china.appspot.com/pkg/os/#SyscallError">SyscallError</a>) Error() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+	
+	
+<!--
+		<h2 id="pkg-subdirectories">Subdirectories</h2>
+-->
+	
+		<h2 id="pkg-subdirectories">子目录</h2>
+	
+	<table class="dir">
+	<tbody><tr>
+<!--
+	<th>Name</th>
+-->
+	<th>名称</th>
+	<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<!--
+	<th style="text-align: left; width: auto">Synopsis</th>
+-->
+	<th style="text-align: left; width: auto">摘要</th>
+	</tr>
+	
+		<tr>
+		<td><a href="https://golang-china.appspot.com/pkg/">..</a></td>
+		</tr>
+	
+	
+		
+			<tr>
+			<td class="name"><a href="https://golang-china.appspot.com/pkg/os/exec/">exec</a></td>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td style="width: auto">exec包执行外部命令。</td>
+			</tr>
+		
+	
+		
+			<tr>
+			<td class="name"><a href="https://golang-china.appspot.com/pkg/os/signal/">signal</a></td>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td style="width: auto">signal包实现了对输入信号的访问。</td>
+			</tr>
+		
+	
+		
+			<tr>
+			<td class="name"><a href="https://golang-china.appspot.com/pkg/os/user/">user</a></td>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td style="width: auto">user包允许通过名称或ID查询用户帐户。</td>
+			</tr>
+		
+	
+	</tbody></table>
+
+	
+
+
+
+<!--
+<div id="footer">
+Build version go1.4.2 (appengine-1.9.21).<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="/LICENSE">BSD license</a>.<br>
+<a href="/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+-->
+<div id="footer">
+构建版本 go1.4.2 (appengine-1.9.21).<br>
+除<a href="https://developers.google.com/site-policies#restrictions">特别注明</a>外，
+本页内容均采用知识共享-署名（CC-BY）3.0协议授权，代码采用<a href="https://golang-china.appspot.com/LICENSE">BSD协议</a>授权。<br>
+<a href="https://golang-china.appspot.com/doc/tos.html">服务条款</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">隐私政策</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="./os - Go 编程语言_files/jquery.js"></script>
+<script type="text/javascript" src="./os - Go 编程语言_files/jquery.treeview.js"></script>
+<script type="text/javascript" src="./os - Go 编程语言_files/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="./os - Go 编程语言_files/playground.js"></script>
+
+<script type="text/javascript" src="./os - Go 编程语言_files/godocs.js"></script>
+
+
+
+</body></html>

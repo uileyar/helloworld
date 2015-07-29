@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://golang-china.appspot.com/pkg/runtime/ -->
+<html data-find="_6"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<!--
+  <title>runtime - The Go Programming Language</title>
+-->
+  <title>runtime - Go 编程语言</title>
+
+<link type="text/css" rel="stylesheet" href="./runtime - Go 编程语言_files/style.css">
+
+<link rel="search" type="application/opensearchdescription+xml" title="godoc" href="https://golang-china.appspot.com/opensearch.xml">
+
+<link rel="stylesheet" href="https://golang-china.appspot.com/lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body data-find="_5">
+
+<div id="lowframe" style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+
+<form method="GET" action="https://golang-china.appspot.com/search" id="1256735944">
+<div id="menu" style="min-width: 650px;">
+<!--
+<a href="/doc/">Documents</a>
+<a href="/pkg/">Packages</a>
+<a href="/project/">The Project</a>
+<a href="/help/">Help</a>
+<a href="/blog/">Blog</a>
+-->
+<a href="https://golang-china.appspot.com/doc/">文档</a>
+<a href="https://golang-china.appspot.com/pkg/">包</a>
+<a href="https://golang-china.appspot.com/project/">项目</a>
+<a href="https://golang-china.appspot.com/help/">帮助</a>
+<a href="https://golang-china.appspot.com/blog/">博客</a>
+
+<!--
+<a id="playgroundButton" href="http://play.golang.org/" title="Show Go Playground">Play</a>
+-->
+<a id="playgroundButton" href="http://play.golang.org/" title="显示 Go 操场" style="display: inline;">运行</a>
+
+<!--
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+-->
+<input type="text" id="search" name="q" class="inactive" value="搜索" placeholder="搜索">
+</div>
+<!--
+<div id="heading"><a href="/">The Go Programming Language</a></div>
+-->
+<div id="heading"><a href="https://golang-china.appspot.com/">Go 编程语言</a></div>
+</form>
+
+</div></div>
+
+
+<div id="playground" class="play">
+	<div class="input"><textarea class="code">package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}</textarea></div>
+	<div class="output"></div>
+	<div class="buttons">
+<!--
+		<a class="run" title="Run this code [shift-enter]">Run</a>
+		<a class="fmt" title="Format this code">Format</a>
+		<a class="share" title="Share this code">Share</a>
+-->
+		<a class="run" title="运行此代码[Shift-Enter]">运行</a>
+		<a class="fmt" title="格式化此代码">格式化</a>
+		<a class="share" title="分享此代码">分享</a>
+	</div>
+</div>
+
+
+<div id="page" class="wide" tabindex="-1" data-find="_4" style="outline: 0px;">
+<div class="container" data-find="_3">
+
+
+<div class="lang-switch-button-group" role="group">
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;, &quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;, &quot;none&quot;);console.log(&quot;lang-en&quot;);">英文</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-en-zh&quot;);">对照</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;none&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-zh&quot;);">中文</button>
+</div>
+
+
+
+  <h1>Package runtime</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type="text/javascript">
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "runtime"</code></dd>
+			</dl>
+			<dl>
+<!--
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+-->
+			<dd><a href="https://golang-china.appspot.com/pkg/runtime/#pkg-overview" class="overviewLink">概览</a></dd>
+			<dd><a href="https://golang-china.appspot.com/pkg/runtime/#pkg-index" class="indexLink">索引</a></dd>
+			
+			
+<!--
+				<dd><a href="#pkg-subdirectories">Subdirectories</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#pkg-subdirectories">子目录</a></dd>
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible" data-find="_2">
+			<div class="collapsed">
+<!--
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+-->
+				<h2 class="toggleButton" title="点此显示概览">概览 ▹</h2>
+			</div>
+			<div class="expanded" data-find="_1">
+<!--
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+-->
+				<h2 class="toggleButton" title="点此隐藏概览">概览 ▾</h2>
+				<p>
+TODO(osc): 需更新 runtime
+包含与Go的运行时系统进行交互的操作，例如用于控制Go程的函数. 它也包括用于 reflect
+包的底层类型信息；运行时类型系统的可编程接口见 reflect 文档。
+</p>
+<p>
+环境变量
+</p>
+<p>
+以下环境变量（$name 或 %name%,
+取决于宿主操作系统）控制了Go程序的运行时行为。
+其意义与使用方法在发行版之间可能有所不同。
+</p>
+<p>
+GOGC
+变量用于设置初始垃圾回收的目标百分比。从上次回收后开始，当新分配数据的比例占到剩余实时数据的此百分比时，
+就会再次触发回收。默认为
+GOGC=100。要完全关闭垃圾回收器，需设置 GOGC=off。runtime/debug 包的 SetGCPercent
+函数允许在运行时更改此百分比。 详见 <a href="http://zh.golanger.com/pkg/runtime/debug/#SetGCPercent">http://zh.golanger.com/pkg/runtime/debug/#SetGCPercent</a>。
+</p>
+<p>
+GOGCTRACE
+变量用于控制来自垃圾回收器的调试输出。设置 GOGCTRACE=1 会使垃圾回收器发出
+每一次回收所产生的单行标准错误输出、概述回收的内存量以及暂停的时长。设置 GOGCTRACE=2
+不仅会发出同样的概述，还会重复每一次回收。
+</p>
+<p>
+GOMAXPROCS
+变量用于限制可同时执行的用户级Go代码所产生的操作系统线程数。对于Go代码所代表的系统调用而言，
+可被阻塞的线程则没有限制；它们不计入 GOMAXPROCS 的限制。本包中的 GOMAXPROCS
+函数可查询并更改此限制。
+</p>
+<p>
+GOTRACEBACK
+用于控制因未恢复的恐慌或意外的运行时状况导致Go程序运行失败时所产生的输出量。
+默认情况下，失败会为每个现有的Go程打印出栈跟踪，省略运行时系统的内部函数，并以退出码 2 退出。 若
+GOTRACEBACK=0，则每个Go程的栈跟踪都会完全省略。 若
+GOTRACEBACK=1，则采用默认的行为。 若
+GOTRACEBACK=2，则每个Go程的栈跟踪，包括运行时函数都会输出。 若
+GOTRACEBACK=crash，则每个Go程的栈跟踪，包括运行时函数，都会输出，
+此外程序可能以操作系统特定的方式崩溃而非退出。例如，在Unix系统上，程序会发出 SIGABRT
+信号，从而触发内核转储。
+</p>
+<p>
+GOARCH、GOOS、GOPATH 和 GOROOT
+环境变量均为Go的环境变量。它们影响了Go程序的构建 （详见 <a href="http://golang.org/cmd/go">http://golang.org/cmd/go</a> 和
+<a href="http://golang.org/pkg/go/build">http://golang.org/pkg/go/build</a>）。 GOARCH、GOOS 和 GOROOT
+会在编译时被记录，并使该包中的常量或函数变得可用，
+但它们并不影响运行时系统的执行。
+</p>
+<p>
+公共的竞争检测API，当且仅当使用 -race 构建时才会出现。
+</p>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示素引">索引 ▹</h2>
+		</div>
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏索引">索引 ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+<!--
+				<dd><a href="#pkg-constants">Constants</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#pkg-constants">常量</a></dd>
+			
+			
+<!--
+				<dd><a href="#pkg-variables">Variables</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#pkg-variables">变量</a></dd>
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#BlockProfile">func BlockProfile(p []BlockProfileRecord) (n int, ok bool)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#Breakpoint">func Breakpoint()</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#CPUProfile">func CPUProfile() []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#Caller">func Caller(skip int) (pc uintptr, file string, line int, ok bool)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#Callers">func Callers(skip int, pc []uintptr) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#GC">func GC()</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#GOMAXPROCS">func GOMAXPROCS(n int) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#GOROOT">func GOROOT() string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#Goexit">func Goexit()</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#GoroutineProfile">func GoroutineProfile(p []StackRecord) (n int, ok bool)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#Gosched">func Gosched()</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#LockOSThread">func LockOSThread()</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#MemProfile">func MemProfile(p []MemProfileRecord, inuseZero bool) (n int, ok bool)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#NumCPU">func NumCPU() int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#NumCgoCall">func NumCgoCall() int64</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#NumGoroutine">func NumGoroutine() int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#ReadMemStats">func ReadMemStats(m *MemStats)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#ReadTrace">func ReadTrace() []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#SetBlockProfileRate">func SetBlockProfileRate(rate int)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#SetCPUProfileRate">func SetCPUProfileRate(hz int)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#SetFinalizer">func SetFinalizer(obj interface{}, finalizer interface{})</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#Stack">func Stack(buf []byte, all bool) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#StartTrace">func StartTrace() error</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#StopTrace">func StopTrace()</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#ThreadCreateProfile">func ThreadCreateProfile(p []StackRecord) (n int, ok bool)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#UnlockOSThread">func UnlockOSThread()</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#Version">func Version() string</a></dd>
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#BlockProfileRecord">type BlockProfileRecord</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#Error">type Error</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#Func">type Func</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/runtime/#FuncForPC">func FuncForPC(pc uintptr) *Func</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/runtime/#Func.Entry">func (f *Func) Entry() uintptr</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/runtime/#Func.FileLine">func (f *Func) FileLine(pc uintptr) (file string, line int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/runtime/#Func.Name">func (f *Func) Name() string</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#MemProfileRecord">type MemProfileRecord</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/runtime/#MemProfileRecord.InUseBytes">func (r *MemProfileRecord) InUseBytes() int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/runtime/#MemProfileRecord.InUseObjects">func (r *MemProfileRecord) InUseObjects() int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/runtime/#MemProfileRecord.Stack">func (r *MemProfileRecord) Stack() []uintptr</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#MemStats">type MemStats</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#StackRecord">type StackRecord</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/runtime/#StackRecord.Stack">func (r *StackRecord) Stack() []uintptr</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/runtime/#TypeAssertionError">type TypeAssertionError</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/runtime/#TypeAssertionError.Error">func (e *TypeAssertionError) Error() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/runtime/#TypeAssertionError.RuntimeError">func (*TypeAssertionError) RuntimeError()</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+<!--
+			<h4>Package files</h4>
+-->
+			<h4>包文件</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="https://golang-china.appspot.com/src/runtime/alg.go">alg.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/arch1_amd64.go">arch1_amd64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/arch1_arm64.go">arch1_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/arch1_ppc64.go">arch1_ppc64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/arch1_ppc64le.go">arch1_ppc64le.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/arch_amd64.go">arch_amd64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/arch_arm64.go">arch_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/arch_ppc64.go">arch_ppc64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/arch_ppc64le.go">arch_ppc64le.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/atomic_amd64x.go">atomic_amd64x.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/atomic_arm64.go">atomic_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/atomic_pointer.go">atomic_pointer.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/cgo.go">cgo.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/cgocall.go">cgocall.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/cgocallback.go">cgocallback.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/chan.go">chan.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/compiler.go">compiler.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/complex.go">complex.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/cpuprof.go">cpuprof.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/cputicks.go">cputicks.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/debug.go">debug.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/defs_darwin_arm64.go">defs_darwin_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/defs_linux_amd64.go">defs_linux_amd64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/defs_linux_arm64.go">defs_linux_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/defs_linux_ppc64.go">defs_linux_ppc64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/defs_linux_ppc64le.go">defs_linux_ppc64le.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/env_posix.go">env_posix.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/error.go">error.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/extern.go">extern.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/hash64.go">hash64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/hashmap.go">hashmap.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/hashmap_fast.go">hashmap_fast.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/heapdump.go">heapdump.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/iface.go">iface.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/lfstack.go">lfstack.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/lfstack_amd64.go">lfstack_amd64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/lfstack_darwin_arm64.go">lfstack_darwin_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/lfstack_linux_arm64.go">lfstack_linux_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/lock_futex.go">lock_futex.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/malloc.go">malloc.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mbarrier.go">mbarrier.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mbitmap.go">mbitmap.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mcache.go">mcache.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mcentral.go">mcentral.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mem_linux.go">mem_linux.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mfinal.go">mfinal.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mfixalloc.go">mfixalloc.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mgc.go">mgc.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mgcmark.go">mgcmark.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mgcsweep.go">mgcsweep.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mgcwork.go">mgcwork.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mheap.go">mheap.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mprof.go">mprof.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/msize.go">msize.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/mstats.go">mstats.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/netpoll.go">netpoll.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/netpoll_epoll.go">netpoll_epoll.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/os1_linux.go">os1_linux.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/os2_linux.go">os2_linux.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/os_darwin_arm64.go">os_darwin_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/os_linux.go">os_linux.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/os_linux_arm64.go">os_linux_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/panic.go">panic.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/panic1.go">panic1.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/parfor.go">parfor.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/print1.go">print1.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/print1_write.go">print1_write.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/proc.go">proc.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/proc1.go">proc1.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/race0.go">race0.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/rdebug.go">rdebug.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/rune.go">rune.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/runtime.go">runtime.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/runtime1.go">runtime1.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/runtime2.go">runtime2.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/select.go">select.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/sema.go">sema.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/signal1_unix.go">signal1_unix.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/signal_amd64x.go">signal_amd64x.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/signal_arm64.go">signal_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/signal_darwin_arm64.go">signal_darwin_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/signal_linux.go">signal_linux.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/signal_linux_amd64.go">signal_linux_amd64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/signal_linux_arm64.go">signal_linux_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/signal_unix.go">signal_unix.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/sigpanic_unix.go">sigpanic_unix.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/sigqueue.go">sigqueue.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/slice.go">slice.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/softfloat64.go">softfloat64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/sqrt.go">sqrt.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/stack1.go">stack1.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/stack2.go">stack2.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/string.go">string.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/string1.go">string1.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/stubs.go">stubs.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/stubs2.go">stubs2.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/symtab.go">symtab.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/sys_arm64.go">sys_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/sys_x86.go">sys_x86.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/time.go">time.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/trace.go">trace.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/traceback.go">traceback.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/type.go">type.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/typekind.go">typekind.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/typekind1.go">typekind1.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/unaligned1.go">unaligned1.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/vdso_linux_amd64.go">vdso_linux_amd64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/wbfat.go">wbfat.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/zgoarch_amd64.go">zgoarch_amd64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/zgoarch_arm64.go">zgoarch_arm64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/zgoarch_ppc64.go">zgoarch_ppc64.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/zgoarch_ppc64le.go">zgoarch_ppc64le.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/zgoos_linux.go">zgoos_linux.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/runtime/zversion.go">zversion.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示内部调用图">内部调用图 ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏内部调用图">内部调用图 ▾</h2>
+<!--
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+-->
+			<p>
+			在下面的调用图查看器中，每个节点都是一个属于本包的函数，其子节点即为它所调用的函数——或许是动态的。
+			</p>
+			<p>
+			根节点为包的入口点：函数可从包的外部调用。若这些函数被其它包动态地调用，
+			那么它们可能是未导出的或匿名的。
+			</p>
+			<p>
+			点击一个节点来查看该函数的源码。在源码中，可以点击它的 <code>func</code>
+			声明标记来查看其调用者。
+			</p>
+			<p>
+			在分析特定程序或测试时，被认定为无法访问的函数会被忽略。
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+<!--
+			<h2 id="pkg-constants">Constants</h2>
+-->
+			<h2 id="pkg-constants">常量</h2>
+			
+				<pre>const <span id="Compiler">Compiler</span> = "gc"</pre>
+				<p>
+Compiler
+为构建了可运行二进制文件的编译工具链。已知的工具链为：
+</p>
+<pre>go       code.google.com/p/go 上的 5g/6g/8g 编译器套件。
+gccgo    gccgo前端，GCC编译器条件的一部分。
+</pre>
+
+			
+				<pre>const <span id="GOARCH">GOARCH</span> <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a> = theGoarch</pre>
+				<p>
+GOARCH 为所运行程序的目标架构： 386、amd64 或 arm。
+</p>
+
+			
+				<pre>const <span id="GOOS">GOOS</span> <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a> = theGoos</pre>
+				<p>
+GOOS 为所运行程序的目标操作系统： darwin、freebsd或linux等等。
+</p>
+
+			
+				<pre>const (
+        <span id="_">_</span> selectDir = <a href="https://golang-china.appspot.com/pkg/builtin/#iota">iota</a>
+)</pre>
+				
+			
+		
+		
+<!--
+			<h2 id="pkg-variables">Variables</h2>
+-->
+			<h2 id="pkg-variables">变量</h2>
+			
+				<pre>var <span id="MemProfileRate">MemProfileRate</span> <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a> = 512 * 1024</pre>
+				<p>
+MemProfileRate controls the fraction of memory allocations that are recorded and
+reported in the memory profile. The profiler aims to sample an average of one
+allocation per MemProfileRate bytes allocated.
+</p>
+<p>
+To include every allocated block in the profile, set MemProfileRate to 1. To
+turn off profiling entirely, set MemProfileRate to 0.
+</p>
+<p>
+The tools that process the memory profiles assume that the profile rate is
+constant across the lifetime of the program and equal to the current value.
+Programs that change the memory profiling rate should do so just once, as early
+as possible in the execution of the program (for example, at the beginning of
+main).
+</p>
+
+			
+		
+		
+			
+			
+			<h2 id="BlockProfile">func <a href="https://golang-china.appspot.com/src/runtime/mprof.go?s=12764:12822#L456">BlockProfile</a></h2>
+			<pre>func BlockProfile(p []<a href="https://golang-china.appspot.com/pkg/runtime/#BlockProfileRecord">BlockProfileRecord</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, ok <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>)</pre>
+			<p>
+BlockProfile returns n, the number of records in the current blocking profile.
+If len(p) &gt;= n, BlockProfile copies the profile into p and returns n, true. If
+len(p) &lt; n, BlockProfile does not change p and returns n, false.
+</p>
+<p>
+Most clients should use the runtime/pprof package or the testing package's
+-test.blockprofile flag instead of calling BlockProfile directly.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Breakpoint">func <a href="https://golang-china.appspot.com/src/runtime/proc1.go?s=63484:63501#L2345">Breakpoint</a></h2>
+			<pre>func Breakpoint()</pre>
+			<p>
+Breakpoint executes a breakpoint trap.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="CPUProfile">func <a href="https://golang-china.appspot.com/src/runtime/cpuprof.go?s=11843:11867#L407">CPUProfile</a></h2>
+			<pre>func CPUProfile() []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+CPUProfile returns the next chunk of binary CPU profiling stack trace data,
+blocking until data is available. If profiling is turned off and all the profile
+data accumulated while it was on has been returned, CPUProfile returns nil. The
+caller must save the returned data before calling CPUProfile again.
+</p>
+<p>
+Most clients should use the runtime/pprof package or the testing package's
+-test.cpuprofile flag instead of calling CPUProfile directly.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Caller">func <a href="https://golang-china.appspot.com/src/runtime/extern.go?s=5237:5303#L90">Caller</a></h2>
+			<pre>func Caller(skip <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) (pc <a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a>, file <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, line <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, ok <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>)</pre>
+			<p>
+Caller
+报告关于调用Go程的栈上的函数调用的文件和行号信息。 实参 skip
+为占用的栈帧数，若为0则表示 Caller 的调用者。（由于历史原因，skip 的意思在 Caller 和 Callers
+中并不相同。）返回值报告程序计数器，
+文件名及对应调用的文件中的行号。若无法获得信息，布尔值 ok 即为 false。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Callers">func <a href="https://golang-china.appspot.com/src/runtime/extern.go?s=6941:6981#L135">Callers</a></h2>
+			<pre>func Callers(skip <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, pc []<a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+Callers
+把调用它的Go程栈上函数请求的返回程序计数器填充到切片 pc 中。 实参 skip 为开始在 pc
+中记录之前所要跳过的栈帧数，若为 0 则表示 Callers 自身的栈帧， 若为 1 则表示 Callers
+的调用者。它返回写入到 pc 中的项数。
+</p>
+<p>
+注意，由于每个切片项 pc[i]
+都是一个返回程序计数器，因此查找 pc[i] 的文件和行（例如，使用
+(*Func).FileLine）将会在该调用之后立即返回该指令所在的文件和行号。
+要查找该调用本身所在的文件和行号，请使用 pc[i]-1。此规则的一个例外是，若 pc[i-1] 对应于函数
+runtime.sigpanic，那么 pc[i]
+就是失败指令的程序计数器，因此应当不通过任何减法来使用。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="GC">func <a href="https://golang-china.appspot.com/src/runtime/mgc.go?s=27688:27697#L687">GC</a></h2>
+			<pre>func GC()</pre>
+			<p>
+GC 运行一次垃圾回收。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="GOMAXPROCS">func <a href="https://golang-china.appspot.com/src/runtime/debug.go?s=502:528#L4">GOMAXPROCS</a></h2>
+			<pre>func GOMAXPROCS(n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+GOMAXPROCS
+设置可同时使用执行的最大CPU数，并返回先前的设置。 若 n &lt;
+1，它就不会更改当前设置。本地机器的逻辑CPU数可通过 NumCPU 查询。
+当调度器改进后，此调用将会消失。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="GOROOT">func <a href="https://golang-china.appspot.com/src/runtime/extern.go?s=7344:7364#L148">GOROOT</a></h2>
+			<pre>func GOROOT() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+GOROOT 返回Go目录树的根目录。
+若设置了GOROOT环境变量，就会使用它，否则就会将Go的构建目录作为根目录
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Goexit">func <a href="https://golang-china.appspot.com/src/runtime/panic.go?s=8250:8263#L289">Goexit</a></h2>
+			<pre>func Goexit()</pre>
+			<p>
+Goexit terminates the goroutine that calls it. No other goroutine is affected.
+Goexit runs all deferred calls before terminating the goroutine. Because Goexit
+is not panic, however, any recover calls in those deferred functions will return
+nil.
+</p>
+<p>
+Calling Goexit from the main goroutine terminates that goroutine without func
+main returning. Since func main has not returned, the program continues
+execution of other goroutines. If all other goroutines exit, the program
+crashes.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="GoroutineProfile">func <a href="https://golang-china.appspot.com/src/runtime/mprof.go?s=14291:14346#L509">GoroutineProfile</a></h2>
+			<pre>func GoroutineProfile(p []<a href="https://golang-china.appspot.com/pkg/runtime/#StackRecord">StackRecord</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, ok <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>)</pre>
+			<p>
+GoroutineProfile returns n, the number of records in the active goroutine stack
+profile. If len(p) &gt;= n, GoroutineProfile copies the profile into p and returns
+n, true. If len(p) &lt; n, GoroutineProfile does not change p and returns n, false.
+</p>
+<p>
+Most clients should use the runtime/pprof package instead of calling
+GoroutineProfile directly.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Gosched">func <a href="https://golang-china.appspot.com/src/runtime/proc.go?s=3849:3863#L155">Gosched</a></h2>
+			<pre>func Gosched()</pre>
+			<p>
+Gosched yields the processor, allowing other goroutines to run. It does not
+suspend the current goroutine, so execution resumes automatically.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="LockOSThread">func <a href="https://golang-china.appspot.com/src/runtime/proc1.go?s=64061:64080#L2364">LockOSThread</a></h2>
+			<pre>func LockOSThread()</pre>
+			<p>
+LockOSThread wires the calling goroutine to its current operating system thread.
+Until the calling goroutine exits or calls UnlockOSThread, it will always
+execute in that thread, and no other goroutine can.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="MemProfile">func <a href="https://golang-china.appspot.com/src/runtime/mprof.go?s=10646:10716#L377">MemProfile</a></h2>
+			<pre>func MemProfile(p []<a href="https://golang-china.appspot.com/pkg/runtime/#MemProfileRecord">MemProfileRecord</a>, inuseZero <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, ok <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>)</pre>
+			<p>
+MemProfile returns n, the number of records in the current memory profile. If
+len(p) &gt;= n, MemProfile copies the profile into p and returns n, true. If len(p)
+&lt; n, MemProfile does not change p and returns n, false.
+</p>
+<p>
+If inuseZero is true, the profile includes allocation records where r.AllocBytes
+&gt; 0 but r.AllocBytes == r.FreeBytes. These are sites where memory was allocated,
+but it has all been released back to the runtime.
+</p>
+<p>
+Most clients should use the runtime/pprof package or the testing package's
+-test.memprofile flag instead of calling MemProfile directly.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumCPU">func <a href="https://golang-china.appspot.com/src/runtime/debug.go?s=884:901#L25">NumCPU</a></h2>
+			<pre>func NumCPU() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+NumCPU 返回本地机器的逻辑CPU数。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumCgoCall">func <a href="https://golang-china.appspot.com/src/runtime/debug.go?s=1000:1023#L30">NumCgoCall</a></h2>
+			<pre>func NumCgoCall() <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a></pre>
+			<p>
+NumCgoCall 返回由当前进程创建的cgo调用数。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NumGoroutine">func <a href="https://golang-china.appspot.com/src/runtime/debug.go?s=1234:1257#L39">NumGoroutine</a></h2>
+			<pre>func NumGoroutine() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+NumGoroutine 返回当前存在的Go程数。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ReadMemStats">func <a href="https://golang-china.appspot.com/src/runtime/mstats.go?s=5629:5659#L145">ReadMemStats</a></h2>
+			<pre>func ReadMemStats(m *<a href="https://golang-china.appspot.com/pkg/runtime/#MemStats">MemStats</a>)</pre>
+			<p>
+ReadMemStats 将内存分配器的统计填充到 m 中。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ReadTrace">func <a href="https://golang-china.appspot.com/src/runtime/trace.go?s=10713:10736#L259">ReadTrace</a></h2>
+			<pre>func ReadTrace() []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+ReadTrace returns the next chunk of binary tracing data, blocking until data
+is available. If tracing is turned off and all the data accumulated while it
+was on has been returned, ReadTrace returns nil. The caller must copy the
+returned data before calling ReadTrace again.
+ReadTrace must be called from one goroutine at a time.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="SetBlockProfileRate">func <a href="https://golang-china.appspot.com/src/runtime/mprof.go?s=7025:7059#L264">SetBlockProfileRate</a></h2>
+			<pre>func SetBlockProfileRate(rate <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>)</pre>
+			<p>
+SetBlockProfileRate controls the fraction of goroutine blocking events that are
+reported in the blocking profile. The profiler aims to sample an average of one
+blocking event per rate nanoseconds spent blocked.
+</p>
+<p>
+To include every blocking event in the profile, pass rate = 1. To turn off
+profiling entirely, pass rate &lt;= 0.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="SetCPUProfileRate">func <a href="https://golang-china.appspot.com/src/runtime/cpuprof.go?s=4739:4769#L112">SetCPUProfileRate</a></h2>
+			<pre>func SetCPUProfileRate(hz <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>)</pre>
+			<p>
+SetCPUProfileRate sets the CPU profiling rate to hz samples per second. If hz &lt;=
+0, SetCPUProfileRate turns off profiling. If the profiler is on, the rate cannot
+be changed without first turning it off.
+</p>
+<p>
+Most clients should use the runtime/pprof package or the testing package's
+-test.cpuprofile flag instead of calling SetCPUProfileRate directly.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="SetFinalizer">func <a href="https://golang-china.appspot.com/src/runtime/mfinal.go?s=8106:8163#L251">SetFinalizer</a></h2>
+			<pre>func SetFinalizer(obj interface{}, finalizer interface{})</pre>
+			<p>
+SetFinalizer 为 f 设置与 x 相关联的终结器。
+当垃圾回收器找到一个无法访问的块及与其相关联的终结器时，就会清理该关联，
+并在一个独立的Go程中运行f(x)。这会使 x
+再次变得可访问，但现在没有了相关联的终结器。 假设 SetFinalizer
+未被再次调用，当下一次垃圾回收器发现 x 无法访问时，就会释放 x。
+</p>
+<p>
+SetFinalizer(x, nil) 会清理任何与 x 相关联的终结器。
+</p>
+<p>
+实参 x
+必须是一个对象的指针，该对象通过调用新的或获取一个复合字面地址来分配。 实参 f
+必须是一个函数，该函数获取一个 x
+的类型的单一实参，并拥有可任意忽略的返回值。
+只要这些条件有一个不满足，SetFinalizer 就会跳过该程序。
+</p>
+<p>
+终结器按照依赖顺序运行：若 A 指向 B，则二者都有终结器，当只有 A 的终结器运行时，
+它们才无法访问；一旦 A 被释放，则 B
+的终结器便可运行。若循环依赖的结构包含块及其终结器，
+则该循环并不能保证被垃圾回收，而其终结器并不能保证运行，这是因为其依赖没有顺序。
+</p>
+<p>
+x 的终结器预定为在 x
+无法访问后的任意时刻运行。无法保证终结器会在程序退出前运行，
+因此它们通常只在长时间运行的程序中释放一个关联至对象的非内存资源时使用。 例如，当程序丢弃 os.File 而没有调用 Close 时，该 os.File
+对象便可使用一个终结器
+来关闭与其相关联的操作系统文件描述符，但依赖终结器去刷新一个内存中的I/O缓存是错误的，
+因为该缓存不会在程序退出时被刷新。
+</p>
+<p>
+一个程序的单个Go程会按顺序运行所有的终结器。若某个终结器需要长时间运行，
+它应当通过开始一个新的Go程来继续。 TODO(osc): 仍需校对及语句优化
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Stack">func <a href="https://golang-china.appspot.com/src/runtime/mprof.go?s=15278:15314#L552">Stack</a></h2>
+			<pre>func Stack(buf []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, all <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+Stack formats a stack trace of the calling goroutine into buf and returns the
+number of bytes written to buf. If all is true, Stack formats stack traces of
+all other goroutines into buf after the trace for the current goroutine.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="StartTrace">func <a href="https://golang-china.appspot.com/src/runtime/trace.go?s=7109:7132#L122">StartTrace</a></h2>
+			<pre>func StartTrace() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+StartTrace enables tracing for the current process.
+While tracing, the data will be buffered and available via ReadTrace.
+StartTrace returns an error if tracing is already enabled.
+Most clients should use the runtime/pprof package or the testing package's
+-test.trace flag instead of calling StartTrace directly.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="StopTrace">func <a href="https://golang-china.appspot.com/src/runtime/trace.go?s=8487:8503#L169">StopTrace</a></h2>
+			<pre>func StopTrace()</pre>
+			<p>
+StopTrace stops tracing, if it was previously enabled.
+StopTrace only returns after all the reads for the trace have completed.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ThreadCreateProfile">func <a href="https://golang-china.appspot.com/src/runtime/mprof.go?s=13568:13626#L485">ThreadCreateProfile</a></h2>
+			<pre>func ThreadCreateProfile(p []<a href="https://golang-china.appspot.com/pkg/runtime/#StackRecord">StackRecord</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, ok <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>)</pre>
+			<p>
+ThreadCreateProfile returns n, the number of records in the thread creation
+profile. If len(p) &gt;= n, ThreadCreateProfile copies the profile into p and
+returns n, true. If len(p) &lt; n, ThreadCreateProfile does not change p and
+returns n, false.
+</p>
+<p>
+Most clients should use the runtime/pprof package instead of calling
+ThreadCreateProfile directly.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="UnlockOSThread">func <a href="https://golang-china.appspot.com/src/runtime/proc1.go?s=64770:64791#L2392">UnlockOSThread</a></h2>
+			<pre>func UnlockOSThread()</pre>
+			<p>
+UnlockOSThread unwires the calling goroutine from its fixed operating system
+thread. If the calling goroutine has not called LockOSThread, UnlockOSThread is
+a no-op.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Version">func <a href="https://golang-china.appspot.com/src/runtime/extern.go?s=7610:7631#L159">Version</a></h2>
+			<pre>func Version() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+Version 返回Go目录树的版本字符串。
+它一般是一个提交散列值及其构建时间，也可能是一个类似于 "go1.3" 的发行标注。
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="BlockProfileRecord">type <a href="https://golang-china.appspot.com/src/runtime/mprof.go?s=12302:12377#L443">BlockProfileRecord</a></h2>
+			<pre>type BlockProfileRecord struct {
+        Count  <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>
+        Cycles <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>
+        <a href="https://golang-china.appspot.com/pkg/runtime/#StackRecord">StackRecord</a>
+}</pre>
+			<p>
+BlockProfileRecord describes blocking events originated at a particular call
+sequence (stack trace).
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Error">type <a href="https://golang-china.appspot.com/src/runtime/error.go?s=246:482#L1">Error</a></h2>
+			<pre>type Error interface {
+        <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>
+
+        <span class="comment">// RuntimeError is a no-op function but</span>
+        <span class="comment">// serves to distinguish types that are run time</span>
+        <span class="comment">// errors from ordinary errors: a type is a</span>
+        <span class="comment">// run time error if it has a RuntimeError method.</span>
+        RuntimeError()
+}</pre>
+			<p>
+Error 接口用于标识运行时错误。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Func">type <a href="https://golang-china.appspot.com/src/runtime/symtab.go?s=521:602#L5">Func</a></h2>
+			<pre>type Func struct {
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+A Func represents a Go function in the running binary.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="FuncForPC">func <a href="https://golang-china.appspot.com/src/runtime/symtab.go?s=4892:4924#L136">FuncForPC</a></h3>
+				<pre>func FuncForPC(pc <a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a>) *<a href="https://golang-china.appspot.com/pkg/runtime/#Func">Func</a></pre>
+				<p>
+FuncForPC returns a *Func describing the function that contains the given
+program counter address, or else nil.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Func.Entry">func (*Func) <a href="https://golang-china.appspot.com/src/runtime/symtab.go?s=5130:5160#L146">Entry</a></h3>
+				<pre>func (f *<a href="https://golang-china.appspot.com/pkg/runtime/#Func">Func</a>) Entry() <a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a></pre>
+				<p>
+Entry returns the entry address of the function.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Func.FileLine">func (*Func) <a href="https://golang-china.appspot.com/src/runtime/symtab.go?s=5380:5439#L154">FileLine</a></h3>
+				<pre>func (f *<a href="https://golang-china.appspot.com/pkg/runtime/#Func">Func</a>) FileLine(pc <a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a>) (file <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, line <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>)</pre>
+				<p>
+FileLine returns the file name and line number of the source code corresponding
+to the program counter pc. The result will not be accurate if pc is not a
+program counter within f.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Func.Name">func (*Func) <a href="https://golang-china.appspot.com/src/runtime/symtab.go?s=5018:5046#L141">Name</a></h3>
+				<pre>func (f *<a href="https://golang-china.appspot.com/pkg/runtime/#Func">Func</a>) Name() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				<p>
+Name returns the name of the function.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MemProfileRecord">type <a href="https://golang-china.appspot.com/src/runtime/mprof.go?s=9200:9477#L340">MemProfileRecord</a></h2>
+			<pre>type MemProfileRecord struct {
+        AllocBytes, FreeBytes     <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>       <span class="comment">// number of bytes allocated, freed</span>
+        AllocObjects, FreeObjects <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>       <span class="comment">// number of objects allocated, freed</span>
+        Stack0                    [32]<a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a> <span class="comment">// stack trace for this record; ends at first 0 entry</span>
+}</pre>
+			<p>
+A MemProfileRecord describes the live objects allocated by a particular call
+sequence (stack trace).
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="MemProfileRecord.InUseBytes">func (*MemProfileRecord) <a href="https://golang-china.appspot.com/src/runtime/mprof.go?s=9554:9599#L347">InUseBytes</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/runtime/#MemProfileRecord">MemProfileRecord</a>) InUseBytes() <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a></pre>
+				<p>
+InUseBytes returns the number of bytes in use (AllocBytes - FreeBytes).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="MemProfileRecord.InUseObjects">func (*MemProfileRecord) <a href="https://golang-china.appspot.com/src/runtime/mprof.go?s=9722:9769#L350">InUseObjects</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/runtime/#MemProfileRecord">MemProfileRecord</a>) InUseObjects() <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a></pre>
+				<p>
+InUseObjects returns the number of objects in use (AllocObjects - FreeObjects).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="MemProfileRecord.Stack">func (*MemProfileRecord) <a href="https://golang-china.appspot.com/src/runtime/mprof.go?s=9900:9944#L356">Stack</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/runtime/#MemProfileRecord">MemProfileRecord</a>) Stack() []<a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a></pre>
+				<p>
+Stack returns the stack trace associated with the record, a prefix of r.Stack0.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="MemStats">type <a href="https://golang-china.appspot.com/src/runtime/mstats.go?s=3203:4988#L81">MemStats</a></h2>
+			<pre>type MemStats struct {
+        <span class="comment">// General statistics.</span>
+        Alloc      <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// bytes allocated and not yet freed</span>
+        TotalAlloc <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// bytes allocated (even if freed)</span>
+        Sys        <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// bytes obtained from system (sum of XxxSys below)</span>
+        Lookups    <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// number of pointer lookups</span>
+        Mallocs    <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// number of mallocs</span>
+        Frees      <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// number of frees</span>
+
+        <span class="comment">// Main allocation heap statistics.</span>
+        HeapAlloc    <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// bytes allocated and not yet freed (same as Alloc above)</span>
+        HeapSys      <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// bytes obtained from system</span>
+        HeapIdle     <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// bytes in idle spans</span>
+        HeapInuse    <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// bytes in non-idle span</span>
+        HeapReleased <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// bytes released to the OS</span>
+        HeapObjects  <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// total number of allocated objects</span>
+
+        <span class="comment">// Low-level fixed-size structure allocator statistics.</span>
+        <span class="comment">//	Inuse is bytes used now.</span>
+        <span class="comment">//	Sys is bytes obtained from system.</span>
+        StackInuse  <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// bytes used by stack allocator</span>
+        StackSys    <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a>
+        MSpanInuse  <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// mspan structures</span>
+        MSpanSys    <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a>
+        MCacheInuse <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// mcache structures</span>
+        MCacheSys   <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a>
+        BuckHashSys <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// profiling bucket hash table</span>
+        GCSys       <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// GC metadata</span>
+        OtherSys    <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// other system allocations</span>
+
+        <span class="comment">// Garbage collector statistics.</span>
+        NextGC       <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// next collection will happen when HeapAlloc ≥ this amount</span>
+        LastGC       <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// end time of last collection (nanoseconds since 1970)</span>
+        PauseTotalNs <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a>
+        PauseNs      [256]<a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// circular buffer of recent GC pause durations, most recent at [(NumGC+255)%256]</span>
+        PauseEnd     [256]<a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a> <span class="comment">// circular buffer of recent GC pause end times</span>
+        NumGC        <a href="https://golang-china.appspot.com/pkg/builtin/#uint32">uint32</a>
+        EnableGC     <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>
+        DebugGC      <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>
+
+        <span class="comment">// Per-size allocation statistics.</span>
+        <span class="comment">// 61 is NumSizeClasses in the C code.</span>
+        BySize [61]struct {
+                Size    <a href="https://golang-china.appspot.com/pkg/builtin/#uint32">uint32</a>
+                Mallocs <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a>
+                Frees   <a href="https://golang-china.appspot.com/pkg/builtin/#uint64">uint64</a>
+        }
+}</pre>
+			<p>
+MemStats 用于记录内存分配器的统计量。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="StackRecord">type <a href="https://golang-china.appspot.com/src/runtime/mprof.go?s=8030:8131#L307">StackRecord</a></h2>
+			<pre>type StackRecord struct {
+        Stack0 [32]<a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a> <span class="comment">// stack trace for this record; ends at first 0 entry</span>
+}</pre>
+			<p>
+A StackRecord describes a single execution stack.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="StackRecord.Stack">func (*StackRecord) <a href="https://golang-china.appspot.com/src/runtime/mprof.go?s=8219:8258#L313">Stack</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/runtime/#StackRecord">StackRecord</a>) Stack() []<a href="https://golang-china.appspot.com/pkg/builtin/#uintptr">uintptr</a></pre>
+				<p>
+Stack returns the stack trace associated with the record, a prefix of r.Stack0.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="TypeAssertionError">type <a href="https://golang-china.appspot.com/src/runtime/error.go?s=542:729#L11">TypeAssertionError</a></h2>
+			<pre>type TypeAssertionError struct {
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+TypeAssertionError 用于阐明失败的类型断言。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="TypeAssertionError.Error">func (*TypeAssertionError) <a href="https://golang-china.appspot.com/src/runtime/error.go?s=777:820#L20">Error</a></h3>
+				<pre>func (e *<a href="https://golang-china.appspot.com/pkg/runtime/#TypeAssertionError">TypeAssertionError</a>) Error() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="TypeAssertionError.RuntimeError">func (*TypeAssertionError) <a href="https://golang-china.appspot.com/src/runtime/error.go?s=731:772#L18">RuntimeError</a></h3>
+				<pre>func (*<a href="https://golang-china.appspot.com/pkg/runtime/#TypeAssertionError">TypeAssertionError</a>) RuntimeError()</pre>
+				
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+	
+	
+<!--
+		<h2 id="pkg-subdirectories">Subdirectories</h2>
+-->
+	
+		<h2 id="pkg-subdirectories">子目录</h2>
+	
+	<table class="dir">
+	<tbody><tr>
+<!--
+	<th>Name</th>
+-->
+	<th>名称</th>
+	<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<!--
+	<th style="text-align: left; width: auto">Synopsis</th>
+-->
+	<th style="text-align: left; width: auto">摘要</th>
+	</tr>
+	
+		<tr>
+		<td><a href="https://golang-china.appspot.com/pkg/">..</a></td>
+		</tr>
+	
+	
+		
+			<tr>
+			<td class="name"><a href="https://golang-china.appspot.com/pkg/runtime/cgo/">cgo</a></td>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td style="width: auto">cgo 包含有 cgo 工具生成的代码的运行时支持.</td>
+			</tr>
+		
+	
+		
+			<tr>
+			<td class="name"><a href="https://golang-china.appspot.com/pkg/runtime/debug/">debug</a></td>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td style="width: auto">debug 包含有程序在运行时调试其自身的功能.</td>
+			</tr>
+		
+	
+		
+			<tr>
+			<td class="name"><a href="https://golang-china.appspot.com/pkg/runtime/pprof/">pprof</a></td>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td style="width: auto">pprof 包按照可视化工具 pprof 所要求的格式写出运行时分析数据.</td>
+			</tr>
+		
+	
+		
+			<tr>
+			<td class="name"><a href="https://golang-china.appspot.com/pkg/runtime/race/">race</a></td>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td style="width: auto">race 包实现了数据竞争检测逻辑.</td>
+			</tr>
+		
+	
+	</tbody></table>
+
+	
+
+
+
+<!--
+<div id="footer">
+Build version go1.4.2 (appengine-1.9.21).<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="/LICENSE">BSD license</a>.<br>
+<a href="/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+-->
+<div id="footer">
+构建版本 go1.4.2 (appengine-1.9.21).<br>
+除<a href="https://developers.google.com/site-policies#restrictions">特别注明</a>外，
+本页内容均采用知识共享-署名（CC-BY）3.0协议授权，代码采用<a href="https://golang-china.appspot.com/LICENSE">BSD协议</a>授权。<br>
+<a href="https://golang-china.appspot.com/doc/tos.html">服务条款</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">隐私政策</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="./runtime - Go 编程语言_files/jquery.js"></script>
+<script type="text/javascript" src="./runtime - Go 编程语言_files/jquery.treeview.js"></script>
+<script type="text/javascript" src="./runtime - Go 编程语言_files/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="./runtime - Go 编程语言_files/playground.js"></script>
+
+<script type="text/javascript" src="./runtime - Go 编程语言_files/godocs.js"></script>
+
+
+
+</body></html>

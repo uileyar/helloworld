@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://golang-china.appspot.com/pkg/compress/flate/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<!--
+  <title>flate - The Go Programming Language</title>
+-->
+  <title>flate - Go 编程语言</title>
+
+<link type="text/css" rel="stylesheet" href="./flate - Go 编程语言_files/style.css">
+
+<link rel="search" type="application/opensearchdescription+xml" title="godoc" href="https://golang-china.appspot.com/opensearch.xml">
+
+<link rel="stylesheet" href="https://golang-china.appspot.com/lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id="lowframe" style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+
+<form method="GET" action="https://golang-china.appspot.com/search" id="1607878232">
+<div id="menu" style="min-width: 650px;">
+<!--
+<a href="/doc/">Documents</a>
+<a href="/pkg/">Packages</a>
+<a href="/project/">The Project</a>
+<a href="/help/">Help</a>
+<a href="/blog/">Blog</a>
+-->
+<a href="https://golang-china.appspot.com/doc/">文档</a>
+<a href="https://golang-china.appspot.com/pkg/">包</a>
+<a href="https://golang-china.appspot.com/project/">项目</a>
+<a href="https://golang-china.appspot.com/help/">帮助</a>
+<a href="https://golang-china.appspot.com/blog/">博客</a>
+
+<!--
+<a id="playgroundButton" href="http://play.golang.org/" title="Show Go Playground">Play</a>
+-->
+<a id="playgroundButton" href="http://play.golang.org/" title="显示 Go 操场" style="display: inline;">运行</a>
+
+<!--
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+-->
+<input type="text" id="search" name="q" class="inactive" value="搜索" placeholder="搜索">
+</div>
+<!--
+<div id="heading"><a href="/">The Go Programming Language</a></div>
+-->
+<div id="heading"><a href="https://golang-china.appspot.com/">Go 编程语言</a></div>
+</form>
+
+</div></div>
+
+
+<div id="playground" class="play">
+	<div class="input"><textarea class="code">package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}</textarea></div>
+	<div class="output"></div>
+	<div class="buttons">
+<!--
+		<a class="run" title="Run this code [shift-enter]">Run</a>
+		<a class="fmt" title="Format this code">Format</a>
+		<a class="share" title="Share this code">Share</a>
+-->
+		<a class="run" title="运行此代码[Shift-Enter]">运行</a>
+		<a class="fmt" title="格式化此代码">格式化</a>
+		<a class="share" title="分享此代码">分享</a>
+	</div>
+</div>
+
+
+<div id="page" class="wide" tabindex="-1" style="outline: 0px;">
+<div class="container">
+
+
+<div class="lang-switch-button-group" role="group">
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;, &quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;, &quot;none&quot;);console.log(&quot;lang-en&quot;);">英文</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-en-zh&quot;);">对照</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;none&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-zh&quot;);">中文</button>
+</div>
+
+
+
+  <h1>Package flate</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type="text/javascript">
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "compress/flate"</code></dd>
+			</dl>
+			<dl>
+<!--
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+-->
+			<dd><a href="https://golang-china.appspot.com/pkg/compress/flate/#pkg-overview" class="overviewLink">概览</a></dd>
+			<dd><a href="https://golang-china.appspot.com/pkg/compress/flate/#pkg-index" class="indexLink">索引</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+<!--
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+-->
+				<h2 class="toggleButton" title="点此显示概览">概览 ▹</h2>
+			</div>
+			<div class="expanded">
+<!--
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+-->
+				<h2 class="toggleButton" title="点此隐藏概览">概览 ▾</h2>
+				<p>
+flate 包实现了 deflate 压缩数据格式, 参见RFC 1951.
+gzip 包和 zlib 包实现了对基于 deflate 的文件格式的访问.
+</p>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示素引">索引 ▹</h2>
+		</div>
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏索引">索引 ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+<!--
+				<dd><a href="#pkg-constants">Constants</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/flate/#pkg-constants">常量</a></dd>
+			
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/flate/#NewReader">func NewReader(r io.Reader) io.ReadCloser</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/flate/#NewReaderDict">func NewReaderDict(r io.Reader, dict []byte) io.ReadCloser</a></dd>
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/flate/#CorruptInputError">type CorruptInputError</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/flate/#CorruptInputError.Error">func (e CorruptInputError) Error() string</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/flate/#InternalError">type InternalError</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/flate/#InternalError.Error">func (e InternalError) Error() string</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/flate/#ReadError">type ReadError</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/flate/#ReadError.Error">func (e *ReadError) Error() string</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/flate/#Reader">type Reader</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/flate/#Resetter">type Resetter</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/flate/#WriteError">type WriteError</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/flate/#WriteError.Error">func (e *WriteError) Error() string</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/flate/#Writer">type Writer</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/flate/#NewWriter">func NewWriter(w io.Writer, level int) (*Writer, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/flate/#NewWriterDict">func NewWriterDict(w io.Writer, level int, dict []byte) (*Writer, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/flate/#Writer.Close">func (w *Writer) Close() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/flate/#Writer.Flush">func (w *Writer) Flush() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/flate/#Writer.Reset">func (w *Writer) Reset(dst io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/flate/#Writer.Write">func (w *Writer) Write(data []byte) (n int, err error)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+<!--
+			<h4>Package files</h4>
+-->
+			<h4>包文件</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="https://golang-china.appspot.com/src/compress/flate/copy.go">copy.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/compress/flate/deflate.go">deflate.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/compress/flate/fixedhuff.go">fixedhuff.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/compress/flate/huffman_bit_writer.go">huffman_bit_writer.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/compress/flate/huffman_code.go">huffman_code.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/compress/flate/inflate.go">inflate.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/compress/flate/reverse_bits.go">reverse_bits.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/compress/flate/token.go">token.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示内部调用图">内部调用图 ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏内部调用图">内部调用图 ▾</h2>
+<!--
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+-->
+			<p>
+			在下面的调用图查看器中，每个节点都是一个属于本包的函数，其子节点即为它所调用的函数——或许是动态的。
+			</p>
+			<p>
+			根节点为包的入口点：函数可从包的外部调用。若这些函数被其它包动态地调用，
+			那么它们可能是未导出的或匿名的。
+			</p>
+			<p>
+			点击一个节点来查看该函数的源码。在源码中，可以点击它的 <code>func</code>
+			声明标记来查看其调用者。
+			</p>
+			<p>
+			在分析特定程序或测试时，被认定为无法访问的函数会被忽略。
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+<!--
+			<h2 id="pkg-constants">Constants</h2>
+-->
+			<h2 id="pkg-constants">常量</h2>
+			
+				<pre>const (
+        <span id="NoCompression">NoCompression</span> = 0
+        <span id="BestSpeed">BestSpeed</span>     = 1
+
+        <span id="BestCompression">BestCompression</span>    = 9
+        <span id="DefaultCompression">DefaultCompression</span> = -1
+)</pre>
+				
+			
+		
+		
+		
+			
+			
+			<h2 id="NewReader">func <a href="https://golang-china.appspot.com/src/compress/flate/inflate.go?s=17655:17696#L752">NewReader</a></h2>
+			<pre>func NewReader(r <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>) <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#ReadCloser">ReadCloser</a></pre>
+			<p>
+NewReader 返回一个从 r 读取并解压数据的 io.ReadCloser.
+调用者有责任在读取完毕后调用返回值的Close方法.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="NewReaderDict">func <a href="https://golang-china.appspot.com/src/compress/flate/inflate.go?s=18261:18319#L769">NewReaderDict</a></h2>
+			<pre>func NewReaderDict(r <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>, dict []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#ReadCloser">ReadCloser</a></pre>
+			<p>
+NewReaderDict 类似 NewReader, 但会使用预设的字典初始化返回的 Reader.
+</p>
+<p>
+返回的 Reader 表现的好像原始未压缩的数据流以该字典起始.
+NewReaderDict 用于读取 NewWriterDict 压缩的数据.
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="CorruptInputError">type <a href="https://golang-china.appspot.com/src/compress/flate/inflate.go?s=764:792#L18">CorruptInputError</a></h2>
+			<pre>type CorruptInputError <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a></pre>
+			<p>
+CorruptInputError 表示在输入的指定偏移量位置存在损坏.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="CorruptInputError.Error">func (CorruptInputError) <a href="https://golang-china.appspot.com/src/compress/flate/inflate.go?s=794:835#L20">Error</a></h3>
+				<pre>func (e <a href="https://golang-china.appspot.com/pkg/compress/flate/#CorruptInputError">CorruptInputError</a>) Error() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="InternalError">type <a href="https://golang-china.appspot.com/src/compress/flate/inflate.go?s=984:1009#L25">InternalError</a></h2>
+			<pre>type InternalError <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+InternalError 表示flate数据自身的错误.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="InternalError.Error">func (InternalError) <a href="https://golang-china.appspot.com/src/compress/flate/inflate.go?s=1011:1048#L27">Error</a></h3>
+				<pre>func (e <a href="https://golang-china.appspot.com/pkg/compress/flate/#InternalError">InternalError</a>) Error() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ReadError">type <a href="https://golang-china.appspot.com/src/compress/flate/inflate.go?s=1164:1290#L30">ReadError</a></h2>
+			<pre>type ReadError struct {
+        Offset <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a> <span class="comment">// byte offset where error occurred</span>
+        Err    <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a> <span class="comment">// error returned by underlying Read</span>
+}</pre>
+			<p>
+ReadError 代表在读取输入流时遇到的错误.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="ReadError.Error">func (*ReadError) <a href="https://golang-china.appspot.com/src/compress/flate/inflate.go?s=1292:1326#L35">Error</a></h3>
+				<pre>func (e *<a href="https://golang-china.appspot.com/pkg/compress/flate/#ReadError">ReadError</a>) Error() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Reader">type <a href="https://golang-china.appspot.com/src/compress/flate/inflate.go?s=7329:7380#L231">Reader</a></h2>
+			<pre>type Reader interface {
+        <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>
+        <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#ByteReader">ByteReader</a>
+}</pre>
+			<p>
+Reader 是 NewReader 真正需要的接口. 如果提供的 io.Reader 没有提供 ReadByte 方法,
+NewReader 函数会自行添加缓冲.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Resetter">type <a href="https://golang-china.appspot.com/src/compress/flate/inflate.go?s=1948:2133#L52">Resetter</a></h2>
+			<pre>type Resetter interface {
+        <span class="comment">// Reset discards any buffered data and resets the Resetter as if it was</span>
+        <span class="comment">// newly initialized with the given reader.</span>
+        Reset(r <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>, dict []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>
+}</pre>
+			<p>
+Resetter resets a ReadCloser returned by NewReader or NewReaderDict to to switch
+to a new underlying Reader. This permits reusing a ReadCloser instead of
+allocating a new one.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="WriteError">type <a href="https://golang-china.appspot.com/src/compress/flate/inflate.go?s=1495:1623#L40">WriteError</a></h2>
+			<pre>type WriteError struct {
+        Offset <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a> <span class="comment">// byte offset where error occurred</span>
+        Err    <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a> <span class="comment">// error returned by underlying Write</span>
+}</pre>
+			<p>
+WriteError 代表在写入输出流时遇到的错误.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="WriteError.Error">func (*WriteError) <a href="https://golang-china.appspot.com/src/compress/flate/inflate.go?s=1625:1660#L45">Error</a></h3>
+				<pre>func (e *<a href="https://golang-china.appspot.com/pkg/compress/flate/#WriteError">WriteError</a>) Error() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Writer">type <a href="https://golang-china.appspot.com/src/compress/flate/deflate.go?s=13950:14002#L516">Writer</a></h2>
+			<pre>type Writer struct {
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Writer 将提供给它的数据压缩后写入下层的 io.Writer 接口.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewWriter">func <a href="https://golang-china.appspot.com/src/compress/flate/deflate.go?s=12834:12889#L475">NewWriter</a></h3>
+				<pre>func NewWriter(w <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>, level <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) (*<a href="https://golang-china.appspot.com/pkg/compress/flate/#Writer">Writer</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewWriter 返回一个压缩水平为 level 的 Writer.
+</p>
+<p>
+和 zlib 包一样, level 的范围是 1 (BestSpeed) 到9 (BestCompression);
+值越大, 压缩效果越好, 但也越慢; level 为 0 表示不尝试做任何压缩,
+只添加必需的 deflate 框架; level 为 -1 时会使用默认的压缩水平;
+如果 level 在 [-1, 9] 范围内, error 返回值将是 nil, 否则将返回非 nil 的错误值.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewWriterDict">func <a href="https://golang-china.appspot.com/src/compress/flate/deflate.go?s=13323:13395#L489">NewWriterDict</a></h3>
+				<pre>func NewWriterDict(w <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>, level <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, dict []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (*<a href="https://golang-china.appspot.com/pkg/compress/flate/#Writer">Writer</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewWriterDict 类似NewWriter，但会使用预设的字典初始化返回的 Writer.
+</p>
+<p>
+返回的 Writer 表现的好像已经将原始/未压缩数据 dict 写入 w 了,
+使用 w 压缩的数据只能被使用同样的字典初始化生成的 Reader 接口解压缩.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Writer.Close">func (*Writer) <a href="https://golang-china.appspot.com/src/compress/flate/deflate.go?s=14796:14826#L541">Close</a></h3>
+				<pre>func (w *<a href="https://golang-china.appspot.com/pkg/compress/flate/#Writer">Writer</a>) Close() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Close 刷新缓冲并关闭 w.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Writer.Flush">func (*Writer) <a href="https://golang-china.appspot.com/src/compress/flate/deflate.go?s=14615:14645#L534">Flush</a></h3>
+				<pre>func (w *<a href="https://golang-china.appspot.com/pkg/compress/flate/#Writer">Writer</a>) Flush() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Flush 将缓冲中的压缩数据刷新到下层 io.Writer 接口中.
+</p>
+<p>
+本方法主要用在传输压缩数据的网络连接中, 以保证远端的接收者可以获得足够的数据来重构数据报.
+Flush 会阻塞直到所有缓冲中的数据都写入下层 io.Writer 接口后才返回.
+如果下层的 io.Writetr 接口返回一个错误, Flush 也会返回该错误.
+在zlib包的术语中, Flush 方法等价于 Z_SYNC_FLUSH.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Writer.Reset">func (*Writer) <a href="https://golang-china.appspot.com/src/compress/flate/deflate.go?s=15009:15046#L548">Reset</a></h3>
+				<pre>func (w *<a href="https://golang-china.appspot.com/pkg/compress/flate/#Writer">Writer</a>) Reset(dst <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>)</pre>
+				<p>
+Reset 将 w 重置, 丢弃当前的写入状态, 并将下层输出目标设为 dst.
+效果上等价于将 w 设为使用 dst 和 w 的压缩水平/字典重新调用 NewWriter 或 NewWriterDict 返回的 *Writer.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Writer.Write">func (*Writer) <a href="https://golang-china.appspot.com/src/compress/flate/deflate.go?s=14116:14170#L523">Write</a></h3>
+				<pre>func (w *<a href="https://golang-china.appspot.com/pkg/compress/flate/#Writer">Writer</a>) Write(data []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Write 向 w写入数据, 最终会将压缩后的数据写入下层 io.Writer接口.
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<!--
+<div id="footer">
+Build version go1.4.2 (appengine-1.9.21).<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="/LICENSE">BSD license</a>.<br>
+<a href="/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+-->
+<div id="footer">
+构建版本 go1.4.2 (appengine-1.9.21).<br>
+除<a href="https://developers.google.com/site-policies#restrictions">特别注明</a>外，
+本页内容均采用知识共享-署名（CC-BY）3.0协议授权，代码采用<a href="https://golang-china.appspot.com/LICENSE">BSD协议</a>授权。<br>
+<a href="https://golang-china.appspot.com/doc/tos.html">服务条款</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">隐私政策</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="./flate - Go 编程语言_files/jquery.js"></script>
+<script type="text/javascript" src="./flate - Go 编程语言_files/jquery.treeview.js"></script>
+<script type="text/javascript" src="./flate - Go 编程语言_files/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="./flate - Go 编程语言_files/playground.js"></script>
+
+<script type="text/javascript" src="./flate - Go 编程语言_files/godocs.js"></script>
+
+
+
+</body></html>

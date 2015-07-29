@@ -1,0 +1,2567 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://golang-china.appspot.com/pkg/strings/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<!--
+  <title>strings - The Go Programming Language</title>
+-->
+  <title>strings - Go 编程语言</title>
+
+<link type="text/css" rel="stylesheet" href="./strings - Go 编程语言_files/style.css">
+
+<link rel="search" type="application/opensearchdescription+xml" title="godoc" href="https://golang-china.appspot.com/opensearch.xml">
+
+<link rel="stylesheet" href="https://golang-china.appspot.com/lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id="lowframe" style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+
+<form method="GET" action="https://golang-china.appspot.com/search" id="1255293952">
+<div id="menu" style="min-width: 650px;">
+<!--
+<a href="/doc/">Documents</a>
+<a href="/pkg/">Packages</a>
+<a href="/project/">The Project</a>
+<a href="/help/">Help</a>
+<a href="/blog/">Blog</a>
+-->
+<a href="https://golang-china.appspot.com/doc/">文档</a>
+<a href="https://golang-china.appspot.com/pkg/">包</a>
+<a href="https://golang-china.appspot.com/project/">项目</a>
+<a href="https://golang-china.appspot.com/help/">帮助</a>
+<a href="https://golang-china.appspot.com/blog/">博客</a>
+
+<!--
+<a id="playgroundButton" href="http://play.golang.org/" title="Show Go Playground">Play</a>
+-->
+<a id="playgroundButton" href="http://play.golang.org/" title="显示 Go 操场" style="display: inline;">运行</a>
+
+<!--
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+-->
+<input type="text" id="search" name="q" class="inactive" value="搜索" placeholder="搜索">
+</div>
+<!--
+<div id="heading"><a href="/">The Go Programming Language</a></div>
+-->
+<div id="heading"><a href="https://golang-china.appspot.com/">Go 编程语言</a></div>
+</form>
+
+</div></div>
+
+
+<div id="playground" class="play">
+	<div class="input"><textarea class="code">package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}</textarea></div>
+	<div class="output"></div>
+	<div class="buttons">
+<!--
+		<a class="run" title="Run this code [shift-enter]">Run</a>
+		<a class="fmt" title="Format this code">Format</a>
+		<a class="share" title="Share this code">Share</a>
+-->
+		<a class="run" title="运行此代码[Shift-Enter]">运行</a>
+		<a class="fmt" title="格式化此代码">格式化</a>
+		<a class="share" title="分享此代码">分享</a>
+	</div>
+</div>
+
+
+<div id="page" class="wide" tabindex="-1" style="outline: 0px;">
+<div class="container">
+
+
+<div class="lang-switch-button-group" role="group">
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;, &quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;, &quot;none&quot;);console.log(&quot;lang-en&quot;);">英文</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-en-zh&quot;);">对照</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;none&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-zh&quot;);">中文</button>
+</div>
+
+
+
+  <h1>Package strings</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type="text/javascript">
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "strings"</code></dd>
+			</dl>
+			<dl>
+<!--
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+-->
+			<dd><a href="https://golang-china.appspot.com/pkg/strings/#pkg-overview" class="overviewLink">概览</a></dd>
+			<dd><a href="https://golang-china.appspot.com/pkg/strings/#pkg-index" class="indexLink">索引</a></dd>
+			
+<!--
+				<dd><a href="#pkg-examples" class="examplesLink">Examples</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#pkg-examples" class="examplesLink">示例</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+<!--
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+-->
+				<h2 class="toggleButton" title="点此显示概览">概览 ▹</h2>
+			</div>
+			<div class="expanded">
+<!--
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+-->
+				<h2 class="toggleButton" title="点此隐藏概览">概览 ▾</h2>
+				<p>
+strings包实现了用于操作字符的简单函数。
+</p>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示素引">索引 ▹</h2>
+		</div>
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏索引">索引 ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Compare">func Compare(a, b string) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Contains">func Contains(s, substr string) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#ContainsAny">func ContainsAny(s, chars string) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#ContainsRune">func ContainsRune(s string, r rune) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Count">func Count(s, sep string) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#EqualFold">func EqualFold(s, t string) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Fields">func Fields(s string) []string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#FieldsFunc">func FieldsFunc(s string, f func(rune) bool) []string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#HasPrefix">func HasPrefix(s, prefix string) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#HasSuffix">func HasSuffix(s, suffix string) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Index">func Index(s, sep string) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#IndexAny">func IndexAny(s, chars string) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#IndexByte">func IndexByte(s string, c byte) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#IndexFunc">func IndexFunc(s string, f func(rune) bool) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#IndexRune">func IndexRune(s string, r rune) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Join">func Join(a []string, sep string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#LastIndex">func LastIndex(s, sep string) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#LastIndexAny">func LastIndexAny(s, chars string) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#LastIndexByte">func LastIndexByte(s string, c byte) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#LastIndexFunc">func LastIndexFunc(s string, f func(rune) bool) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Map">func Map(mapping func(rune) rune, s string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Repeat">func Repeat(s string, count int) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Replace">func Replace(s, old, new string, n int) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Split">func Split(s, sep string) []string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#SplitAfter">func SplitAfter(s, sep string) []string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#SplitAfterN">func SplitAfterN(s, sep string, n int) []string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#SplitN">func SplitN(s, sep string, n int) []string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Title">func Title(s string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#ToLower">func ToLower(s string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#ToLowerSpecial">func ToLowerSpecial(_case unicode.SpecialCase, s string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#ToTitle">func ToTitle(s string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#ToTitleSpecial">func ToTitleSpecial(_case unicode.SpecialCase, s string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#ToUpper">func ToUpper(s string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#ToUpperSpecial">func ToUpperSpecial(_case unicode.SpecialCase, s string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Trim">func Trim(s string, cutset string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#TrimFunc">func TrimFunc(s string, f func(rune) bool) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#TrimLeft">func TrimLeft(s string, cutset string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#TrimLeftFunc">func TrimLeftFunc(s string, f func(rune) bool) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#TrimPrefix">func TrimPrefix(s, prefix string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#TrimRight">func TrimRight(s string, cutset string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#TrimRightFunc">func TrimRightFunc(s string, f func(rune) bool) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#TrimSpace">func TrimSpace(s string) string</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#TrimSuffix">func TrimSuffix(s, suffix string) string</a></dd>
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Reader">type Reader</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#NewReader">func NewReader(s string) *Reader</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#Reader.Len">func (r *Reader) Len() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#Reader.Read">func (r *Reader) Read(b []byte) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#Reader.ReadAt">func (r *Reader) ReadAt(b []byte, off int64) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#Reader.ReadByte">func (r *Reader) ReadByte() (b byte, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#Reader.ReadRune">func (r *Reader) ReadRune() (ch rune, size int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#Reader.Seek">func (r *Reader) Seek(offset int64, whence int) (int64, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#Reader.Size">func (r *Reader) Size() int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#Reader.UnreadByte">func (r *Reader) UnreadByte() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#Reader.UnreadRune">func (r *Reader) UnreadRune() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#Reader.WriteTo">func (r *Reader) WriteTo(w io.Writer) (n int64, err error)</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#Replacer">type Replacer</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#NewReplacer">func NewReplacer(oldnew ...string) *Replacer</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#Replacer.Replace">func (r *Replacer) Replace(s string) string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/strings/#Replacer.WriteString">func (r *Replacer) WriteString(w io.Writer, s string) (n int, err error)</a></dd>
+				
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/strings/#pkg-note-BUG">Bugs</a></dd>
+				
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+		<div id="pkg-examples">
+<!--
+			<h4>Examples</h4>
+-->
+			<h4>示例</h4>
+			<dl>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_Contains">Contains</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_ContainsAny">ContainsAny</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_Count">Count</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_EqualFold">EqualFold</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_Fields">Fields</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_FieldsFunc">FieldsFunc</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_Index">Index</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_IndexAny">IndexAny</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_IndexFunc">IndexFunc</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_IndexRune">IndexRune</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_Join">Join</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_LastIndex">LastIndex</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_Map">Map</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_NewReplacer">NewReplacer</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_Repeat">Repeat</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_Replace">Replace</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_Split">Split</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_SplitAfter">SplitAfter</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_SplitAfterN">SplitAfterN</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_SplitN">SplitN</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_Title">Title</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_ToLower">ToLower</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_ToTitle">ToTitle</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_ToUpper">ToUpper</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_Trim">Trim</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_TrimPrefix">TrimPrefix</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_TrimSpace">TrimSpace</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/strings/#example_TrimSuffix">TrimSuffix</a></dd>
+			
+			</dl>
+		</div>
+		
+
+		
+<!--
+			<h4>Package files</h4>
+-->
+			<h4>包文件</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="https://golang-china.appspot.com/src/strings/compare.go">compare.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/strings/reader.go">reader.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/strings/replace.go">replace.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/strings/search.go">search.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/strings/strings.go">strings.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/strings/strings_decl.go">strings_decl.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示内部调用图">内部调用图 ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏内部调用图">内部调用图 ▾</h2>
+<!--
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+-->
+			<p>
+			在下面的调用图查看器中，每个节点都是一个属于本包的函数，其子节点即为它所调用的函数——或许是动态的。
+			</p>
+			<p>
+			根节点为包的入口点：函数可从包的外部调用。若这些函数被其它包动态地调用，
+			那么它们可能是未导出的或匿名的。
+			</p>
+			<p>
+			点击一个节点来查看该函数的源码。在源码中，可以点击它的 <code>func</code>
+			声明标记来查看其调用者。
+			</p>
+			<p>
+			在分析特定程序或测试时，被认定为无法访问的函数会被忽略。
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+		
+			
+			
+			<h2 id="Compare">func <a href="https://golang-china.appspot.com/src/strings/compare.go?s=491:520#L3">Compare</a></h2>
+			<pre>func Compare(a, b <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+Compare returns an integer comparing two strings lexicographically.
+The result will be 0 if a==b, -1 if a &lt; b, and +1 if a &gt; b.
+</p>
+<p>
+Compare is included only for symmetry with package bytes.
+It is usually clearer and always faster to use the built-in
+string comparison operators ==, &lt;, &gt;, and so on.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Contains">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=2891:2927#L120">Contains</a></h2>
+			<pre>func Contains(s, substr <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+判断字符串s是否包含子串substr。
+</p>
+
+			<div id="example_Contains" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.Contains("seafood", "foo"))
+	fmt.Println(strings.Contains("seafood", "bar"))
+	fmt.Println(strings.Contains("seafood", ""))
+	fmt.Println(strings.Contains("", ""))
+}
+</textarea></div>
+				<div class="output"><pre>true
+false
+true
+true
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="ContainsAny">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=3041:3079#L125">ContainsAny</a></h2>
+			<pre>func ContainsAny(s, chars <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+判断字符串s是否包含字符串chars中的任一字符。
+</p>
+
+			<div id="example_ContainsAny" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.ContainsAny("team", "i"))
+	fmt.Println(strings.ContainsAny("failure", "u &amp; i"))
+	fmt.Println(strings.ContainsAny("foo", ""))
+	fmt.Println(strings.ContainsAny("", ""))
+}
+</textarea></div>
+				<div class="output"><pre>false
+true
+false
+false
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="ContainsRune">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=3187:3227#L130">ContainsRune</a></h2>
+			<pre>func ContainsRune(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, r <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+判断字符串s是否包含utf-8码值r。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Count">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=2006:2035#L72">Count</a></h2>
+			<pre>func Count(s, sep <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+返回字符串s中有几个不重复的sep子串。
+</p>
+
+			<div id="example_Count" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.Count("cheese", "e"))
+	fmt.Println(strings.Count("five", "")) // before &amp; after each rune
+}
+</textarea></div>
+				<div class="output"><pre>3
+5
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="EqualFold">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=18797:18829#L705">EqualFold</a></h2>
+			<pre>func EqualFold(s, t <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+判断两个utf-8编码字符串（将unicode大写、小写、标题三种格式字符视为相同）是否相同。
+</p>
+
+			<div id="example_EqualFold" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.EqualFold("Go", "go"))
+}
+</textarea></div>
+				<div class="output"><pre>true
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Fields">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=8349:8379#L332">Fields</a></h2>
+			<pre>func Fields(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回将字符串按照空白（unicode.IsSpace确定，可以是一到多个连续的空白字符）分割的多个字符串。如果字符串全部是空白或者是空字符串的话，会返回空切片。
+</p>
+
+			<div id="example_Fields" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Printf("Fields are: %q", strings.Fields("  foo bar  baz   "))
+}
+</textarea></div>
+				<div class="output"><pre>Fields are: ["foo" "bar" "baz"]
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="FieldsFunc">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=8797:8850#L341">FieldsFunc</a></h2>
+			<pre>func FieldsFunc(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, f func(<a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+类似Fields，但使用函数f来确定分割符（满足f的unicode码值）。如果字符串全部是分隔符或者是空字符串的话，会返回空切片。
+</p>
+
+			<div id="example_FieldsFunc" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+	"unicode"
+)
+
+func main() {
+	f := func(c rune) bool {
+		return !unicode.IsLetter(c) &amp;&amp; !unicode.IsNumber(c)
+	}
+	fmt.Printf("Fields are: %q", strings.FieldsFunc("  foo1;bar2,baz3...", f))
+}
+</textarea></div>
+				<div class="output"><pre>Fields are: ["foo1" "bar2" "baz3"]
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="HasPrefix">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=9964:10001#L398">HasPrefix</a></h2>
+			<pre>func HasPrefix(s, prefix <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+判断s是否有前缀字符串prefix。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasSuffix">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=10125:10162#L403">HasSuffix</a></h2>
+			<pre>func HasSuffix(s, suffix <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+判断s是否有后缀字符串suffix。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Index">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=3358:3387#L135">Index</a></h2>
+			<pre>func Index(s, sep <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+子串sep在字符串s中第一次出现的位置，不存在则返回-1。
+</p>
+
+			<div id="example_Index" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.Index("chicken", "ken"))
+	fmt.Println(strings.Index("chicken", "dmr"))
+}
+</textarea></div>
+				<div class="output"><pre>4
+-1
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="IndexAny">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=5144:5178#L226">IndexAny</a></h2>
+			<pre>func IndexAny(s, chars <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+字符串chars中的任一utf-8码值在s中第一次出现的位置，如果不存在或者chars为空字符串则返回-1。
+</p>
+
+			<div id="example_IndexAny" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.IndexAny("chicken", "aeiouy"))
+	fmt.Println(strings.IndexAny("crwth", "aeiouy"))
+}
+</textarea></div>
+				<div class="output"><pre>2
+-1
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="IndexByte">func <a href="https://golang-china.appspot.com/src/strings/strings_decl.go?s=274:310#L1">IndexByte</a></h2>
+			<pre>func IndexByte(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, c <a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+字符c在s中第一次出现的位置，不存在则返回-1。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="IndexFunc">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=15088:15135#L565">IndexFunc</a></h2>
+			<pre>func IndexFunc(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, f func(<a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+s中第一个满足函数f的位置i（该处的utf-8码值r满足f(r)==true），不存在则返回-1。
+</p>
+
+			<div id="example_IndexFunc" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+	"unicode"
+)
+
+func main() {
+	f := func(c rune) bool {
+		return unicode.Is(unicode.Han, c)
+	}
+	fmt.Println(strings.IndexFunc("Hello, 世界", f))
+	fmt.Println(strings.IndexFunc("Hello, world", f))
+}
+</textarea></div>
+				<div class="output"><pre>7
+-1
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="IndexRune">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=4794:4830#L210">IndexRune</a></h2>
+			<pre>func IndexRune(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, r <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+unicode码值r在s中第一次出现的位置，不存在则返回-1。
+</p>
+
+			<div id="example_IndexRune" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.IndexRune("chicken", 'k'))
+	fmt.Println(strings.IndexRune("chicken", 'd'))
+}
+</textarea></div>
+				<div class="output"><pre>4
+-1
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Join">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=9567:9607#L376">Join</a></h2>
+			<pre>func Join(a []<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, sep <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+将一系列字符串连接为一个字符串，之间用sep来分隔。
+</p>
+
+			<div id="example_Join" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	s := []string{"foo", "bar", "baz"}
+	fmt.Println(strings.Join(s, ", "))
+}
+</textarea></div>
+				<div class="output"><pre>foo, bar, baz
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="LastIndex">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=4026:4059#L172">LastIndex</a></h2>
+			<pre>func LastIndex(s, sep <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+子串sep在字符串s中最后一次出现的位置，不存在则返回-1。
+</p>
+
+			<div id="example_LastIndex" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.Index("go gopher", "go"))
+	fmt.Println(strings.LastIndex("go gopher", "go"))
+	fmt.Println(strings.LastIndex("go gopher", "rodent"))
+}
+</textarea></div>
+				<div class="output"><pre>0
+3
+-1
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="LastIndexAny">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=5480:5518#L242">LastIndexAny</a></h2>
+			<pre>func LastIndexAny(s, chars <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+字符串chars中的任一utf-8码值在s中最后一次出现的位置，如不存在或者chars为空字符串则返回-1。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="LastIndexByte">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=5829:5869#L258">LastIndexByte</a></h2>
+			<pre>func LastIndexByte(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, c <a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+LastIndexByte returns the index of the last instance of c in s, or -1 if c is not present in s.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="LastIndexFunc">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=15282:15333#L571">LastIndexFunc</a></h2>
+			<pre>func LastIndexFunc(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, f func(<a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+s中最后一个满足函数f的unicode码值的位置i，不存在则返回-1。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Map">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=10445:10495#L410">Map</a></h2>
+			<pre>func Map(mapping func(<a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>, s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+将s的每一个unicode码值r都替换为mapping(r)，返回这些新码值组成的字符串拷贝。如果mapping返回一个负值，将会丢弃该码值而不会被替换。（返回值中对应位置将没有码值）
+</p>
+
+			<div id="example_Map" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	rot13 := func(r rune) rune {
+		switch {
+		case r &gt;= 'A' &amp;&amp; r &lt;= 'Z':
+			return 'A' + (r-'A'+13)%26
+		case r &gt;= 'a' &amp;&amp; r &lt;= 'z':
+			return 'a' + (r-'a'+13)%26
+		}
+		return r
+	}
+	fmt.Println(strings.Map(rot13, "'Twas brillig and the slithy gopher..."))
+}
+</textarea></div>
+				<div class="output"><pre>'Gjnf oevyyvt naq gur fyvgul tbcure...
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Repeat">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=11480:11519#L451">Repeat</a></h2>
+			<pre>func Repeat(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, count <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回count个s串联的字符串。
+</p>
+
+			<div id="example_Repeat" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println("ba" + strings.Repeat("na", 2))
+}
+</textarea></div>
+				<div class="output"><pre>banana
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Replace">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=18012:18058#L669">Replace</a></h2>
+			<pre>func Replace(s, old, new <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回将s中前n个不重叠old子串都替换为new的新字符串，如果n&lt;0会替换所有old子串。
+</p>
+
+			<div id="example_Replace" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.Replace("oink oink oink", "k", "ky", 2))
+	fmt.Println(strings.Replace("oink oink oink", "oink", "moo", -1))
+}
+</textarea></div>
+				<div class="output"><pre>oinky oinky oink
+moo moo moo
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Split">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=7734:7768#L319">Split</a></h2>
+			<pre>func Split(s, sep <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+用去掉s中出现的sep的方式进行分割，会分割到结尾，并返回生成的所有片段组成的切片（每一个sep都会进行一次切割，即使两个sep相邻，也会进行两次切割）。如果sep为空字符，Split会将s切分成每一个unicode码值一个字符串。
+</p>
+
+			<div id="example_Split" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Printf("%q\n", strings.Split("a,b,c", ","))
+	fmt.Printf("%q\n", strings.Split("a man a plan a canal panama", "a "))
+	fmt.Printf("%q\n", strings.Split(" xyz ", ""))
+	fmt.Printf("%q\n", strings.Split("", "Bernardo O'Higgins"))
+}
+</textarea></div>
+				<div class="output"><pre>["a" "b" "c"]
+["" "man " "plan " "canal panama"]
+[" " "x" "y" "z" " "]
+[""]
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="SplitAfter">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=8039:8078#L325">SplitAfter</a></h2>
+			<pre>func SplitAfter(s, sep <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+用从s中出现的sep后面切断的方式进行分割，会分割到结尾，并返回生成的所有片段组成的切片（每一个sep都会进行一次切割，即使两个sep相邻，也会进行两次切割）。如果sep为空字符，Split会将s切分成每一个unicode码值一个字符串。
+</p>
+
+			<div id="example_SplitAfter" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Printf("%q\n", strings.SplitAfter("a,b,c", ","))
+}
+</textarea></div>
+				<div class="output"><pre>["a," "b," "c"]
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="SplitAfterN">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=7411:7458#L311">SplitAfterN</a></h2>
+			<pre>func SplitAfterN(s, sep <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+用从s中出现的sep后面切断的方式进行分割，会分割到结尾，并返回生成的所有片段组成的切片（每一个sep都会进行一次切割，即使两个sep相邻，也会进行两次切割）。如果sep为空字符，Split会将s切分成每一个unicode码值一个字符串。参数n决定返回的切片的数目：
+</p>
+<pre>n &gt; 0 : 返回的切片最多n个子字符串；最后一个子字符串包含未进行切割的部分。
+n == 0: 返回nil
+n &lt; 0 : 返回所有的子字符串组成的切
+</pre>
+
+			<div id="example_SplitAfterN" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Printf("%q\n", strings.SplitAfterN("a,b,c", ",", 2))
+}
+</textarea></div>
+				<div class="output"><pre>["a," "b,c"]
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="SplitN">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=6936:6978#L302">SplitN</a></h2>
+			<pre>func SplitN(s, sep <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+用去掉s中出现的sep的方式进行分割，会分割到结尾，并返回生成的所有片段组成的切片（每一个sep都会进行一次切割，即使两个sep相邻，也会进行两次切割）。如果sep为空字符，Split会将s切分成每一个unicode码值一个字符串。参数n决定返回的切片的数目：
+</p>
+<pre>n &gt; 0 : 返回的切片最多n个子字符串；最后一个子字符串包含未进行切割的部分。
+n == 0: 返回nil
+n &lt; 0 : 返回所有的子字符串组成的切片
+</pre>
+
+			<div id="example_SplitN" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Printf("%q\n", strings.SplitN("a,b,c", ",", 2))
+	z := strings.SplitN("a,b,c", ",", 0)
+	fmt.Printf("%q (nil = %v)\n", z, z == nil)
+}
+</textarea></div>
+				<div class="output"><pre>["a" "b,c"]
+[] (nil = true)
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Title">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=13840:13867#L517">Title</a></h2>
+			<pre>func Title(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回s中每个单词的首字母都改为标题格式的字符串拷贝。
+</p>
+<p>
+BUG:
+Title用于划分单词的规则不能很好的处理Unicode标点符号。
+</p>
+
+			<div id="example_Title" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.Title("her royal highness"))
+}
+</textarea></div>
+				<div class="output"><pre>Her Royal Highness
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="ToLower">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=11905:11934#L465">ToLower</a></h2>
+			<pre>func ToLower(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回将所有字母都转为对应的小写版本的拷贝。
+</p>
+
+			<div id="example_ToLower" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.ToLower("Gopher"))
+}
+</textarea></div>
+				<div class="output"><pre>gopher
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="ToLowerSpecial">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=12563:12626#L478">ToLowerSpecial</a></h2>
+			<pre>func ToLowerSpecial(_case <a href="https://golang-china.appspot.com/pkg/unicode/">unicode</a>.<a href="https://golang-china.appspot.com/pkg/unicode/#SpecialCase">SpecialCase</a>, s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+使用_case规定的字符映射，返回将所有字母都转为对应的小写版本的拷贝。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToTitle">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=12066:12095#L468">ToTitle</a></h2>
+			<pre>func ToTitle(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回将所有字母都转为对应的标题版本的拷贝。
+</p>
+
+			<div id="example_ToTitle" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.ToTitle("loud noises"))
+	fmt.Println(strings.ToTitle("хлеб"))
+}
+</textarea></div>
+				<div class="output"><pre>LOUD NOISES
+ХЛЕБ
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="ToTitleSpecial">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=12844:12907#L484">ToTitleSpecial</a></h2>
+			<pre>func ToTitleSpecial(_case <a href="https://golang-china.appspot.com/pkg/unicode/">unicode</a>.<a href="https://golang-china.appspot.com/pkg/unicode/#SpecialCase">SpecialCase</a>, s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+使用_case规定的字符映射，返回将所有字母都转为对应的标题版本的拷贝。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToUpper">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=11744:11773#L462">ToUpper</a></h2>
+			<pre>func ToUpper(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回将所有字母都转为对应的大写版本的拷贝。
+</p>
+
+			<div id="example_ToUpper" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.ToUpper("Gopher"))
+}
+</textarea></div>
+				<div class="output"><pre>GOPHER
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="ToUpperSpecial">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=12282:12345#L472">ToUpperSpecial</a></h2>
+			<pre>func ToUpperSpecial(_case <a href="https://golang-china.appspot.com/pkg/unicode/">unicode</a>.<a href="https://golang-china.appspot.com/pkg/unicode/#SpecialCase">SpecialCase</a>, s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+使用_case规定的字符映射，返回将所有字母都转为对应的大写版本的拷贝。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Trim">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=16353:16394#L614">Trim</a></h2>
+			<pre>func Trim(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, cutset <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回将s前后端所有cutset包含的utf-8码值都去掉的字符串。
+</p>
+
+			<div id="example_Trim" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Printf("[%q]", strings.Trim(" !!! Achtung! Achtung! !!! ", "! "))
+}
+</textarea></div>
+				<div class="output"><pre>["Achtung! Achtung"]
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="TrimFunc">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=14880:14929#L559">TrimFunc</a></h2>
+			<pre>func TrimFunc(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, f func(<a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回将s前后端所有满足f的unicode码值都去掉的字符串。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TrimLeft">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=16601:16646#L623">TrimLeft</a></h2>
+			<pre>func TrimLeft(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, cutset <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回将s前端所有cutset包含的utf-8码值都去掉的字符串。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TrimLeftFunc">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=14289:14342#L536">TrimLeftFunc</a></h2>
+			<pre>func TrimLeftFunc(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, f func(<a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回将s前端所有满足f的unicode码值都去掉的字符串。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TrimPrefix">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=17330:17370#L647">TrimPrefix</a></h2>
+			<pre>func TrimPrefix(s, prefix <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回去除s可能的前缀prefix的字符串。
+</p>
+
+			<div id="example_TrimPrefix" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	var s = "Goodbye,, world!"
+	s = strings.TrimPrefix(s, "Goodbye,")
+	s = strings.TrimPrefix(s, "Howdy,")
+	fmt.Print("Hello" + s)
+}
+</textarea></div>
+				<div class="output"><pre>Hello, world!
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="TrimRight">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=16860:16906#L632">TrimRight</a></h2>
+			<pre>func TrimRight(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, cutset <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回将s后端所有cutset包含的utf-8码值都去掉的字符串。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TrimRightFunc">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=14537:14591#L546">TrimRightFunc</a></h2>
+			<pre>func TrimRightFunc(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, f func(<a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回将s后端所有满足f的unicode码值都去掉的字符串。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TrimSpace">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=17128:17159#L641">TrimSpace</a></h2>
+			<pre>func TrimSpace(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回将s前后端所有空白（unicode.IsSpace指定）都去掉的字符串。
+</p>
+
+			<div id="example_TrimSpace" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Println(strings.TrimSpace(" \t\n a lone gopher \n\t\r\n"))
+}
+</textarea></div>
+				<div class="output"><pre>a lone gopher
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="TrimSuffix">func <a href="https://golang-china.appspot.com/src/strings/strings.go?s=17568:17608#L656">TrimSuffix</a></h2>
+			<pre>func TrimSuffix(s, suffix <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+			<p>
+返回去除s可能的后缀suffix的字符串。
+</p>
+
+			<div id="example_TrimSuffix" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	var s = "Hello, goodbye, etc!"
+	s = strings.TrimSuffix(s, "goodbye, etc!")
+	s = strings.TrimSuffix(s, "planet")
+	fmt.Print(s, "world!")
+}
+</textarea></div>
+				<div class="output"><pre>Hello, world!
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+		
+			
+			
+			<h2 id="Reader">type <a href="https://golang-china.appspot.com/src/strings/reader.go?s=374:504#L6">Reader</a></h2>
+			<pre>type Reader struct {
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Reader类型通过从一个字符串读取数据，实现了io.Reader、io.Seeker、io.ReaderAt、io.WriterTo、io.ByteScanner、io.RuneScanner接口。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewReader">func <a href="https://golang-china.appspot.com/src/strings/reader.go?s=3304:3336#L140">NewReader</a></h3>
+				<pre>func NewReader(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) *<a href="https://golang-china.appspot.com/pkg/strings/#Reader">Reader</a></pre>
+				<p>
+NewReader创建一个从s读取数据的Reader。本函数类似bytes.NewBufferString，但是更有效率，且为只读的。
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Reader.Len">func (*Reader) <a href="https://golang-china.appspot.com/src/strings/reader.go?s=581:607#L14">Len</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/strings/#Reader">Reader</a>) Len() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+				<p>
+Len返回r包含的字符串还没有被读取的部分。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Reader.Read">func (*Reader) <a href="https://golang-china.appspot.com/src/strings/reader.go?s=970:1020#L27">Read</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/strings/#Reader">Reader</a>) Read(b []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Reader.ReadAt">func (*Reader) <a href="https://golang-china.appspot.com/src/strings/reader.go?s=1180:1243#L40">ReadAt</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/strings/#Reader">Reader</a>) ReadAt(b []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, off <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Reader.ReadByte">func (*Reader) <a href="https://golang-china.appspot.com/src/strings/reader.go?s=1491:1538#L55">ReadByte</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/strings/#Reader">Reader</a>) ReadByte() (b <a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Reader.ReadRune">func (*Reader) <a href="https://golang-china.appspot.com/src/strings/reader.go?s=1809:1867#L74">ReadRune</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/strings/#Reader">Reader</a>) ReadRune() (ch <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>, size <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Reader.Seek">func (*Reader) <a href="https://golang-china.appspot.com/src/strings/reader.go?s=2367:2429#L99">Seek</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/strings/#Reader">Reader</a>) Seek(offset <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, whence <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) (<a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Seek实现了io.Seeker接口。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Reader.Size">func (*Reader) <a href="https://golang-china.appspot.com/src/strings/reader.go?s=912:941#L25">Size</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/strings/#Reader">Reader</a>) Size() <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a></pre>
+				<p>
+Size returns the original length of the underlying string.
+Size is the number of bytes available for reading via ReadAt.
+The returned value is always the same and is not affected by calls
+to any other method.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Reader.UnreadByte">func (*Reader) <a href="https://golang-china.appspot.com/src/strings/reader.go?s=1641:1676#L65">UnreadByte</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/strings/#Reader">Reader</a>) UnreadByte() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Reader.UnreadRune">func (*Reader) <a href="https://golang-china.appspot.com/src/strings/reader.go?s=2118:2153#L89">UnreadRune</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/strings/#Reader">Reader</a>) UnreadRune() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Reader.WriteTo">func (*Reader) <a href="https://golang-china.appspot.com/src/strings/reader.go?s=2821:2879#L120">WriteTo</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/strings/#Reader">Reader</a>) WriteTo(w <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+WriteTo实现了io.WriterTo接口。
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Replacer">type <a href="https://golang-china.appspot.com/src/strings/replace.go?s=305:341#L1">Replacer</a></h2>
+			<pre>type Replacer struct {
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Replacer类型进行一系列字符串的替换。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewReplacer">func <a href="https://golang-china.appspot.com/src/strings/replace.go?s=676:720#L13">NewReplacer</a></h3>
+				<pre>func NewReplacer(oldnew ...<a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) *<a href="https://golang-china.appspot.com/pkg/strings/#Replacer">Replacer</a></pre>
+				<p>
+使用提供的多组old、new字符串对创建并返回一个*Replacer。替换是依次进行的，匹配时不会重叠。
+</p>
+
+				<div id="example_NewReplacer" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	r := strings.NewReplacer("&lt;", "&amp;lt;", "&gt;", "&amp;gt;")
+	fmt.Println(r.Replace("This is &lt;b&gt;HTML&lt;/b&gt;!"))
+}
+</textarea></div>
+				<div class="output"><pre>This is &amp;lt;b&amp;gt;HTML&amp;lt;/b&amp;gt;!
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+				
+			
+
+			
+				
+				<h3 id="Replacer.Replace">func (*Replacer) <a href="https://golang-china.appspot.com/src/strings/replace.go?s=1777:1820#L59">Replace</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/strings/#Replacer">Replacer</a>) Replace(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				<p>
+Replace returns a copy of s with all replacements performed.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Replacer.WriteString">func (*Replacer) <a href="https://golang-china.appspot.com/src/strings/replace.go?s=1911:1983#L64">WriteString</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/strings/#Replacer">Replacer</a>) WriteString(w <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>, s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+WriteString writes s to w with all replacements performed.
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+		
+			<h2 id="pkg-note-BUG">Bugs</h2>
+			<ul style="list-style: none; padding: 0;">
+			
+			<li><a href="https://golang-china.appspot.com/src/strings/strings.go?s=13741:13839#L516">☞</a> The rule Title uses for word boundaries does not handle Unicode punctuation properly.
+</li>
+			
+			</ul>
+		
+	
+
+
+
+
+
+
+
+<!--
+<div id="footer">
+Build version go1.4.2 (appengine-1.9.21).<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="/LICENSE">BSD license</a>.<br>
+<a href="/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+-->
+<div id="footer">
+构建版本 go1.4.2 (appengine-1.9.21).<br>
+除<a href="https://developers.google.com/site-policies#restrictions">特别注明</a>外，
+本页内容均采用知识共享-署名（CC-BY）3.0协议授权，代码采用<a href="https://golang-china.appspot.com/LICENSE">BSD协议</a>授权。<br>
+<a href="https://golang-china.appspot.com/doc/tos.html">服务条款</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">隐私政策</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="./strings - Go 编程语言_files/jquery.js"></script>
+<script type="text/javascript" src="./strings - Go 编程语言_files/jquery.treeview.js"></script>
+<script type="text/javascript" src="./strings - Go 编程语言_files/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="./strings - Go 编程语言_files/playground.js"></script>
+
+<script type="text/javascript" src="./strings - Go 编程语言_files/godocs.js"></script>
+
+
+
+</body></html>

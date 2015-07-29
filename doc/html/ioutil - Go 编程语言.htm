@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://golang-china.appspot.com/pkg/io/ioutil/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<!--
+  <title>ioutil - The Go Programming Language</title>
+-->
+  <title>ioutil - Go 编程语言</title>
+
+<link type="text/css" rel="stylesheet" href="./ioutil - Go 编程语言_files/style.css">
+
+<link rel="search" type="application/opensearchdescription+xml" title="godoc" href="https://golang-china.appspot.com/opensearch.xml">
+
+<link rel="stylesheet" href="https://golang-china.appspot.com/lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id="lowframe" style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+
+<form method="GET" action="https://golang-china.appspot.com/search" id="1607878432">
+<div id="menu" style="min-width: 650px;">
+<!--
+<a href="/doc/">Documents</a>
+<a href="/pkg/">Packages</a>
+<a href="/project/">The Project</a>
+<a href="/help/">Help</a>
+<a href="/blog/">Blog</a>
+-->
+<a href="https://golang-china.appspot.com/doc/">文档</a>
+<a href="https://golang-china.appspot.com/pkg/">包</a>
+<a href="https://golang-china.appspot.com/project/">项目</a>
+<a href="https://golang-china.appspot.com/help/">帮助</a>
+<a href="https://golang-china.appspot.com/blog/">博客</a>
+
+<!--
+<a id="playgroundButton" href="http://play.golang.org/" title="Show Go Playground">Play</a>
+-->
+<a id="playgroundButton" href="http://play.golang.org/" title="显示 Go 操场" style="display: inline;">运行</a>
+
+<!--
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+-->
+<input type="text" id="search" name="q" class="inactive" value="搜索" placeholder="搜索">
+</div>
+<!--
+<div id="heading"><a href="/">The Go Programming Language</a></div>
+-->
+<div id="heading"><a href="https://golang-china.appspot.com/">Go 编程语言</a></div>
+</form>
+
+</div></div>
+
+
+<div id="playground" class="play">
+	<div class="input"><textarea class="code">package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}</textarea></div>
+	<div class="output"></div>
+	<div class="buttons">
+<!--
+		<a class="run" title="Run this code [shift-enter]">Run</a>
+		<a class="fmt" title="Format this code">Format</a>
+		<a class="share" title="Share this code">Share</a>
+-->
+		<a class="run" title="运行此代码[Shift-Enter]">运行</a>
+		<a class="fmt" title="格式化此代码">格式化</a>
+		<a class="share" title="分享此代码">分享</a>
+	</div>
+</div>
+
+
+<div id="page" class="wide" tabindex="-1" style="outline: 0px;">
+<div class="container">
+
+
+<div class="lang-switch-button-group" role="group">
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;, &quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;, &quot;none&quot;);console.log(&quot;lang-en&quot;);">英文</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-en-zh&quot;);">对照</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;none&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-zh&quot;);">中文</button>
+</div>
+
+
+
+  <h1>Package ioutil</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type="text/javascript">
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "io/ioutil"</code></dd>
+			</dl>
+			<dl>
+<!--
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+-->
+			<dd><a href="https://golang-china.appspot.com/pkg/io/ioutil/#pkg-overview" class="overviewLink">概览</a></dd>
+			<dd><a href="https://golang-china.appspot.com/pkg/io/ioutil/#pkg-index" class="indexLink">索引</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+<!--
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+-->
+				<h2 class="toggleButton" title="点此显示概览">概览 ▹</h2>
+			</div>
+			<div class="expanded">
+<!--
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+-->
+				<h2 class="toggleButton" title="点此隐藏概览">概览 ▾</h2>
+				<p>
+ioutil 实现了一些I/O的工具函数。
+</p>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示素引">索引 ▹</h2>
+		</div>
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏索引">索引 ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+<!--
+				<dd><a href="#pkg-variables">Variables</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/io/ioutil/#pkg-variables">变量</a></dd>
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/ioutil/#NopCloser">func NopCloser(r io.Reader) io.ReadCloser</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/ioutil/#ReadAll">func ReadAll(r io.Reader) ([]byte, error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/ioutil/#ReadDir">func ReadDir(dirname string) ([]os.FileInfo, error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/ioutil/#ReadFile">func ReadFile(filename string) ([]byte, error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/ioutil/#TempDir">func TempDir(dir, prefix string) (name string, err error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/ioutil/#TempFile">func TempFile(dir, prefix string) (f *os.File, err error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/ioutil/#WriteFile">func WriteFile(filename string, data []byte, perm os.FileMode) error</a></dd>
+			
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+<!--
+			<h4>Package files</h4>
+-->
+			<h4>包文件</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="https://golang-china.appspot.com/src/io/ioutil/ioutil.go">ioutil.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/io/ioutil/tempfile.go">tempfile.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示内部调用图">内部调用图 ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏内部调用图">内部调用图 ▾</h2>
+<!--
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+-->
+			<p>
+			在下面的调用图查看器中，每个节点都是一个属于本包的函数，其子节点即为它所调用的函数——或许是动态的。
+			</p>
+			<p>
+			根节点为包的入口点：函数可从包的外部调用。若这些函数被其它包动态地调用，
+			那么它们可能是未导出的或匿名的。
+			</p>
+			<p>
+			点击一个节点来查看该函数的源码。在源码中，可以点击它的 <code>func</code>
+			声明标记来查看其调用者。
+			</p>
+			<p>
+			在分析特定程序或测试时，被认定为无法访问的函数会被忽略。
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+<!--
+			<h2 id="pkg-variables">Variables</h2>
+-->
+			<h2 id="pkg-variables">变量</h2>
+			
+				<pre>var <span id="Discard">Discard</span> <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a> = devNull(0)</pre>
+				<p>
+Discard 是一个 io.Writer，对它进行的任何 Write 调用都将无条件成功。
+</p>
+
+			
+		
+		
+			
+			
+			<h2 id="NopCloser">func <a href="https://golang-china.appspot.com/src/io/ioutil/ioutil.go?s=3631:3672#L112">NopCloser</a></h2>
+			<pre>func NopCloser(r <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>) <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#ReadCloser">ReadCloser</a></pre>
+			<p>
+NopCloser 将提供的 Reader r 用空操作 Close 方法包装后作为 ReadCloser 返回。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ReadAll">func <a href="https://golang-china.appspot.com/src/io/ioutil/ioutil.go?s=1147:1188#L31">ReadAll</a></h2>
+			<pre>func ReadAll(r <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>) ([]<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+ReadAll 从 r
+中读取，直至遇到错误或EOF，然后返回它所读取的数据。 一次成功的调用应当返回 err == nil，而非 err == 因为 ReadAll
+被定义为从 src 进行读取直至遇到EOF，它并不会将来自 Read 的EOF视作错误来报告。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ReadDir">func <a href="https://golang-china.appspot.com/src/io/ioutil/ioutil.go?s=3208:3259#L90">ReadDir</a></h2>
+			<pre>func ReadDir(dirname <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) ([]<a href="https://golang-china.appspot.com/pkg/os/">os</a>.<a href="https://golang-china.appspot.com/pkg/os/#FileInfo">FileInfo</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+ReadDir 读取名为 dirname
+的目录并返回一个已排序的目录项列表。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ReadFile">func <a href="https://golang-china.appspot.com/src/io/ioutil/ioutil.go?s=1464:1510#L39">ReadFile</a></h2>
+			<pre>func ReadFile(filename <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) ([]<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+ReadFile 读取名为 filename 的文件并返回其内容。 一次成功的调用应当返回 err == nil，而非 err ==
+EOF。因为 ReadFile 会读取整个文件， 它并不会将来自 Read 的EOF视作错误来报告。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TempDir">func <a href="https://golang-china.appspot.com/src/io/ioutil/tempfile.go?s=2143:2200#L66">TempDir</a></h2>
+			<pre>func TempDir(dir, prefix <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) (name <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+TempDir 在目录 dir 中创建一个名字以 prefix
+开头的新的临时目录并返回该新目录的路径。 若 dir 为空字符串，TempDir
+就会为临时文件（Unix将目录也视作文件）使用默认的目录（见 os.TempDir）。多程序同时调用 TempDir
+将不会选择相同的目录。当该目录不再被需要时， 调用者应负责将其移除。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TempFile">func <a href="https://golang-china.appspot.com/src/io/ioutil/tempfile.go?s=1288:1345#L37">TempFile</a></h2>
+			<pre>func TempFile(dir, prefix <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) (f *<a href="https://golang-china.appspot.com/pkg/os/">os</a>.<a href="https://golang-china.appspot.com/pkg/os/#File">File</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+TempFile 在目录 dir 中创建一个名字以 prefix
+开头的新的临时文件，打开该文件以用于读写， 并返回其结果 *os.File。若 dir 为空字符串，TempFile
+就会为临时文件使用默认的目录（见 os.TempDir）。多程序同时调用 TempFile
+将不会选择相同的文件。调用者可使用 f.Name() 来查找该文件的路径名
+pathname。当该文件不再被需要时，调用者应负责将其移除。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="WriteFile">func <a href="https://golang-china.appspot.com/src/io/ioutil/ioutil.go?s=2520:2588#L66">WriteFile</a></h2>
+			<pre>func WriteFile(filename <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, data []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, perm <a href="https://golang-china.appspot.com/pkg/os/">os</a>.<a href="https://golang-china.appspot.com/pkg/os/#FileMode">FileMode</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+			<p>
+WriteFile 将数据写入到名为 filename 的文件中。 若该文件不存在，WriteFile 就会按照权限 perm
+创建它；否则 WriteFile 就会在写入前将其截断。
+</p>
+
+			
+			
+
+		
+		
+	
+
+	
+
+
+
+
+
+
+
+<!--
+<div id="footer">
+Build version go1.4.2 (appengine-1.9.21).<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="/LICENSE">BSD license</a>.<br>
+<a href="/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+-->
+<div id="footer">
+构建版本 go1.4.2 (appengine-1.9.21).<br>
+除<a href="https://developers.google.com/site-policies#restrictions">特别注明</a>外，
+本页内容均采用知识共享-署名（CC-BY）3.0协议授权，代码采用<a href="https://golang-china.appspot.com/LICENSE">BSD协议</a>授权。<br>
+<a href="https://golang-china.appspot.com/doc/tos.html">服务条款</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">隐私政策</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="./ioutil - Go 编程语言_files/jquery.js"></script>
+<script type="text/javascript" src="./ioutil - Go 编程语言_files/jquery.treeview.js"></script>
+<script type="text/javascript" src="./ioutil - Go 编程语言_files/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="./ioutil - Go 编程语言_files/playground.js"></script>
+
+<script type="text/javascript" src="./ioutil - Go 编程语言_files/godocs.js"></script>
+
+
+
+</body></html>

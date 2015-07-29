@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://golang-china.appspot.com/pkg/bytes/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<!--
+  <title>bytes - The Go Programming Language</title>
+-->
+  <title>bytes - Go 编程语言</title>
+
+<link type="text/css" rel="stylesheet" href="./bytes - Go 编程语言_files/style.css">
+
+<link rel="search" type="application/opensearchdescription+xml" title="godoc" href="https://golang-china.appspot.com/opensearch.xml">
+
+<link rel="stylesheet" href="https://golang-china.appspot.com/lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id="lowframe" style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+
+<form method="GET" action="https://golang-china.appspot.com/search" id="1607877632">
+<div id="menu" style="min-width: 650px;">
+<!--
+<a href="/doc/">Documents</a>
+<a href="/pkg/">Packages</a>
+<a href="/project/">The Project</a>
+<a href="/help/">Help</a>
+<a href="/blog/">Blog</a>
+-->
+<a href="https://golang-china.appspot.com/doc/">文档</a>
+<a href="https://golang-china.appspot.com/pkg/">包</a>
+<a href="https://golang-china.appspot.com/project/">项目</a>
+<a href="https://golang-china.appspot.com/help/">帮助</a>
+<a href="https://golang-china.appspot.com/blog/">博客</a>
+
+<!--
+<a id="playgroundButton" href="http://play.golang.org/" title="Show Go Playground">Play</a>
+-->
+<a id="playgroundButton" href="http://play.golang.org/" title="显示 Go 操场" style="display: inline;">运行</a>
+
+<!--
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+-->
+<input type="text" id="search" name="q" class="inactive" value="搜索" placeholder="搜索">
+</div>
+<!--
+<div id="heading"><a href="/">The Go Programming Language</a></div>
+-->
+<div id="heading"><a href="https://golang-china.appspot.com/">Go 编程语言</a></div>
+</form>
+
+</div></div>
+
+
+<div id="playground" class="play">
+	<div class="input"><textarea class="code">package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}</textarea></div>
+	<div class="output"></div>
+	<div class="buttons">
+<!--
+		<a class="run" title="Run this code [shift-enter]">Run</a>
+		<a class="fmt" title="Format this code">Format</a>
+		<a class="share" title="Share this code">Share</a>
+-->
+		<a class="run" title="运行此代码[Shift-Enter]">运行</a>
+		<a class="fmt" title="格式化此代码">格式化</a>
+		<a class="share" title="分享此代码">分享</a>
+	</div>
+</div>
+
+
+<div id="page" class="wide" tabindex="-1" style="outline: 0px;">
+<div class="container">
+
+
+<div class="lang-switch-button-group" role="group">
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;, &quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;, &quot;none&quot;);console.log(&quot;lang-en&quot;);">英文</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-en-zh&quot;);">对照</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;none&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-zh&quot;);">中文</button>
+</div>
+
+
+
+  <h1>Package bytes</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type="text/javascript">
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "bytes"</code></dd>
+			</dl>
+			<dl>
+<!--
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+-->
+			<dd><a href="https://golang-china.appspot.com/pkg/bytes/#pkg-overview" class="overviewLink">概览</a></dd>
+			<dd><a href="https://golang-china.appspot.com/pkg/bytes/#pkg-index" class="indexLink">索引</a></dd>
+			
+<!--
+				<dd><a href="#pkg-examples" class="examplesLink">Examples</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#pkg-examples" class="examplesLink">示例</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+<!--
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+-->
+				<h2 class="toggleButton" title="点此显示概览">概览 ▹</h2>
+			</div>
+			<div class="expanded">
+<!--
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+-->
+				<h2 class="toggleButton" title="点此隐藏概览">概览 ▾</h2>
+				<p>
+bytes 包实现了操作 byte 切片的常用函数.
+bytes 包和 strings 包的结构很相似.
+</p>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示素引">索引 ▹</h2>
+		</div>
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏索引">索引 ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+<!--
+				<dd><a href="#pkg-constants">Constants</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#pkg-constants">常量</a></dd>
+			
+			
+<!--
+				<dd><a href="#pkg-variables">Variables</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#pkg-variables">变量</a></dd>
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Compare">func Compare(a, b []byte) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Contains">func Contains(b, subslice []byte) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Count">func Count(s, sep []byte) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Equal">func Equal(a, b []byte) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#EqualFold">func EqualFold(s, t []byte) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Fields">func Fields(s []byte) [][]byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#FieldsFunc">func FieldsFunc(s []byte, f func(rune) bool) [][]byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#HasPrefix">func HasPrefix(s, prefix []byte) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#HasSuffix">func HasSuffix(s, suffix []byte) bool</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Index">func Index(s, sep []byte) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#IndexAny">func IndexAny(s []byte, chars string) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#IndexByte">func IndexByte(s []byte, c byte) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#IndexFunc">func IndexFunc(s []byte, f func(r rune) bool) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#IndexRune">func IndexRune(s []byte, r rune) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Join">func Join(s [][]byte, sep []byte) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#LastIndex">func LastIndex(s, sep []byte) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#LastIndexAny">func LastIndexAny(s []byte, chars string) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#LastIndexByte">func LastIndexByte(s []byte, c byte) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#LastIndexFunc">func LastIndexFunc(s []byte, f func(r rune) bool) int</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Map">func Map(mapping func(r rune) rune, s []byte) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Repeat">func Repeat(b []byte, count int) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Replace">func Replace(s, old, new []byte, n int) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Runes">func Runes(s []byte) []rune</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Split">func Split(s, sep []byte) [][]byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#SplitAfter">func SplitAfter(s, sep []byte) [][]byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#SplitAfterN">func SplitAfterN(s, sep []byte, n int) [][]byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#SplitN">func SplitN(s, sep []byte, n int) [][]byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Title">func Title(s []byte) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#ToLower">func ToLower(s []byte) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#ToLowerSpecial">func ToLowerSpecial(_case unicode.SpecialCase, s []byte) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#ToTitle">func ToTitle(s []byte) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#ToTitleSpecial">func ToTitleSpecial(_case unicode.SpecialCase, s []byte) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#ToUpper">func ToUpper(s []byte) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#ToUpperSpecial">func ToUpperSpecial(_case unicode.SpecialCase, s []byte) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Trim">func Trim(s []byte, cutset string) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#TrimFunc">func TrimFunc(s []byte, f func(r rune) bool) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#TrimLeft">func TrimLeft(s []byte, cutset string) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#TrimLeftFunc">func TrimLeftFunc(s []byte, f func(r rune) bool) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#TrimPrefix">func TrimPrefix(s, prefix []byte) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#TrimRight">func TrimRight(s []byte, cutset string) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#TrimRightFunc">func TrimRightFunc(s []byte, f func(r rune) bool) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#TrimSpace">func TrimSpace(s []byte) []byte</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#TrimSuffix">func TrimSuffix(s, suffix []byte) []byte</a></dd>
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">type Buffer</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#NewBuffer">func NewBuffer(buf []byte) *Buffer</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#NewBufferString">func NewBufferString(s string) *Buffer</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.Bytes">func (b *Buffer) Bytes() []byte</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.Cap">func (b *Buffer) Cap() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.Grow">func (b *Buffer) Grow(n int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.Len">func (b *Buffer) Len() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.Next">func (b *Buffer) Next(n int) []byte</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.Read">func (b *Buffer) Read(p []byte) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.ReadByte">func (b *Buffer) ReadByte() (c byte, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.ReadBytes">func (b *Buffer) ReadBytes(delim byte) (line []byte, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.ReadFrom">func (b *Buffer) ReadFrom(r io.Reader) (n int64, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.ReadRune">func (b *Buffer) ReadRune() (r rune, size int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.ReadString">func (b *Buffer) ReadString(delim byte) (line string, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.Reset">func (b *Buffer) Reset()</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.String">func (b *Buffer) String() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.Truncate">func (b *Buffer) Truncate(n int)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.UnreadByte">func (b *Buffer) UnreadByte() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.UnreadRune">func (b *Buffer) UnreadRune() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.Write">func (b *Buffer) Write(p []byte) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.WriteByte">func (b *Buffer) WriteByte(c byte) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.WriteRune">func (b *Buffer) WriteRune(r rune) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.WriteString">func (b *Buffer) WriteString(s string) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Buffer.WriteTo">func (b *Buffer) WriteTo(w io.Writer) (n int64, err error)</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#Reader">type Reader</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#NewReader">func NewReader(b []byte) *Reader</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Reader.Len">func (r *Reader) Len() int</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Reader.Read">func (r *Reader) Read(b []byte) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Reader.ReadAt">func (r *Reader) ReadAt(b []byte, off int64) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Reader.ReadByte">func (r *Reader) ReadByte() (b byte, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Reader.ReadRune">func (r *Reader) ReadRune() (ch rune, size int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Reader.Seek">func (r *Reader) Seek(offset int64, whence int) (int64, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Reader.Size">func (r *Reader) Size() int64</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Reader.UnreadByte">func (r *Reader) UnreadByte() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Reader.UnreadRune">func (r *Reader) UnreadRune() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/bytes/#Reader.WriteTo">func (r *Reader) WriteTo(w io.Writer) (n int64, err error)</a></dd>
+				
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/bytes/#pkg-note-BUG">Bugs</a></dd>
+				
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+		<div id="pkg-examples">
+<!--
+			<h4>Examples</h4>
+-->
+			<h4>示例</h4>
+			<dl>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/bytes/#example_Buffer">Buffer</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/bytes/#example_Buffer_reader">Buffer (Reader)</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/bytes/#example_Compare">Compare</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/bytes/#example_Compare_search">Compare (Search)</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/bytes/#example_TrimPrefix">TrimPrefix</a></dd>
+			
+			<dd><a class="exampleLink" href="https://golang-china.appspot.com/pkg/bytes/#example_TrimSuffix">TrimSuffix</a></dd>
+			
+			</dl>
+		</div>
+		
+
+		
+<!--
+			<h4>Package files</h4>
+-->
+			<h4>包文件</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="https://golang-china.appspot.com/src/bytes/buffer.go">buffer.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/bytes/bytes.go">bytes.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/bytes/bytes_decl.go">bytes_decl.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/bytes/reader.go">reader.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示内部调用图">内部调用图 ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏内部调用图">内部调用图 ▾</h2>
+<!--
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+-->
+			<p>
+			在下面的调用图查看器中，每个节点都是一个属于本包的函数，其子节点即为它所调用的函数——或许是动态的。
+			</p>
+			<p>
+			根节点为包的入口点：函数可从包的外部调用。若这些函数被其它包动态地调用，
+			那么它们可能是未导出的或匿名的。
+			</p>
+			<p>
+			点击一个节点来查看该函数的源码。在源码中，可以点击它的 <code>func</code>
+			声明标记来查看其调用者。
+			</p>
+			<p>
+			在分析特定程序或测试时，被认定为无法访问的函数会被忽略。
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+<!--
+			<h2 id="pkg-constants">Constants</h2>
+-->
+			<h2 id="pkg-constants">常量</h2>
+			
+				<pre>const <span id="MinRead">MinRead</span> = 512</pre>
+				<p>
+MinRead 是被 Buffer.ReadFrom 传递给 Read 调用的切片的最小尺寸.
+只要 Buffer 在保存 r 内容之外有最少 MinRead 字节的余量, 其 ReadFrom 方法就不会增加底层的缓冲.
+</p>
+
+			
+		
+		
+<!--
+			<h2 id="pkg-variables">Variables</h2>
+-->
+			<h2 id="pkg-variables">变量</h2>
+			
+				<pre>var <span id="ErrTooLarge">ErrTooLarge</span> = <a href="https://golang-china.appspot.com/pkg/errors/">errors</a>.<a href="https://golang-china.appspot.com/pkg/errors/#New">New</a>("bytes.Buffer: too large")</pre>
+				<p>
+如果不能申请足够保存数据的缓冲, ErrTooLarge 就会被传递给 panic 函数.
+</p>
+
+			
+		
+		
+			
+			
+			<h2 id="Compare">func <a href="https://golang-china.appspot.com/src/bytes/bytes_decl.go?s=785:814#L14">Compare</a></h2>
+			<pre>func Compare(a, b []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+Compare 函数返回一个整数表示两个 byte 切片按字典序的比较结果.
+如果 a==b 返回0, 如果 a&lt;b 返回 -1, 否则返回+1.
+nil 参数视为空切片.
+</p>
+
+			<div id="example_Compare" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"bytes"
+)
+
+func main() {
+	// Interpret Compare's result by comparing it to zero.
+	var a, b []byte
+	if bytes.Compare(a, b) &lt; 0 {
+		// a less b
+	}
+	if bytes.Compare(a, b) &lt;= 0 {
+		// a less or equal b
+	}
+	if bytes.Compare(a, b) &gt; 0 {
+		// a greater b
+	}
+	if bytes.Compare(a, b) &gt;= 0 {
+		// a greater or equal b
+	}
+
+	// Prefer Equal to Compare for equality comparisons.
+	if bytes.Equal(a, b) {
+		// a equal b
+	}
+	if !bytes.Equal(a, b) {
+		// a not equal b
+	}
+}
+</textarea></div>
+				<div class="output"><pre></pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+<div id="example_Compare_search" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example (Search)</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例 (Search)</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example (Search)</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例 (Search)</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"bytes"
+	"sort"
+)
+
+func main() {
+	// Binary search to find a matching byte slice.
+	var needle []byte
+	var haystack [][]byte // Assume sorted
+	i := sort.Search(len(haystack), func(i int) bool {
+		// Return haystack[i] &gt;= needle.
+		return bytes.Compare(haystack[i], needle) &gt;= 0
+	})
+	if i &lt; len(haystack) &amp;&amp; bytes.Equal(haystack[i], needle) {
+		// Found it!
+	}
+}
+</textarea></div>
+				<div class="output"><pre></pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="Contains">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=1583:1621#L72">Contains</a></h2>
+			<pre>func Contains(b, subslice []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+Contains 判断切片 b 是否包含子切片 subslice.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Count">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=1147:1176#L41">Count</a></h2>
+			<pre>func Count(s, sep []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+Count 统计切片 s 包含 切片 b 的次数.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Equal">func <a href="https://golang-china.appspot.com/src/bytes/bytes_decl.go?s=523:551#L7">Equal</a></h2>
+			<pre>func Equal(a, b []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+Equal 判断两个切片的内容是否完全相同.
+nil 参数视为空切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="EqualFold">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=17532:17564#L653">EqualFold</a></h2>
+			<pre>func EqualFold(s, t []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+EqualFold 判断两个 UTF-8 编码切片是否相同, 忽略大小写.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Fields">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=6593:6623#L263">Fields</a></h2>
+			<pre>func Fields(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) [][]<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+Fields 返回将字符串按照空白分割的多个子切片.
+如果字符串全部是空白或者是空字符串的话, 会返回空切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="FieldsFunc">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=7099:7152#L273">FieldsFunc</a></h2>
+			<pre>func FieldsFunc(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, f func(<a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) [][]<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+FieldsFunc 类似 Fields, 但使用函数f来确定分割符.
+如果字符串全部是分隔符或者是空字符串的话, 会返回空切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasPrefix">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=8302:8339#L334">HasPrefix</a></h2>
+			<pre>func HasPrefix(s, prefix []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+HasPrefix 判断 s 前缀是否是 prefix.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="HasSuffix">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=8472:8509#L339">HasSuffix</a></h2>
+			<pre>func HasSuffix(s, suffix []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a></pre>
+			<p>
+HasSuffix 判断 s 后缀是否是 suffix.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Index">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=1756:1785#L77">Index</a></h2>
+			<pre>func Index(s, sep []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+Index 返回子切片 sep 在 s 中第一次出现的位置, 不存在则返回 -1.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="IndexAny">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=3402:3443#L159">IndexAny</a></h2>
+			<pre>func IndexAny(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, chars <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+IndexAny 返回字符串 chars 中的任一个 utf-8 编码字符在 s 中第一次出现的位置,
+如不存在或者 chars 为空字符串则返回 -1.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="IndexByte">func <a href="https://golang-china.appspot.com/src/bytes/bytes_decl.go?s=287:323#L1">IndexByte</a></h2>
+			<pre>func IndexByte(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, c <a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+IndexByte returns the index of the first instance of c in s, or -1 if c is not
+present in s.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="IndexFunc">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=14025:14074#L514">IndexFunc</a></h2>
+			<pre>func IndexFunc(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, f func(r <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+IndexFunc 返回 s 中第一个满足函数 f 的位置 i, 不存在则返回 -1.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="IndexRune">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=2981:3017#L144">IndexRune</a></h2>
+			<pre>func IndexRune(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, r <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+IndexRune 返回 unicode 字符 r 的 utf-8 编码在 s 中第一次出现的位置, 不存在则返回 -1.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Join">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=7865:7905#L311">Join</a></h2>
+			<pre>func Join(s [][]<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, sep []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+Join 将一系列 byte 切片连接为一个 byte 切片, 之间用 sep 来分隔, 返回生成的新切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="LastIndex">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=2334:2367#L117">LastIndex</a></h2>
+			<pre>func LastIndex(s, sep []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+LastIndex 返回切片 sep 在字符串 s 中最后一次出现的位置, 不存在则返回-1.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="LastIndexAny">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=4003:4048#L184">LastIndexAny</a></h2>
+			<pre>func LastIndexAny(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, chars <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+LastIndexAny 返回字符串 chars 中的任一个 utf-8 字符在 s 中最后一次出现的位置,
+如不存在或者 chars 为空字符串则返回 -1.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="LastIndexByte">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=2651:2691#L132">LastIndexByte</a></h2>
+			<pre>func LastIndexByte(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, c <a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+LastIndexByte returns the index of the last instance of c in s, or -1 if c is not present in s.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="LastIndexFunc">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=14295:14348#L521">LastIndexFunc</a></h2>
+			<pre>func LastIndexFunc(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, f func(r <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+			<p>
+LastIndexFunc 返回 s 中最后一个满足函数 f 的 unicode 码值的位置i,
+不存在则返回 -1.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Map">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=8894:8946#L347">Map</a></h2>
+			<pre>func Map(mapping func(r <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>, s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+Map 将 s 的每一个 unicode 码值 r 都替换为 mapping(r), 返回这些新码值组成的切片拷贝.
+如果 mapping 返回一个负值, 将会丢弃该码值而不会被替换.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Repeat">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=9819:9858#L381">Repeat</a></h2>
+			<pre>func Repeat(b []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, count <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+Repeat 返回 count 个 b 串联形成的新的切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Replace">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=16775:16821#L615">Replace</a></h2>
+			<pre>func Replace(s, old, new []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+Replace 返回将 s 中前 n 个不重叠 old 切片序列都替换为 new 的新的切片拷贝.
+如果 n&lt;0 会替换所有 old 子切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Runes">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=16284:16311#L597">Runes</a></h2>
+			<pre>func Runes(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a></pre>
+			<p>
+Runes 函数返回和 s 等价的 rune 切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Split">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=6017:6051#L251">Split</a></h2>
+			<pre>func Split(s, sep []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) [][]<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+Split 用去掉 s 中出现的 sep 的方式进行分割, 会分割到结尾,
+并返回生成的所有 byte 切片组成的切片.
+如果 sep 为空字符, Split 会将 s 切分成每一个 unicode 码值一个 byte 切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="SplitAfter">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=6320:6359#L257">SplitAfter</a></h2>
+			<pre>func SplitAfter(s, sep []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) [][]<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+SplitAfter 用从 s 中出现的 sep 后面切断的方式进行分割, 会分割到结尾,
+并返回生成的所有 byte 切片组成的切片.
+如果 sep 为空字符, Split 会将 s 切分成每一个 unicode 码值一个 byte 切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="SplitAfterN">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=5696:5743#L243">SplitAfterN</a></h2>
+			<pre>func SplitAfterN(s, sep []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) [][]<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+SplitAfterN 用从 s 中出现的 sep 后面切断的方式进行分割, 会分割到最多 n 个子切片,
+并返回生成的所有 byte 切片组成的切片.
+如果 sep 为空字符, Split 会将 s 切分成每一个 unicode 码值一个 byte 切片.
+参数n决定返回的切片的数目:
+</p>
+<pre>n &gt; 0: 返回的切片最多n个子字符串；最后一个子字符串包含未进行切割的部分。
+n == 0: 返回nil
+n &lt; 0: 返回所有的子字符串组成的切片
+</pre>
+
+			
+			
+
+		
+			
+			
+			<h2 id="SplitN">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=5228:5270#L234">SplitN</a></h2>
+			<pre>func SplitN(s, sep []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) [][]<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+SplitN 用去掉 s 中出现的 sep 的方式进行分割, 会分割到最多n个子切片,
+并返回生成的所有 byte 切片组成的切片.
+如果 sep 为空字符, Split 会将 s 切分成每一个 unicode 码值一个 byte 切片.
+参数n决定返回的切片的数目:
+</p>
+<pre>n &gt; 0: 返回的切片最多n个子字符串, 最后一个子字符串包含未进行切割的部分.
+n == 0: 返回nil
+n &lt; 0: 返回所有的子字符串组成的切片
+</pre>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Title">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=12190:12217#L447">Title</a></h2>
+			<pre>func Title(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+Title 返回 s 中每个单词的首字母都改为标题格式的拷贝.
+</p>
+<p>
+BUG: Title 用于划分单词的规则不能很好的处理 Unicode 标点符号.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToLower">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=10250:10279#L395">ToLower</a></h2>
+			<pre>func ToLower(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+ToLower 返回将所有字母都转为对应的小写版本的拷贝.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToLowerSpecial">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=10920:10983#L408">ToLowerSpecial</a></h2>
+			<pre>func ToLowerSpecial(_case <a href="https://golang-china.appspot.com/pkg/unicode/">unicode</a>.<a href="https://golang-china.appspot.com/pkg/unicode/#SpecialCase">SpecialCase</a>, s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+ToLowerSpecial 使用 _case 规定的字符映射, 返回将所有字母都转为对应的小写版本的拷贝.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToTitle">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=10415:10444#L398">ToTitle</a></h2>
+			<pre>func ToTitle(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+ToTitle 返回将所有字母都转为对应的标题版本的拷贝.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToTitleSpecial">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=11205:11268#L414">ToTitleSpecial</a></h2>
+			<pre>func ToTitleSpecial(_case <a href="https://golang-china.appspot.com/pkg/unicode/">unicode</a>.<a href="https://golang-china.appspot.com/pkg/unicode/#SpecialCase">SpecialCase</a>, s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+ToTitleSpecial 使用 _case 规定的字符映射, 返回将所有字母都转为对应的标题版本的拷贝.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToUpper">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=10085:10114#L392">ToUpper</a></h2>
+			<pre>func ToUpper(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+ToUpper 返回将所有字母都转为对应的大写版本的拷贝.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ToUpperSpecial">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=10635:10698#L402">ToUpperSpecial</a></h2>
+			<pre>func ToUpperSpecial(_case <a href="https://golang-china.appspot.com/pkg/unicode/">unicode</a>.<a href="https://golang-china.appspot.com/pkg/unicode/#SpecialCase">SpecialCase</a>, s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+ToUpperSpecial 使用 _case 规定的字符映射, 返回将所有字母都转为对应的大写版本的拷贝.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="Trim">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=15477:15518#L574">Trim</a></h2>
+			<pre>func Trim(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, cutset <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+Trim 返回将 s 前后端所有 cutset 包含的 unicode 码值都去掉的子切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TrimFunc">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=13257:13308#L489">TrimFunc</a></h2>
+			<pre>func TrimFunc(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, f func(r <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+TrimFunc returns a subslice of s by slicing off all leading and trailing
+UTF-8-encoded Unicode code points c that satisfy f(c).
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TrimLeft">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=15689:15734#L580">TrimLeft</a></h2>
+			<pre>func TrimLeft(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, cutset <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+TrimLeft 返回将 s 前端所有 cutset 包含的 unicode 码值都去掉的子切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TrimLeftFunc">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=12649:12704#L466">TrimLeftFunc</a></h2>
+			<pre>func TrimLeftFunc(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, f func(r <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+TrimLeftFunc 返回将 s 前端所有满足 f 的 unicode 码值都去掉的子切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TrimPrefix">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=13487:13527#L495">TrimPrefix</a></h2>
+			<pre>func TrimPrefix(s, prefix []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+TrimPrefix 返回去除 s 可能的前缀 prefix 的子切片.
+</p>
+
+			<div id="example_TrimPrefix" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"bytes"
+	"fmt"
+)
+
+func main() {
+	var b = []byte("Goodbye,, world!")
+	b = bytes.TrimPrefix(b, []byte("Goodbye,"))
+	b = bytes.TrimPrefix(b, []byte("See ya,"))
+	fmt.Printf("Hello%s", b)
+}
+</textarea></div>
+				<div class="output"><pre>Hello, world!
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+			
+			
+			<h2 id="TrimRight">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=15920:15966#L586">TrimRight</a></h2>
+			<pre>func TrimRight(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, cutset <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+TrimRight 返回将 s 后端所有 cutset 包含的 unicode 码值都去掉的子切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TrimRightFunc">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=12910:12966#L476">TrimRightFunc</a></h2>
+			<pre>func TrimRightFunc(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, f func(r <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+TrimRightFunc 返回将 s 前后端所有满足 f 的 unicode 码值都去掉的子切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TrimSpace">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=16137:16168#L592">TrimSpace</a></h2>
+			<pre>func TrimSpace(s []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+TrimSpace 返回将 s 前后端所有空白都去掉的子切片.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="TrimSuffix">func <a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=13725:13765#L504">TrimSuffix</a></h2>
+			<pre>func TrimSuffix(s, suffix []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+			<p>
+TrimSuffix 返回去除 s 可能的后缀 suffix 的子切片.
+</p>
+
+			<div id="example_TrimSuffix" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"bytes"
+	"os"
+)
+
+func main() {
+	var b = []byte("Hello, goodbye, etc!")
+	b = bytes.TrimSuffix(b, []byte("goodbye, etc!"))
+	b = bytes.TrimSuffix(b, []byte("gopher"))
+	b = append(b, bytes.TrimSuffix([]byte("world!"), []byte("x!"))...)
+	os.Stdout.Write(b)
+}
+</textarea></div>
+				<div class="output"><pre>Hello, world!
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+
+		
+		
+			
+			
+			<h2 id="Buffer">type <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=402:854#L7">Buffer</a></h2>
+			<pre>type Buffer struct {
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Buffer 是一个实现了读写方法的可变大小的字节缓冲.
+本类型的零值是一个空的可用于读写的缓冲.
+</p>
+
+
+			
+
+			
+
+			<div id="example_Buffer" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"bytes"
+	"fmt"
+	"os"
+)
+
+func main() {
+	var b bytes.Buffer // A Buffer needs no initialization.
+	b.Write([]byte("Hello "))
+	fmt.Fprintf(&amp;b, "world!")
+	b.WriteTo(os.Stdout)
+}
+</textarea></div>
+				<div class="output"><pre>Hello world!
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+<div id="example_Buffer_reader" class="toggle">
+	<div class="collapsed">
+<!--
+		<p class="exampleHeading toggleButton">▹ <span class="text">Example (Reader)</span></p>
+-->
+		<p class="exampleHeading toggleButton">▹ <span class="text">示例 (Reader)</span></p>
+	</div>
+	<div class="expanded">
+<!--
+		<p class="exampleHeading toggleButton">▾ <span class="text">Example (Reader)</span></p>
+-->
+		<p class="exampleHeading toggleButton">▾ <span class="text">示例 (Reader)</span></p>
+		
+		
+		
+			<div class="play">
+				<div class="input"><textarea class="code">package main
+
+import (
+	"bytes"
+	"encoding/base64"
+	"io"
+	"os"
+)
+
+func main() {
+	// A Buffer can turn a string or a []byte into an io.Reader.
+	buf := bytes.NewBufferString("R29waGVycyBydWxlIQ==")
+	dec := base64.NewDecoder(base64.StdEncoding, buf)
+	io.Copy(os.Stdout, dec)
+}
+</textarea></div>
+				<div class="output"><pre>Gophers rule!
+</pre></div>
+				<div class="buttons">
+<!--
+					<a class="run" title="Run this code [shift-enter]">Run</a>
+					<a class="fmt" title="Format this code">Format</a>
+					<a class="share" title="Share this code">Share</a>
+-->
+					<a class="run" title="运行此代码[Shift+Enter]">运行</a>
+					<a class="fmt" title="格式化此代码">格式化</a>
+					<a class="share" title="分享此代码">分享</a>
+				</div>
+			</div>
+		
+	</div>
+</div>
+
+			
+			
+
+			
+				
+				<h3 id="NewBuffer">func <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=12902:12936#L396">NewBuffer</a></h3>
+				<pre>func NewBuffer(buf []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a></pre>
+				<p>
+NewBuffer 使用 buf 作为初始内容创建并初始化一个 Buffer.
+本函数用于创建一个用于读取已存在数据的 buffer, 也用于指定用于写入的内部缓冲的大小.
+此时, buf 应为一个具有指定容量但长度为 0 的切片.
+buf会 被作为返回值的底层缓冲切片.
+</p>
+<p>
+大多数情况下, new(Buffer)就足以初始化一个 Buffer 了.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewBufferString">func <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=13244:13282#L404">NewBufferString</a></h3>
+				<pre>func NewBufferString(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a></pre>
+				<p>
+NewBufferString 使用 s 作为初始内容创建并初始化一个 Buffer.
+本函数用于创建一个用于读取已存在数据的 buffer.
+</p>
+<p>
+大多数情况下, new(Buffer)就足以初始化一个Buffer了.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Buffer.Bytes">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=1593:1624#L33">Bytes</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) Bytes() []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+				<p>
+返回未读取部分字节数据的切片, len(b.Bytes()) == b.Len().
+如果中间没有调用其他方法, 修改返回的切片的内容会直接改变Buffer的内容.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.Cap">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=2218:2244#L51">Cap</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) Cap() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+				<p>
+Cap returns the capacity of the buffer's underlying byte slice, that is, the
+total space allocated for the buffer's data.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.Grow">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=3991:4019#L108">Grow</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) Grow(n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Grow 必要时会增加缓冲的容量, 以保证n字节的剩余空间.
+调用 Grow(n) 后至少可以向缓冲中写入 n 字节数据而无需申请内存.
+如果 n 小于零或者不能增加容量都会 panic.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.Len">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=2032:2058#L47">Len</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) Len() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+				<p>
+Len 返回缓冲中未读取部分的字节长度: b.Len() == len(b.Bytes()).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.Next">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=8887:8922#L267">Next</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) Next(n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a></pre>
+				<p>
+Next 返回未读取部分前 n 字节数据的切片, 并且移动读取位置, 就像调用了Read方法一样.
+如果缓冲内数据不足, 会返回整个数据的切片.
+切片只在下一次调用 b 的读/写方法前才合法.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.Read">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=8287:8337#L245">Read</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) Read(p []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Read 方法从缓冲中读取数据直到缓冲中没有数据或者读取了 len(p) 字节数据,
+将读取的数据写入p.
+返回值 n 是读取的字节数, 除非缓冲中完全没有数据可以读取并写入 p,
+此时返回值 err 为 io.EOF, 否则 err 总是 nil.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.ReadByte">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=9197:9244#L283">ReadByte</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) ReadByte() (c <a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+ReadByte 读取并返回缓冲中的下一个字节.
+如果没有数据可用, 返回值 err 为 io.EOF.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.ReadBytes">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=11416:11479#L356">ReadBytes</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) ReadBytes(delim <a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (line []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+ReadBytes 读取直到第一次遇到 delim 字节, 返回一个包含已读取的数据和delim字节的切片.
+如果 ReadBytes 方法在读取到 delim 之前遇到了错误, 它会返回在错误之前读取的数据以及该错误.
+当且仅当 ReadBytes 方法返回的切片不以 delim 结尾时, 会返回一个非 nil 的错误.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.ReadFrom">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=5385:5444#L144">ReadFrom</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) ReadFrom(r <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+ReadFrom 从 r 中读取数据直到结束并将读取的数据写入缓冲中, 如必要会增加缓冲容量.
+返回值 n 为从 r 读取并写入 b 的字节数, 会返回读取时遇到的除了io.EOF之外的错误.
+如果缓冲太大, ReadFrom 会采用错误值 ErrTooLarge 引发 panic.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.ReadRune">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=9695:9752#L301">ReadRune</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) ReadRune() (r <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>, size <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+ReadRune 读取并返回缓冲中的下一个 utf-8 码值.
+如果没有数据可用, 返回值 err 为 io.EOF.
+如果缓冲中的数据是错误的 utf-8 编码, 本方法会吃掉一字节并返回 (U+FFFD, 1, nil).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.ReadString">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=12373:12437#L384">ReadString</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) ReadString(delim <a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (line <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+ReadString 读取直到第一次遇到 delim 字节, 返回一个包含已读取的数据和delim字节的字符串.
+如果 ReadString 方法在读取到 delim 之前遇到了错误, 它会返回在错误之前读取的数据以及该错误.
+当且仅当 ReadString 方法返回的切片不以 delim 结尾时, 会返回一个非 nil 的错误.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.Reset">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=2734:2758#L69">Reset</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) Reset()</pre>
+				<p>
+Reset 重设缓冲, 因此会丢弃全部内容, 等价于 b.Truncate(0).
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.String">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=1787:1819#L37">String</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) String() <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a></pre>
+				<p>
+String 将未读取部分的字节数据作为字符串返回, 如果 b 是 nil 指针, 会返回 "&lt;nil&gt;".
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.Truncate">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=2411:2443#L55">Truncate</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) Truncate(n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>)</pre>
+				<p>
+Truncate 丢弃缓冲中除前 n 字节数据外的其它数据, 如果 n 小于零或者大于缓冲容量将panic.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.UnreadByte">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=10787:10822#L339">UnreadByte</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) UnreadByte() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+UnreadByte 吐出最近一次读取操作读取的最后一个字节.
+如果最后一次读取操作之后进行了写入, 本方法会返回错误.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.UnreadRune">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=10354:10389#L324">UnreadRune</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) UnreadRune() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+UnreadRune 吐出最近一次调用 ReadRune 方法读取的 unicode 码值.
+如果最近一次读写操作不是 ReadRune, 本方法会返回错误.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.Write">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=4333:4384#L119">Write</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) Write(p []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Write 将 p 的内容写入缓冲中, 如必要会增加缓冲容量.
+返回值 n 为 len(p), err 总是nil.
+如果缓冲变得太大, Write 会采用错误值 ErrTooLarge 引发 panic.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.WriteByte">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=7438:7478#L220">WriteByte</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) WriteByte(c <a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+WriteByte 将字节 c 写入缓冲中, 如必要会增加缓冲容量.
+返回值总是 nil, 但仍保留以匹配 bufio.Writer 的 WriteByte 方法.
+如果缓冲太大, WriteByte 会采用错误值 ErrTooLarge 引发 panic.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.WriteRune">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=7839:7892#L231">WriteRune</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) WriteRune(r <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+WriteByte 将 unicode 码值 r 的 utf-8 编码写入缓冲中, 如必要会增加缓冲容量.
+返回值总是 nil, 但仍保留以匹配 bufio.Writer 的 WriteRune 方法.
+如果缓冲太大, WriteRune 会采用错误值 ErrTooLarge 引发 panic.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.WriteString">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=4691:4748#L128">WriteString</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) WriteString(s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+WriteString 将 s 的内容写入缓冲中, 如必要会增加缓冲容量.
+返回值 n 为 len(p), err总是nil.
+如果缓冲变得太大, WriteString 会采用错误值 ErrTooLarge 引发 panic.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Buffer.WriteTo">func (*Buffer) <a href="https://golang-china.appspot.com/src/bytes/buffer.go?s=6690:6748#L192">WriteTo</a></h3>
+				<pre>func (b *<a href="https://golang-china.appspot.com/pkg/bytes/#Buffer">Buffer</a>) WriteTo(w <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+WriteTo 从缓冲中读取数据直到缓冲内没有数据或遇到错误, 并将这些数据写入 w.
+返回值 n 为从 b 读取并写入 w 的字节数, 返回值总是可以无溢出的写入int类型,
+但为了匹配 io.WriterTo 接口设为 int64 类型.
+从 b 读取是遇到的非 io.EOF 错误及写入 w 时遇到的错误都会终止本方法并返回该错误.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Reader">type <a href="https://golang-china.appspot.com/src/bytes/reader.go?s=440:570#L7">Reader</a></h2>
+			<pre>type Reader struct {
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Reader 类型通过从一个 byte 切片读取数据,
+实现了 io.Reader, io.Seeker, io.ReaderAt, io.WriterTo, io.ByteScanner, io.RuneScanner 接口.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewReader">func <a href="https://golang-china.appspot.com/src/bytes/reader.go?s=3260:3292#L140">NewReader</a></h3>
+				<pre>func NewReader(b []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) *<a href="https://golang-china.appspot.com/pkg/bytes/#Reader">Reader</a></pre>
+				<p>
+NewReader 创建一个从 s 读取数据的 Reader.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Reader.Len">func (*Reader) <a href="https://golang-china.appspot.com/src/bytes/reader.go?s=646:672#L15">Len</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/bytes/#Reader">Reader</a>) Len() <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a></pre>
+				<p>
+Len 返回 r 包含的切片中还没有被读取的部分.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Reader.Read">func (*Reader) <a href="https://golang-china.appspot.com/src/bytes/reader.go?s=1039:1089#L28">Read</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/bytes/#Reader">Reader</a>) Read(b []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Reader.ReadAt">func (*Reader) <a href="https://golang-china.appspot.com/src/bytes/reader.go?s=1249:1312#L41">ReadAt</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/bytes/#Reader">Reader</a>) ReadAt(b []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, off <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Reader.ReadByte">func (*Reader) <a href="https://golang-china.appspot.com/src/bytes/reader.go?s=1558:1605#L56">ReadByte</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/bytes/#Reader">Reader</a>) ReadByte() (b <a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Reader.ReadRune">func (*Reader) <a href="https://golang-china.appspot.com/src/bytes/reader.go?s=1873:1931#L75">ReadRune</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/bytes/#Reader">Reader</a>) ReadRune() (ch <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>, size <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Reader.Seek">func (*Reader) <a href="https://golang-china.appspot.com/src/bytes/reader.go?s=2421:2483#L100">Seek</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/bytes/#Reader">Reader</a>) Seek(offset <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, whence <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) (<a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Seek 实现了 io.Seeker 接口.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Reader.Size">func (*Reader) <a href="https://golang-china.appspot.com/src/bytes/reader.go?s=981:1010#L26">Size</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/bytes/#Reader">Reader</a>) Size() <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a></pre>
+				<p>
+Size returns the original length of the underlying byte slice.
+Size is the number of bytes available for reading via ReadAt.
+The returned value is always the same and is not affected by calls
+to any other method.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Reader.UnreadByte">func (*Reader) <a href="https://golang-china.appspot.com/src/bytes/reader.go?s=1708:1743#L66">UnreadByte</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/bytes/#Reader">Reader</a>) UnreadByte() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Reader.UnreadRune">func (*Reader) <a href="https://golang-china.appspot.com/src/bytes/reader.go?s=2174:2209#L90">UnreadRune</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/bytes/#Reader">Reader</a>) UnreadRune() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Reader.WriteTo">func (*Reader) <a href="https://golang-china.appspot.com/src/bytes/reader.go?s=2871:2929#L121">WriteTo</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/bytes/#Reader">Reader</a>) WriteTo(w <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+WriteTo 实现了 io.WriterTo 接口.
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+		
+			<h2 id="pkg-note-BUG">Bugs</h2>
+			<ul style="list-style: none; padding: 0;">
+			
+			<li><a href="https://golang-china.appspot.com/src/bytes/bytes.go?s=12091:12189#L446">☞</a> The rule Title uses for word boundaries does not handle Unicode punctuation properly.
+</li>
+			
+			</ul>
+		
+	
+
+
+
+
+
+
+
+<!--
+<div id="footer">
+Build version go1.4.2 (appengine-1.9.21).<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="/LICENSE">BSD license</a>.<br>
+<a href="/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+-->
+<div id="footer">
+构建版本 go1.4.2 (appengine-1.9.21).<br>
+除<a href="https://developers.google.com/site-policies#restrictions">特别注明</a>外，
+本页内容均采用知识共享-署名（CC-BY）3.0协议授权，代码采用<a href="https://golang-china.appspot.com/LICENSE">BSD协议</a>授权。<br>
+<a href="https://golang-china.appspot.com/doc/tos.html">服务条款</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">隐私政策</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="./bytes - Go 编程语言_files/jquery.js"></script>
+<script type="text/javascript" src="./bytes - Go 编程语言_files/jquery.treeview.js"></script>
+<script type="text/javascript" src="./bytes - Go 编程语言_files/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="./bytes - Go 编程语言_files/playground.js"></script>
+
+<script type="text/javascript" src="./bytes - Go 编程语言_files/godocs.js"></script>
+
+
+
+</body></html>

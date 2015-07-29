@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://golang-china.appspot.com/pkg/io/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<!--
+  <title>io - The Go Programming Language</title>
+-->
+  <title>io - Go 编程语言</title>
+
+<link type="text/css" rel="stylesheet" href="./io - Go 编程语言_files/style.css">
+
+<link rel="search" type="application/opensearchdescription+xml" title="godoc" href="https://golang-china.appspot.com/opensearch.xml">
+
+<link rel="stylesheet" href="https://golang-china.appspot.com/lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id="lowframe" style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+
+<form method="GET" action="https://golang-china.appspot.com/search" id="870072544">
+<div id="menu" style="min-width: 650px;">
+<!--
+<a href="/doc/">Documents</a>
+<a href="/pkg/">Packages</a>
+<a href="/project/">The Project</a>
+<a href="/help/">Help</a>
+<a href="/blog/">Blog</a>
+-->
+<a href="https://golang-china.appspot.com/doc/">文档</a>
+<a href="https://golang-china.appspot.com/pkg/">包</a>
+<a href="https://golang-china.appspot.com/project/">项目</a>
+<a href="https://golang-china.appspot.com/help/">帮助</a>
+<a href="https://golang-china.appspot.com/blog/">博客</a>
+
+<!--
+<a id="playgroundButton" href="http://play.golang.org/" title="Show Go Playground">Play</a>
+-->
+<a id="playgroundButton" href="http://play.golang.org/" title="显示 Go 操场" style="display: inline;">运行</a>
+
+<!--
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+-->
+<input type="text" id="search" name="q" class="inactive" value="搜索" placeholder="搜索">
+</div>
+<!--
+<div id="heading"><a href="/">The Go Programming Language</a></div>
+-->
+<div id="heading"><a href="https://golang-china.appspot.com/">Go 编程语言</a></div>
+</form>
+
+</div></div>
+
+
+<div id="playground" class="play">
+	<div class="input"><textarea class="code">package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}</textarea></div>
+	<div class="output"></div>
+	<div class="buttons">
+<!--
+		<a class="run" title="Run this code [shift-enter]">Run</a>
+		<a class="fmt" title="Format this code">Format</a>
+		<a class="share" title="Share this code">Share</a>
+-->
+		<a class="run" title="运行此代码[Shift-Enter]">运行</a>
+		<a class="fmt" title="格式化此代码">格式化</a>
+		<a class="share" title="分享此代码">分享</a>
+	</div>
+</div>
+
+
+<div id="page" class="wide" tabindex="-1" style="outline: 0px;">
+<div class="container">
+
+
+<div class="lang-switch-button-group" role="group">
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;, &quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;, &quot;none&quot;);console.log(&quot;lang-en&quot;);">英文</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-en-zh&quot;);">对照</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;none&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-zh&quot;);">中文</button>
+</div>
+
+
+
+  <h1>Package io</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type="text/javascript">
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "io"</code></dd>
+			</dl>
+			<dl>
+<!--
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+-->
+			<dd><a href="https://golang-china.appspot.com/pkg/io/#pkg-overview" class="overviewLink">概览</a></dd>
+			<dd><a href="https://golang-china.appspot.com/pkg/io/#pkg-index" class="indexLink">索引</a></dd>
+			
+			
+<!--
+				<dd><a href="#pkg-subdirectories">Subdirectories</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#pkg-subdirectories">子目录</a></dd>
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+<!--
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+-->
+				<h2 class="toggleButton" title="点此显示概览">概览 ▹</h2>
+			</div>
+			<div class="expanded">
+<!--
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+-->
+				<h2 class="toggleButton" title="点此隐藏概览">概览 ▾</h2>
+				<p>
+io 包为I/O原语提供了基础的接口.
+它主要包装了这些原语的已有实现，如 os
+包中的那些，抽象成函数性的共享公共接口， 加上一些其它相关的原语。
+</p>
+<p>
+由于这些接口和原语以不同的实现包装了低级操作，因此除非另行通知，
+否则客户不应假定它们对于并行执行是安全的。
+</p>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示素引">索引 ▹</h2>
+		</div>
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏索引">索引 ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+<!--
+				<dd><a href="#pkg-variables">Variables</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#pkg-variables">变量</a></dd>
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#Copy">func Copy(dst Writer, src Reader) (written int64, err error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#CopyBuffer">func CopyBuffer(dst Writer, src Reader, buf []byte) (written int64, err error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#CopyN">func CopyN(dst Writer, src Reader, n int64) (written int64, err error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#ReadAtLeast">func ReadAtLeast(r Reader, buf []byte, min int) (n int, err error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#ReadFull">func ReadFull(r Reader, buf []byte) (n int, err error)</a></dd>
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#WriteString">func WriteString(w Writer, s string) (n int, err error)</a></dd>
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#ByteReader">type ByteReader</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#ByteScanner">type ByteScanner</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#ByteWriter">type ByteWriter</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#Closer">type Closer</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#LimitedReader">type LimitedReader</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#LimitedReader.Read">func (l *LimitedReader) Read(p []byte) (n int, err error)</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#PipeReader">type PipeReader</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#Pipe">func Pipe() (*PipeReader, *PipeWriter)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#PipeReader.Close">func (r *PipeReader) Close() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#PipeReader.CloseWithError">func (r *PipeReader) CloseWithError(err error) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#PipeReader.Read">func (r *PipeReader) Read(data []byte) (n int, err error)</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#PipeWriter">type PipeWriter</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#PipeWriter.Close">func (w *PipeWriter) Close() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#PipeWriter.CloseWithError">func (w *PipeWriter) CloseWithError(err error) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#PipeWriter.Write">func (w *PipeWriter) Write(data []byte) (n int, err error)</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#ReadCloser">type ReadCloser</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#ReadSeeker">type ReadSeeker</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#ReadWriteCloser">type ReadWriteCloser</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#ReadWriteSeeker">type ReadWriteSeeker</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#ReadWriter">type ReadWriter</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#Reader">type Reader</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#LimitReader">func LimitReader(r Reader, n int64) Reader</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#MultiReader">func MultiReader(readers ...Reader) Reader</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#TeeReader">func TeeReader(r Reader, w Writer) Reader</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#ReaderAt">type ReaderAt</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#ReaderFrom">type ReaderFrom</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#RuneReader">type RuneReader</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#RuneScanner">type RuneScanner</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#SectionReader">type SectionReader</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#NewSectionReader">func NewSectionReader(r ReaderAt, off int64, n int64) *SectionReader</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#SectionReader.Read">func (s *SectionReader) Read(p []byte) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#SectionReader.ReadAt">func (s *SectionReader) ReadAt(p []byte, off int64) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#SectionReader.Seek">func (s *SectionReader) Seek(offset int64, whence int) (int64, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#SectionReader.Size">func (s *SectionReader) Size() int64</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#Seeker">type Seeker</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#WriteCloser">type WriteCloser</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#WriteSeeker">type WriteSeeker</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#Writer">type Writer</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/io/#MultiWriter">func MultiWriter(writers ...Writer) Writer</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#WriterAt">type WriterAt</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/io/#WriterTo">type WriterTo</a></dd>
+				
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+<!--
+			<h4>Package files</h4>
+-->
+			<h4>包文件</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="https://golang-china.appspot.com/src/io/io.go">io.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/io/multi.go">multi.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/io/pipe.go">pipe.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示内部调用图">内部调用图 ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏内部调用图">内部调用图 ▾</h2>
+<!--
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+-->
+			<p>
+			在下面的调用图查看器中，每个节点都是一个属于本包的函数，其子节点即为它所调用的函数——或许是动态的。
+			</p>
+			<p>
+			根节点为包的入口点：函数可从包的外部调用。若这些函数被其它包动态地调用，
+			那么它们可能是未导出的或匿名的。
+			</p>
+			<p>
+			点击一个节点来查看该函数的源码。在源码中，可以点击它的 <code>func</code>
+			声明标记来查看其调用者。
+			</p>
+			<p>
+			在分析特定程序或测试时，被认定为无法访问的函数会被忽略。
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+		
+<!--
+			<h2 id="pkg-variables">Variables</h2>
+-->
+			<h2 id="pkg-variables">变量</h2>
+			
+				<pre>var <span id="EOF">EOF</span> = <a href="https://golang-china.appspot.com/pkg/errors/">errors</a>.<a href="https://golang-china.appspot.com/pkg/errors/#New">New</a>("EOF")</pre>
+				<p>
+EOF 是 Read 在没有更多输入可用时返回的错误。
+函数应当只为标志出优雅的输入结束而返回 EOF。若 EOF
+在结构化数据流中出现意外， 适当的错误不是 ErrUnexpectedEOF
+就是一些其它能给出更多详情的错误。
+</p>
+
+			
+				<pre>var <span id="ErrClosedPipe">ErrClosedPipe</span> = <a href="https://golang-china.appspot.com/pkg/errors/">errors</a>.<a href="https://golang-china.appspot.com/pkg/errors/#New">New</a>("io: read/write on closed pipe")</pre>
+				<p>
+ErrClosedPipe
+错误用于在已关闭的管道上进行读取或写入操作。
+</p>
+
+			
+				<pre>var <span id="ErrNoProgress">ErrNoProgress</span> = <a href="https://golang-china.appspot.com/pkg/errors/">errors</a>.<a href="https://golang-china.appspot.com/pkg/errors/#New">New</a>("multiple Read calls return no data or error")</pre>
+				<p>
+ErrNoProgress is returned by some clients of an io.Reader when many calls to
+Read have failed to return any data or error, usually the sign of a broken
+io.Reader implementation.
+</p>
+
+			
+				<pre>var <span id="ErrShortBuffer">ErrShortBuffer</span> = <a href="https://golang-china.appspot.com/pkg/errors/">errors</a>.<a href="https://golang-china.appspot.com/pkg/errors/#New">New</a>("short buffer")</pre>
+				<p>
+ErrShortBuffer 意为所需读取的缓存比提供的长。
+</p>
+
+			
+				<pre>var <span id="ErrShortWrite">ErrShortWrite</span> = <a href="https://golang-china.appspot.com/pkg/errors/">errors</a>.<a href="https://golang-china.appspot.com/pkg/errors/#New">New</a>("short write")</pre>
+				<p>
+ErrShortWrite
+意为接受写入的字节比请求的少，但失败将返回一个明确的错误。
+</p>
+
+			
+				<pre>var <span id="ErrUnexpectedEOF">ErrUnexpectedEOF</span> = <a href="https://golang-china.appspot.com/pkg/errors/">errors</a>.<a href="https://golang-china.appspot.com/pkg/errors/#New">New</a>("unexpected EOF")</pre>
+				<p>
+ErrUnexpectedEOF
+意为在读取固定大小的块或数据结构过程中遇到EOF。
+</p>
+
+			
+		
+		
+			
+			
+			<h2 id="Copy">func <a href="https://golang-china.appspot.com/src/io/io.go?s=12247:12307#L340">Copy</a></h2>
+			<pre>func Copy(dst <a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>, src <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>) (written <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+Copy 将 src 复制到 dst，直到在 src 上到达 EOF 或发生错误。
+它返回复制的字节数，如果有的话，还会返回在复制时遇到的第一个错误。
+</p>
+<p>
+成功的 Copy 返回 err == nil，而非 err == EOF。由于 Copy 被定义为从 src 读取直到 EOF
+为止，因此它不会将来自 Read 的 EOF 当做错误来报告。
+</p>
+<p>
+若 src 实现了 WriterTo 接口，其复制操作可通过调用 src.WriteTo(dst) 实现。 否则，若 dst 实现了 ReaderFrom
+接口，其复制操作可通过调用 dst.ReadFrom(src) 实现。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="CopyBuffer">func <a href="https://golang-china.appspot.com/src/io/io.go?s=12587:12665#L348">CopyBuffer</a></h2>
+			<pre>func CopyBuffer(dst <a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>, src <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>, buf []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (written <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+CopyBuffer is identical to Copy except that it stages through the
+provided buffer (if one is required) rather than allocating a
+temporary one. If buf is nil, one is allocated; otherwise if it has
+zero length, CopyBuffer panics.
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="CopyN">func <a href="https://golang-china.appspot.com/src/io/io.go?s=11401:11471#L316">CopyN</a></h2>
+			<pre>func CopyN(dst <a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>, src <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>, n <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>) (written <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+CopyN 将 n 个字节从 src 复制到 dst。
+它返回复制的字节数以及在复制时遇到的最早的错误。由于 Read
+可以返回要求的全部数量及一个错误（包括 EOF），因此 CopyN 也能。
+</p>
+<p>
+若 dst 实现了 ReaderFrom
+接口，复制操作也就会使用它来实现。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ReadAtLeast">func <a href="https://golang-china.appspot.com/src/io/io.go?s=10363:10429#L282">ReadAtLeast</a></h2>
+			<pre>func ReadAtLeast(r <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>, buf []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, min <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+ReadAtLeast 将 r 读取到 buf 中，直到读了最少 min 个字节为止。
+它返回复制的字节数，如果读取的字节较少，还会返回一个错误。若没有读取字节， 错误就只是 EOF。如果一个 EOF
+发生在读取了少于 min 个字节之后，ReadAtLeast 就会返回 ErrUnexpectedEOF。若 min 大于 buf
+的长度，ReadAtLeast 就会返回 ErrShortBuffer。 对于返回值，当且仅当 err == nil 时，才有 n &gt;= min。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="ReadFull">func <a href="https://golang-china.appspot.com/src/io/io.go?s=11007:11061#L305">ReadFull</a></h2>
+			<pre>func ReadFull(r <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>, buf []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+ReadFull 精确地从 r 中将 len(buf) 个字节读取到 buf 中。
+它返回复制的字节数，如果读取的字节较少，还会返回一个错误。若没有读取字节， 错误就只是 EOF。如果一个 EOF
+发生在读取了一些但不是所有的字节后，ReadFull 就会返回 ErrUnexpectedEOF。
+对于返回值，当且仅当 err == nil 时，才有 n == len(buf)。
+</p>
+
+			
+			
+
+		
+			
+			
+			<h2 id="WriteString">func <a href="https://golang-china.appspot.com/src/io/io.go?s=9776:9831#L268">WriteString</a></h2>
+			<pre>func WriteString(w <a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>, s <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+			<p>
+WriteString 将字符串 s 的内容写入 w 中，它接受一个字节数组。 若 w 已经实现了 WriteString
+方法，就可以直接调用它。
+</p>
+
+			
+			
+
+		
+		
+			
+			
+			<h2 id="ByteReader">type <a href="https://golang-china.appspot.com/src/io/io.go?s=8266:8327#L219">ByteReader</a></h2>
+			<pre>type ByteReader interface {
+        ReadByte() (c <a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)
+}</pre>
+			<p>
+ByteReader 接口包装了 ReadByte 方法。
+</p>
+<p>
+ReadByte
+从输入中读取并返回下一个字节。若没有字节可用，就会置为 err。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ByteScanner">type <a href="https://golang-china.appspot.com/src/io/io.go?s=8628:8690#L230">ByteScanner</a></h2>
+			<pre>type ByteScanner interface {
+        <a href="https://golang-china.appspot.com/pkg/io/#ByteReader">ByteReader</a>
+        UnreadByte() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>
+}</pre>
+			<p>
+ByteScanner 接口将 UnreadByte 方法添加到基本的 ReadByte 方法。
+</p>
+<p>
+UnreadByte 使下一次调用 ReadByte 返回的字节与上一次调用 ReadByte 返回的相同。 调用 UnreadByte
+两次而中间没有调用 ReadByte 的话就会返回错误。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ByteWriter">type <a href="https://golang-china.appspot.com/src/io/io.go?s=8756:8810#L236">ByteWriter</a></h2>
+			<pre>type ByteWriter interface {
+        WriteByte(c <a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>
+}</pre>
+			<p>
+ByteWriter 接口包装了 WriteByte 方法。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Closer">type <a href="https://golang-china.appspot.com/src/io/io.go?s=3864:3904#L81">Closer</a></h2>
+			<pre>type Closer interface {
+        Close() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>
+}</pre>
+			<p>
+Closer 接口包装了基本的 Close 方法。
+</p>
+<p>
+Close
+的行为在第一次调用后没有定义。具体实现可能有自己的行为描述。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="LimitedReader">type <a href="https://golang-china.appspot.com/src/io/io.go?s=14028:14121#L405">LimitedReader</a></h2>
+			<pre>type LimitedReader struct {
+        R <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a> <span class="comment">// underlying reader</span>
+        N <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>  <span class="comment">// max bytes remaining</span>
+}</pre>
+			<p>
+LimitedReader 从 R 读取但将返回的数据量限制为 N 字节。每调用一次 Read 都将更新 N
+来反射新的剩余数量。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="LimitedReader.Read">func (*LimitedReader) <a href="https://golang-china.appspot.com/src/io/io.go?s=14123:14180#L410">Read</a></h3>
+				<pre>func (l *<a href="https://golang-china.appspot.com/pkg/io/#LimitedReader">LimitedReader</a>) Read(p []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="PipeReader">type <a href="https://golang-china.appspot.com/src/io/pipe.go?s=2308:2343#L114">PipeReader</a></h2>
+			<pre>type PipeReader struct {
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+PipeReader 是管道的读取端。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="Pipe">func <a href="https://golang-china.appspot.com/src/io/pipe.go?s=4486:4524#L179">Pipe</a></h3>
+				<pre>func Pipe() (*<a href="https://golang-china.appspot.com/pkg/io/#PipeReader">PipeReader</a>, *<a href="https://golang-china.appspot.com/pkg/io/#PipeWriter">PipeWriter</a>)</pre>
+				<p>
+Pipe 创建同步的内存管道。 它可用于将代码预期的 io.Reader 连接到代码预期的 io.Writer。
+一端的读取匹配另一端的写入，直接在这两端之间复制数据；它没有内部缓存。 它对于并行调用 Read 和 Write
+以及其它函数或 Close 来说都是安全的。 一旦等待的I/O结束，Close 就会完成。并行调用 Read 或并行调用 Write
+也同样安全： 同种类的调用将按顺序进行控制。
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="PipeReader.Close">func (*PipeReader) <a href="https://golang-china.appspot.com/src/io/pipe.go?s=2791:2825#L129">Close</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/io/#PipeReader">PipeReader</a>) Close() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Close
+关闭读取器；关闭后如果对管道的写入端进行写入操作，就会返回 ErrClosedPipe 错误。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PipeReader.CloseWithError">func (*PipeReader) <a href="https://golang-china.appspot.com/src/io/pipe.go?s=2976:3028#L135">CloseWithError</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/io/#PipeReader">PipeReader</a>) CloseWithError(err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+CloseWithError
+关闭读取器；关闭后如果对管道的写入端进行写入操作，就会返回 err 错误。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PipeReader.Read">func (*PipeReader) <a href="https://golang-china.appspot.com/src/io/pipe.go?s=2589:2646#L123">Read</a></h3>
+				<pre>func (r *<a href="https://golang-china.appspot.com/pkg/io/#PipeReader">PipeReader</a>) Read(data []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Read 实现了标准的 Read 接口：
+它从管道中读取数据并阻塞，直到写入器开始写入或写入端被关闭。
+若写入端带错误关闭，该错误将作为 err 返回；否则 err 为 EOF。
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="PipeWriter">type <a href="https://golang-china.appspot.com/src/io/pipe.go?s=3108:3143#L141">PipeWriter</a></h2>
+			<pre>type PipeWriter struct {
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+PipeReader 是管道的写入端。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="PipeWriter.Close">func (*PipeWriter) <a href="https://golang-china.appspot.com/src/io/pipe.go?s=3611:3645#L156">Close</a></h3>
+				<pre>func (w *<a href="https://golang-china.appspot.com/pkg/io/#PipeWriter">PipeWriter</a>) Close() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Close
+关闭写入器；关闭后如果对管道的读取端进行读取操作，就会返回 EOF 而不返回字节。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PipeWriter.CloseWithError">func (*PipeWriter) <a href="https://golang-china.appspot.com/src/io/pipe.go?s=3875:3927#L165">CloseWithError</a></h3>
+				<pre>func (w *<a href="https://golang-china.appspot.com/pkg/io/#PipeWriter">PipeWriter</a>) CloseWithError(err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+CloseWithError
+关闭写入器；关闭后如果对管道的读取端进行读取操作，就会返回错误 err 而不返回字节。
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="PipeWriter.Write">func (*PipeWriter) <a href="https://golang-china.appspot.com/src/io/pipe.go?s=3414:3472#L150">Write</a></h3>
+				<pre>func (w *<a href="https://golang-china.appspot.com/pkg/io/#PipeWriter">PipeWriter</a>) Write(data []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Write 实现了标准的 Write 接口：
+它将数据写入到管道中并阻塞，直到读取器读完所有的数据或读取端被关闭。
+若读取端带错误关闭，该错误将作为 err 返回；否则 err 为 ErrClosedPipe。
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="ReadCloser">type <a href="https://golang-china.appspot.com/src/io/io.go?s=4715:4760#L107">ReadCloser</a></h2>
+			<pre>type ReadCloser interface {
+        <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>
+        <a href="https://golang-china.appspot.com/pkg/io/#Closer">Closer</a>
+}</pre>
+			<p>
+ReadCloser 接口组合了基本的 Read 和 Close 方法。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ReadSeeker">type <a href="https://golang-china.appspot.com/src/io/io.go?s=5114:5159#L126">ReadSeeker</a></h2>
+			<pre>type ReadSeeker interface {
+        <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>
+        <a href="https://golang-china.appspot.com/pkg/io/#Seeker">Seeker</a>
+}</pre>
+			<p>
+ReadSeeker 接口组合了基本的 Read 和 Seek 方法。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ReadWriteCloser">type <a href="https://golang-china.appspot.com/src/io/io.go?s=4978:5036#L119">ReadWriteCloser</a></h2>
+			<pre>type ReadWriteCloser interface {
+        <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>
+        <a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>
+        <a href="https://golang-china.appspot.com/pkg/io/#Closer">Closer</a>
+}</pre>
+			<p>
+ReadWriteCloser 接口组合了基本的 Read、Write 和 Close 方法。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ReadWriteSeeker">type <a href="https://golang-china.appspot.com/src/io/io.go?s=5375:5433#L138">ReadWriteSeeker</a></h2>
+			<pre>type ReadWriteSeeker interface {
+        <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>
+        <a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>
+        <a href="https://golang-china.appspot.com/pkg/io/#Seeker">Seeker</a>
+}</pre>
+			<p>
+ReadWriteSeeker 接口组合了基本的 Read、Write 和 Seek 方法。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ReadWriter">type <a href="https://golang-china.appspot.com/src/io/io.go?s=4591:4636#L101">ReadWriter</a></h2>
+			<pre>type ReadWriter interface {
+        <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>
+        <a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>
+}</pre>
+			<p>
+ReadWriter 接口组合了基本的 Read 和 Write 方法。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Reader">type <a href="https://golang-china.appspot.com/src/io/io.go?s=3124:3184#L60">Reader</a></h2>
+			<pre>type Reader interface {
+        Read(p []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)
+}</pre>
+			<p>
+Reader 接口包装了基本的 Read 方法。
+</p>
+<p>
+Read 将 len(p) 个字节读取到 p 中。它返回读取的字节数 n（0 &lt;= n &lt;= len(p)）
+以及任何遇到的错误。即使 Read 返回的 n &lt; len(p)，它也会在调用过程中使用 p
+的全部作为暂存空间。若一些数据可用但不到 len(p) 个字节，Read
+会照例返回可用的东西， 而不是等待更多。
+</p>
+<p>
+当 Read 在成功读取 n &gt; 0 个字节后遇到一个错误或 EOF
+情况，它就会返回读取的字节数。
+它会从相同的调用中返回（非nil的）错误或从随后的调用中返回错误（和 n == 0）。
+这种一般情况的一个例子就是 Reader
+在输入流结束时会返回一个非零的字节数， 可能的返回不是 err == EOF 就是 err ==
+nil。无论如何，下一个 Read 都应当返回 0, EOF。
+</p>
+<p>
+调用者应当总在考虑到错误 err 前处理 n &gt; 0
+的字节。这样做可以在读取一些字节， 以及允许的 EOF 行为后正确地处理I/O错误。
+</p>
+<p>
+Read 的实现在 len(p) == 0
+以外的情况下会阻止返回零字节的计数和 nil 错误， 调用者应将返回 0 和 nil
+视作什么也没有发生；特别是它并不表示 EOF。
+</p>
+<p>
+实现必须不保留 p。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="LimitReader">func <a href="https://golang-china.appspot.com/src/io/io.go?s=13793:13835#L400">LimitReader</a></h3>
+				<pre>func LimitReader(r <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>, n <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>) <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a></pre>
+				<p>
+LimitReader 返回一个 Reader，它从 r 中读取 n 个字节后以 EOF 停止。 其基本实现为 *LimitedReader。
+</p>
+
+				
+				
+			
+				
+				<h3 id="MultiReader">func <a href="https://golang-china.appspot.com/src/io/multi.go?s=830:872#L21">MultiReader</a></h3>
+				<pre>func MultiReader(readers ...<a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>) <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a></pre>
+				<p>
+MultiReader 返回一个 Reader，它是输入 readers 提供的的逻辑拼接。
+它们按顺序读取。一旦所有的输入返回 EOF，Read 就会返回 EOF。 若任何 readers 返回了非 nil 或非 EOF
+错误，Read 就会返回该错误。
+</p>
+
+				
+				
+			
+				
+				<h3 id="TeeReader">func <a href="https://golang-china.appspot.com/src/io/io.go?s=16121:16162#L494">TeeReader</a></h3>
+				<pre>func TeeReader(r <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>, w <a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>) <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a></pre>
+				<p>
+TeeReader 返回一个 Reader，它将从 r 中读到的东西写入 w 中。 所有经由它处理的从 r
+的读取都匹配于对应的对 w 的写入。它没有内部缓存，
+即写入必须在读取完成前完成。任何在写入时遇到的错误都将作为读取错误来报告。
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="ReaderAt">type <a href="https://golang-china.appspot.com/src/io/io.go?s=7286:7361#L192">ReaderAt</a></h2>
+			<pre>type ReaderAt interface {
+        ReadAt(p []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, off <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)
+}</pre>
+			<p>
+ReaderAt 接口包装了基本的 ReadAt 方法。
+</p>
+<p>
+ReadAt 从基本输入源的偏移量 off 处开始，将 len(p) 个字节读取到 p 中。
+它返回读取的字节数 n（0 &lt;= n &lt;= len(p)）以及任何遇到的错误。
+</p>
+<p>
+当 ReadAt 返回的 n &lt; len(p)
+时，它就会返回一个非nil的错误来解释
+为什么没有返回更多的字节。在这一点上，ReadAt 比 Read 更严格。
+</p>
+<p>
+即使 ReadAt 返回的 n &lt; len(p)，它也会在调用过程中使用 p 的全部作为暂存空间。
+若一些数据可用但不到 len(p) 字节，ReadAt
+就会阻塞直到所有数据都可用或产生一个错误。 在这一点上 ReadAt 不同于 Read。
+</p>
+<p>
+若 n = len(p) 个字节在输入源的的结尾处由 ReadAt 返回，ReadAt 不是返回 err == EOF 就是返回 err == nil。
+</p>
+<p>
+若 ReadAt 按查找偏移量从输入源读取，ReadAt
+应当既不影响基本查找偏移量也不被它所影响。
+</p>
+<p>
+ReadAt 的客户端可对相同的输入源并行执行 ReadAt 调用。
+</p>
+<p>
+实现必须不保留 p。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="ReaderFrom">type <a href="https://golang-china.appspot.com/src/io/io.go?s=5729:5799#L151">ReaderFrom</a></h2>
+			<pre>type ReaderFrom interface {
+        ReadFrom(r <a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)
+}</pre>
+			<p>
+ReaderFrom 接口包装了 ReadFrom 方法。
+</p>
+<p>
+ReadFrom 从 r 中读取数据，直到 EOF 或发生错误。其返回值 n 为读取的字节数。 除 io.EOF
+之外，在读取过程中遇到的任何错误也将被返回。
+</p>
+<p>
+如果 ReaderFrom 可用，Copy 函数就会使用它。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="RuneReader">type <a href="https://golang-china.appspot.com/src/io/io.go?s=9034:9105#L245">RuneReader</a></h2>
+			<pre>type RuneReader interface {
+        ReadRune() (r <a href="https://golang-china.appspot.com/pkg/builtin/#rune">rune</a>, size <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)
+}</pre>
+			<p>
+RuneReader 接口包装了 ReadRune 方法。
+</p>
+<p>
+ReadRune
+读取单个用UTF-8编码的Unicode字符，并返回该符文及其字节大小。
+若没有字符可用，就会置为 err。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="RuneScanner">type <a href="https://golang-china.appspot.com/src/io/io.go?s=9406:9468#L256">RuneScanner</a></h2>
+			<pre>type RuneScanner interface {
+        <a href="https://golang-china.appspot.com/pkg/io/#RuneReader">RuneReader</a>
+        UnreadRune() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>
+}</pre>
+			<p>
+RuneScanner 接口将 UnreadRune 方法添加到基本的 ReadRune 方法。
+</p>
+<p>
+UnreadRune 使下一次调用 ReadRune 返回的符文与上一次调用 ReadRune 返回的相同。 调用 UnreadRune
+两次而中间没有调用 ReadRune 的话就会返回错误。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="SectionReader">type <a href="https://golang-china.appspot.com/src/io/io.go?s=14646:14730#L430">SectionReader</a></h2>
+			<pre>type SectionReader struct {
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+SectionReader 在基本 ReaderAt
+的片段上实现了Read、Seek和ReadAt。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewSectionReader">func <a href="https://golang-china.appspot.com/src/io/io.go?s=14433:14501#L424">NewSectionReader</a></h3>
+				<pre>func NewSectionReader(r <a href="https://golang-china.appspot.com/pkg/io/#ReaderAt">ReaderAt</a>, off <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, n <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>) *<a href="https://golang-china.appspot.com/pkg/io/#SectionReader">SectionReader</a></pre>
+				<p>
+NewSectionReader 返回一个 SectionReader，它从 r 中的偏移量 off 处读取 n 个字节后以 EOF 停止。
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="SectionReader.Read">func (*SectionReader) <a href="https://golang-china.appspot.com/src/io/io.go?s=14732:14789#L437">Read</a></h3>
+				<pre>func (s *<a href="https://golang-china.appspot.com/pkg/io/#SectionReader">SectionReader</a>) Read(p []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SectionReader.ReadAt">func (*SectionReader) <a href="https://golang-china.appspot.com/src/io/io.go?s=15369:15439#L470">ReadAt</a></h3>
+				<pre>func (s *<a href="https://golang-china.appspot.com/pkg/io/#SectionReader">SectionReader</a>) ReadAt(p []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, off <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SectionReader.Seek">func (*SectionReader) <a href="https://golang-china.appspot.com/src/io/io.go?s=15066:15135#L452">Seek</a></h3>
+				<pre>func (s *<a href="https://golang-china.appspot.com/pkg/io/#SectionReader">SectionReader</a>) Seek(offset <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, whence <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) (<a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="SectionReader.Size">func (*SectionReader) <a href="https://golang-china.appspot.com/src/io/io.go?s=15742:15778#L487">Size</a></h3>
+				<pre>func (s *<a href="https://golang-china.appspot.com/pkg/io/#SectionReader">SectionReader</a>) Size() <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a></pre>
+				<p>
+Size 返回片段的字节数。
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Seeker">type <a href="https://golang-china.appspot.com/src/io/io.go?s=4440:4512#L96">Seeker</a></h2>
+			<pre>type Seeker interface {
+        Seek(offset <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, whence <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) (<a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)
+}</pre>
+			<p>
+Seeker 接口包装了基本的 Seek 方法。
+</p>
+<p>
+Seek 将 offset 置为下一个 Read 或 Write 的偏移量 ，它的解释取决于 whence： 0
+表示相对于文件的起始处，1 表示相对于当前的偏移，而 2 表示相对于其结尾处。 Seek
+返回新的偏移量和一个错误，如果有的话。
+</p>
+<p>
+对负数偏移量进行 Seek 会产生错误。对任何正数偏移量进行 Seek
+是合法的，但对底层类型的后续 I/O 操作行为则取决于具体实现。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="WriteCloser">type <a href="https://golang-china.appspot.com/src/io/io.go?s=4841:4887#L113">WriteCloser</a></h2>
+			<pre>type WriteCloser interface {
+        <a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>
+        <a href="https://golang-china.appspot.com/pkg/io/#Closer">Closer</a>
+}</pre>
+			<p>
+WriteCloser 接口组合了基本的 Write 和 Close 方法。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="WriteSeeker">type <a href="https://golang-china.appspot.com/src/io/io.go?s=5239:5285#L132">WriteSeeker</a></h2>
+			<pre>type WriteSeeker interface {
+        <a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>
+        <a href="https://golang-china.appspot.com/pkg/io/#Seeker">Seeker</a>
+}</pre>
+			<p>
+WriteSeeker 接口组合了基本的 Write 和 Seek 方法。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Writer">type <a href="https://golang-china.appspot.com/src/io/io.go?s=3615:3676#L73">Writer</a></h2>
+			<pre>type Writer interface {
+        Write(p []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)
+}</pre>
+			<p>
+Writer 接口包装了基本的 Write 方法。
+</p>
+<p>
+Write 将 len(p) 个字节从 p
+中写入到基本数据流中。它返回从 p 中被写入的字节数 n（0 &lt;= n &lt;=
+len(p)）以及任何遇到的引起写入提前停止的错误。若 Write 返回的 n &lt;
+len(p)，它就必须返回一个非nil的错误。Write
+不能修改此切片的数据，即便它是临时的。
+</p>
+<p>
+实现必须不保留 p。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="MultiWriter">func <a href="https://golang-china.appspot.com/src/io/multi.go?s=1355:1397#L47">MultiWriter</a></h3>
+				<pre>func MultiWriter(writers ...<a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>) <a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a></pre>
+				<p>
+MultiWriter 创建一个 Writer，它将其写入复制到所有提供的 writers
+中，类似于Unix的tee(1)命令。
+</p>
+
+				
+				
+			
+
+			
+		
+			
+			
+			<h2 id="WriterAt">type <a href="https://golang-china.appspot.com/src/io/io.go?s=8017:8093#L211">WriterAt</a></h2>
+			<pre>type WriterAt interface {
+        WriteAt(p []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>, off <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)
+}</pre>
+			<p>
+WriterAt 接口包装了基本的 WriteAt 方法。
+</p>
+<p>
+WriteAt 从 p 中将 len(p) 个字节写入到偏移量 off
+处的基本数据流中。它返回从 p 中被写入的字节数 n（0 &lt;= n &lt;=
+len(p)）以及任何遇到的引起写入提前停止的错误。 若 WriteAt 返回的 n &lt;
+len(p)，它就必须返回一个非nil的错误。
+</p>
+<p>
+若 WriteAt 按查找偏移量写入到目标中，WriteAt
+应当既不影响基本查找偏移量也不被它所影响。
+</p>
+<p>
+若区域没有重叠，WriteAt 的客户端可对相同的目标并行执行 WriteAt 调用。
+</p>
+<p>
+实现必须不保留 p。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="WriterTo">type <a href="https://golang-china.appspot.com/src/io/io.go?s=6119:6186#L162">WriterTo</a></h2>
+			<pre>type WriterTo interface {
+        WriteTo(w <a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int64">int64</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)
+}</pre>
+			<p>
+WriterTo 接口包装了 WriteTo 方法。
+</p>
+<p>
+WriteTo 将数据写入 w
+中，直到没有数据可读或发生错误。其返回值 n 为写入的字节数。
+在写入过程中遇到的任何错误也将被返回。
+</p>
+<p>
+如果 WriterTo 可用，Copy 函数就会使用它。
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+	
+
+	
+
+
+
+
+
+	
+	
+<!--
+		<h2 id="pkg-subdirectories">Subdirectories</h2>
+-->
+	
+		<h2 id="pkg-subdirectories">子目录</h2>
+	
+	<table class="dir">
+	<tbody><tr>
+<!--
+	<th>Name</th>
+-->
+	<th>名称</th>
+	<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<!--
+	<th style="text-align: left; width: auto">Synopsis</th>
+-->
+	<th style="text-align: left; width: auto">摘要</th>
+	</tr>
+	
+		<tr>
+		<td><a href="https://golang-china.appspot.com/pkg/">..</a></td>
+		</tr>
+	
+	
+		
+			<tr>
+			<td class="name"><a href="https://golang-china.appspot.com/pkg/io/ioutil/">ioutil</a></td>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td style="width: auto">ioutil 实现了一些I/O的工具函数。</td>
+			</tr>
+		
+	
+	</tbody></table>
+
+	
+
+
+
+<!--
+<div id="footer">
+Build version go1.4.2 (appengine-1.9.21).<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="/LICENSE">BSD license</a>.<br>
+<a href="/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+-->
+<div id="footer">
+构建版本 go1.4.2 (appengine-1.9.21).<br>
+除<a href="https://developers.google.com/site-policies#restrictions">特别注明</a>外，
+本页内容均采用知识共享-署名（CC-BY）3.0协议授权，代码采用<a href="https://golang-china.appspot.com/LICENSE">BSD协议</a>授权。<br>
+<a href="https://golang-china.appspot.com/doc/tos.html">服务条款</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">隐私政策</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="./io - Go 编程语言_files/jquery.js"></script>
+<script type="text/javascript" src="./io - Go 编程语言_files/jquery.treeview.js"></script>
+<script type="text/javascript" src="./io - Go 编程语言_files/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="./io - Go 编程语言_files/playground.js"></script>
+
+<script type="text/javascript" src="./io - Go 编程语言_files/godocs.js"></script>
+
+
+
+</body></html>

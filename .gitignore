@@ -1,0 +1,8 @@
+*.exe
+*.crt
+*.db
+.tags
+.tags_sorted_by_file
+build
+src
+pkg

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://golang-china.appspot.com/pkg/compress/gzip/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<!--
+  <title>gzip - The Go Programming Language</title>
+-->
+  <title>gzip - Go 编程语言</title>
+
+<link type="text/css" rel="stylesheet" href="./gzip - Go 编程语言_files/style.css">
+
+<link rel="search" type="application/opensearchdescription+xml" title="godoc" href="https://golang-china.appspot.com/opensearch.xml">
+
+<link rel="stylesheet" href="https://golang-china.appspot.com/lib/godoc/jquery.treeview.css">
+<script type="text/javascript">window.initFuncs = [];</script>
+</head>
+<body>
+
+<div id="lowframe" style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+
+<form method="GET" action="https://golang-china.appspot.com/search" id="1607877832">
+<div id="menu" style="min-width: 650px;">
+<!--
+<a href="/doc/">Documents</a>
+<a href="/pkg/">Packages</a>
+<a href="/project/">The Project</a>
+<a href="/help/">Help</a>
+<a href="/blog/">Blog</a>
+-->
+<a href="https://golang-china.appspot.com/doc/">文档</a>
+<a href="https://golang-china.appspot.com/pkg/">包</a>
+<a href="https://golang-china.appspot.com/project/">项目</a>
+<a href="https://golang-china.appspot.com/help/">帮助</a>
+<a href="https://golang-china.appspot.com/blog/">博客</a>
+
+<!--
+<a id="playgroundButton" href="http://play.golang.org/" title="Show Go Playground">Play</a>
+-->
+<a id="playgroundButton" href="http://play.golang.org/" title="显示 Go 操场" style="display: inline;">运行</a>
+
+<!--
+<input type="text" id="search" name="q" class="inactive" value="Search" placeholder="Search">
+-->
+<input type="text" id="search" name="q" class="inactive" value="搜索" placeholder="搜索">
+</div>
+<!--
+<div id="heading"><a href="/">The Go Programming Language</a></div>
+-->
+<div id="heading"><a href="https://golang-china.appspot.com/">Go 编程语言</a></div>
+</form>
+
+</div></div>
+
+
+<div id="playground" class="play">
+	<div class="input"><textarea class="code">package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}</textarea></div>
+	<div class="output"></div>
+	<div class="buttons">
+<!--
+		<a class="run" title="Run this code [shift-enter]">Run</a>
+		<a class="fmt" title="Format this code">Format</a>
+		<a class="share" title="Share this code">Share</a>
+-->
+		<a class="run" title="运行此代码[Shift-Enter]">运行</a>
+		<a class="fmt" title="格式化此代码">格式化</a>
+		<a class="share" title="分享此代码">分享</a>
+	</div>
+</div>
+
+
+<div id="page" class="wide" tabindex="-1" style="outline: 0px;">
+<div class="container">
+
+
+<div class="lang-switch-button-group" role="group">
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;, &quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;, &quot;none&quot;);console.log(&quot;lang-en&quot;);">英文</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;block&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-en-zh&quot;);">对照</button>
+  <button type="button" class="btn btn-default" onclick="$(&quot;div.english&quot;).css(&quot;display&quot;,&quot;none&quot;);$(&quot;div.chinese&quot;).css(&quot;display&quot;,&quot;block&quot;);console.log(&quot;lang-zh&quot;);">中文</button>
+</div>
+
+
+
+  <h1>Package gzip</h1>
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script type="text/javascript">
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "compress/gzip"</code></dd>
+			</dl>
+			<dl>
+<!--
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+-->
+			<dd><a href="https://golang-china.appspot.com/pkg/compress/gzip/#pkg-overview" class="overviewLink">概览</a></dd>
+			<dd><a href="https://golang-china.appspot.com/pkg/compress/gzip/#pkg-index" class="indexLink">索引</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+<!--
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+-->
+				<h2 class="toggleButton" title="点此显示概览">概览 ▹</h2>
+			</div>
+			<div class="expanded">
+<!--
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+-->
+				<h2 class="toggleButton" title="点此隐藏概览">概览 ▾</h2>
+				<p>
+gzip 包实现了 gzip 格式压缩文件的读写, 参见RFC 1952.
+</p>
+
+			</div>
+		</div>
+		
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示素引">索引 ▹</h2>
+		</div>
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏索引">索引 ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+<!--
+				<dd><a href="#pkg-constants">Constants</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/gzip/#pkg-constants">常量</a></dd>
+			
+			
+<!--
+				<dd><a href="#pkg-variables">Variables</a></dd>
+-->
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/gzip/#pkg-variables">变量</a></dd>
+			
+			
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/gzip/#Header">type Header</a></dd>
+				
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/gzip/#Reader">type Reader</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/gzip/#NewReader">func NewReader(r io.Reader) (*Reader, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/gzip/#Reader.Close">func (z *Reader) Close() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/gzip/#Reader.Multistream">func (z *Reader) Multistream(ok bool)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/gzip/#Reader.Read">func (z *Reader) Read(p []byte) (n int, err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/gzip/#Reader.Reset">func (z *Reader) Reset(r io.Reader) error</a></dd>
+				
+			
+				
+				<dd><a href="https://golang-china.appspot.com/pkg/compress/gzip/#Writer">type Writer</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/gzip/#NewWriter">func NewWriter(w io.Writer) *Writer</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/gzip/#NewWriterLevel">func NewWriterLevel(w io.Writer, level int) (*Writer, error)</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/gzip/#Writer.Close">func (z *Writer) Close() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/gzip/#Writer.Flush">func (z *Writer) Flush() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/gzip/#Writer.Reset">func (z *Writer) Reset(w io.Writer)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="https://golang-china.appspot.com/pkg/compress/gzip/#Writer.Write">func (z *Writer) Write(p []byte) (int, error)</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+<!--
+			<h4>Package files</h4>
+-->
+			<h4>包文件</h4>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="https://golang-china.appspot.com/src/compress/gzip/gunzip.go">gunzip.go</a>
+			
+				<a href="https://golang-china.appspot.com/src/compress/gzip/gzip.go">gzip.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		<div id="pkg-callgraph" class="toggle" style="display: none">
+		<div class="collapsed">
+<!--
+			<h2 class="toggleButton" title="Click to show Internal Call Graph section">Internal call graph ▹</h2>
+-->
+			<h2 class="toggleButton" title="点此显示内部调用图">内部调用图 ▹</h2>
+		</div> <!-- .expanded -->
+		<div class="expanded">
+<!--
+			<h2 class="toggleButton" title="Click to hide Internal Call Graph section">Internal call graph ▾</h2>
+-->
+			<h2 class="toggleButton" title="点此隐藏内部调用图">内部调用图 ▾</h2>
+<!--
+			<p>
+			  In the call graph viewer below, each node
+			  is a function belonging to this package
+			  and its children are the functions it
+			  calls&mdash;perhaps dynamically.
+			</p>
+			<p>
+			  The root nodes are the entry points of the
+			  package: functions that may be called from
+			  outside the package.
+			  There may be non-exported or anonymous
+			  functions among them if they are called
+			  dynamically from another package.
+			</p>
+			<p>
+			  Click a node to visit that function's source code.
+			  From there you can visit its callers by
+			  clicking its declaring <code>func</code>
+			  token.
+			</p>
+			<p>
+			  Functions may be omitted if they were
+			  determined to be unreachable in the
+			  particular programs or tests that were
+			  analyzed.
+			</p>
+-->
+			<p>
+			在下面的调用图查看器中，每个节点都是一个属于本包的函数，其子节点即为它所调用的函数——或许是动态的。
+			</p>
+			<p>
+			根节点为包的入口点：函数可从包的外部调用。若这些函数被其它包动态地调用，
+			那么它们可能是未导出的或匿名的。
+			</p>
+			<p>
+			点击一个节点来查看该函数的源码。在源码中，可以点击它的 <code>func</code>
+			声明标记来查看其调用者。
+			</p>
+			<p>
+			在分析特定程序或测试时，被认定为无法访问的函数会被忽略。
+			</p>
+			<!-- Zero means show all package entry points. -->
+			<ul style="margin-left: 0.5in" id="callgraph-0" class="treeview"></ul>
+		</div>
+		</div> <!-- #pkg-callgraph -->
+
+		
+<!--
+			<h2 id="pkg-constants">Constants</h2>
+-->
+			<h2 id="pkg-constants">常量</h2>
+			
+				<pre>const (
+        <span id="NoCompression">NoCompression</span>      = <a href="https://golang-china.appspot.com/pkg/compress/flate/">flate</a>.<a href="https://golang-china.appspot.com/pkg/compress/flate/#NoCompression">NoCompression</a>
+        <span id="BestSpeed">BestSpeed</span>          = <a href="https://golang-china.appspot.com/pkg/compress/flate/">flate</a>.<a href="https://golang-china.appspot.com/pkg/compress/flate/#BestSpeed">BestSpeed</a>
+        <span id="BestCompression">BestCompression</span>    = <a href="https://golang-china.appspot.com/pkg/compress/flate/">flate</a>.<a href="https://golang-china.appspot.com/pkg/compress/flate/#BestCompression">BestCompression</a>
+        <span id="DefaultCompression">DefaultCompression</span> = <a href="https://golang-china.appspot.com/pkg/compress/flate/">flate</a>.<a href="https://golang-china.appspot.com/pkg/compress/flate/#DefaultCompression">DefaultCompression</a>
+)</pre>
+				<p>
+这些常量都是拷贝自 flate 包, 因此导入 "compress/gzip" 后, 就不必再导入 "compress/flate" 了.
+</p>
+
+			
+		
+		
+<!--
+			<h2 id="pkg-variables">Variables</h2>
+-->
+			<h2 id="pkg-variables">变量</h2>
+			
+				<pre>var (
+        <span class="comment">// ErrChecksum is returned when reading GZIP data that has an invalid checksum.</span>
+        <span id="ErrChecksum">ErrChecksum</span> = <a href="https://golang-china.appspot.com/pkg/errors/">errors</a>.<a href="https://golang-china.appspot.com/pkg/errors/#New">New</a>("gzip: invalid checksum")
+        <span class="comment">// ErrHeader is returned when reading GZIP data that has an invalid header.</span>
+        <span id="ErrHeader">ErrHeader</span> = <a href="https://golang-china.appspot.com/pkg/errors/">errors</a>.<a href="https://golang-china.appspot.com/pkg/errors/#New">New</a>("gzip: invalid header")
+)</pre>
+				
+			
+		
+		
+		
+			
+			
+			<h2 id="Header">type <a href="https://golang-china.appspot.com/src/compress/gzip/gunzip.go?s=1089:1292#L36">Header</a></h2>
+			<pre>type Header struct {
+        Comment <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>    <span class="comment">// comment</span>
+        Extra   []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>    <span class="comment">// "extra data"</span>
+        ModTime <a href="https://golang-china.appspot.com/pkg/time/">time</a>.<a href="https://golang-china.appspot.com/pkg/time/#Time">Time</a> <span class="comment">// modification time</span>
+        Name    <a href="https://golang-china.appspot.com/pkg/builtin/#string">string</a>    <span class="comment">// file name</span>
+        OS      <a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>      <span class="comment">// operating system type</span>
+}</pre>
+			<p>
+gzip 文件保存一个头域, 提供关于被压缩的文件的一些元数据.
+该头域作为 Writer 和 Reader 类型的一个可导出字段, 可以提供给调用者访问.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+		
+			
+			
+			<h2 id="Reader">type <a href="https://golang-china.appspot.com/src/compress/gzip/gunzip.go?s=1992:2206#L58">Reader</a></h2>
+			<pre>type Reader struct {
+        <a href="https://golang-china.appspot.com/pkg/compress/gzip/#Header">Header</a>
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Reader 类型满足 io.Reader接口, 可以从 gzip 格式压缩文件读取并解压数据.
+</p>
+<p>
+一般, 一个 gzip 文件可以是多个 gzip 文件的串联, 每一个都有自己的头域.
+从 Reader 读取数据会返回串联的每个文件的解压数据, 但只有第一个文件的头域被记录在 Reader 的 Header 字段里.
+</p>
+<p>
+gzip 文件会保存未压缩数据的长度与校验和.
+当读取到未压缩数据的结尾时, 如果数据的长度或者校验和不正确, Reader 会返回 ErrCheckSum.
+因此, 调用者应该将 Read 方法返回的数据视为暂定的, 直到他们在数据结尾获得了一个 io.EOF.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewReader">func <a href="https://golang-china.appspot.com/src/compress/gzip/gunzip.go?s=2453:2497#L74">NewReader</a></h3>
+				<pre>func NewReader(r <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>) (*<a href="https://golang-china.appspot.com/pkg/compress/gzip/#Reader">Reader</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewReader 返回一个从 r 读取并解压数据的 *Reader.
+其实现会缓冲输入流的数据, 并可能从 r 中读取比需要的更多的数据.
+调用者有责任在读取完毕后调用返回值的 Close 方法.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Reader.Close">func (*Reader) <a href="https://golang-china.appspot.com/src/compress/gzip/gunzip.go?s=7161:7191#L277">Close</a></h3>
+				<pre>func (z *<a href="https://golang-china.appspot.com/pkg/compress/gzip/#Reader">Reader</a>) Close() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+调用 Close 会关闭 z, 但不会关闭下层 io.Reader 接口.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Reader.Multistream">func (*Reader) <a href="https://golang-china.appspot.com/src/compress/gzip/gunzip.go?s=4114:4151#L117">Multistream</a></h3>
+				<pre>func (z *<a href="https://golang-china.appspot.com/pkg/compress/gzip/#Reader">Reader</a>) Multistream(ok <a href="https://golang-china.appspot.com/pkg/builtin/#bool">bool</a>)</pre>
+				<p>
+Multistream controls whether the reader supports multistream files.
+</p>
+<p>
+If enabled (the default), the Reader expects the input to be a sequence of
+individually gzipped data streams, each with its own header and trailer, ending
+at EOF. The effect is that the concatenation of a sequence of gzipped files is
+treated as equivalent to the gzip of the concatenation of the sequence. This is
+standard behavior for gzip readers.
+</p>
+<p>
+Calling Multistream(false) disables this behavior; disabling the behavior can be
+useful when reading file formats that distinguish individual gzip data streams
+or mix gzip data streams with other data streams. In this mode, when the Reader
+reaches the end of the data stream, Read returns io.EOF. If the underlying
+reader implements io.ByteReader, it will be left positioned just after the gzip
+stream. To start the next stream, call z.Reset(r) followed by
+z.Multistream(false). If there is no next stream, z.Reset(r) will return io.EOF.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Reader.Read">func (*Reader) <a href="https://golang-china.appspot.com/src/compress/gzip/gunzip.go?s=6298:6348#L232">Read</a></h3>
+				<pre>func (z *<a href="https://golang-china.appspot.com/pkg/compress/gzip/#Reader">Reader</a>) Read(p []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (n <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, err <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				
+				
+				
+				
+			
+				
+				<h3 id="Reader.Reset">func (*Reader) <a href="https://golang-china.appspot.com/src/compress/gzip/gunzip.go?s=2885:2926#L88">Reset</a></h3>
+				<pre>func (z *<a href="https://golang-china.appspot.com/pkg/compress/gzip/#Reader">Reader</a>) Reset(r <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Reader">Reader</a>) <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Reset 将 z 重置, 丢弃当前的读取状态, 并将下层读取目标设为 r.
+效果上等价于将 z 设为使用 r 重新调用 NewReader 返回的 Reader.
+这让我们可以重用 z 而不是再申请一个新的.
+</p>
+
+				
+				
+				
+			
+		
+			
+			
+			<h2 id="Writer">type <a href="https://golang-china.appspot.com/src/compress/gzip/gzip.go?s=666:885#L17">Writer</a></h2>
+			<pre>type Writer struct {
+        <a href="https://golang-china.appspot.com/pkg/compress/gzip/#Header">Header</a>
+        <span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+			<p>
+Writer 满足 io.WriteCloser接口. 它会将提供给它的数据压缩后写入下层 io.Writer 接口.
+</p>
+
+
+			
+
+			
+
+			
+			
+			
+
+			
+				
+				<h3 id="NewWriter">func <a href="https://golang-china.appspot.com/src/compress/gzip/gzip.go?s=1456:1491#L41">NewWriter</a></h3>
+				<pre>func NewWriter(w <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>) *<a href="https://golang-china.appspot.com/pkg/compress/gzip/#Writer">Writer</a></pre>
+				<p>
+NewWriter 创建并返回一个 Writer.
+写入返回值的数据都会在压缩后写入 w.
+调用者有责任在结束写入后调用返回值的 Close 方法.
+因为写入的数据可能保存在缓冲中没有刷新入下层.
+</p>
+<p>
+如要设定 Writer.Header 字段, 调用者必须在第一次调用 Write 方法或者 Close 方法之前设置.
+Header 字段的 Comment 和 Name 字段是 Go 的 utf-8 字符串,
+但下层格式要求为 NUL 中止的 ISO 8859-1 (Latin-1) 序列.
+如果这两个字段的字符串包含 NUL 或非 Latin-1 字符, 将导致Write方法返回错误.
+</p>
+
+				
+				
+			
+				
+				<h3 id="NewWriterLevel">func <a href="https://golang-china.appspot.com/src/compress/gzip/gzip.go?s=1869:1929#L52">NewWriterLevel</a></h3>
+				<pre>func NewWriterLevel(w <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>, level <a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>) (*<a href="https://golang-china.appspot.com/pkg/compress/gzip/#Writer">Writer</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+NewWriterLevel 类似 NewWriter 但指定了压缩水平而不是采用默认的 DefaultCompression.
+</p>
+<p>
+参数 level 可以是 DefaultCompression/NoCompression/BestSpeed/BestCompression 之间包括二者的任何整数.
+如果 level 合法, 返回的错误值为 nil.
+</p>
+
+				
+				
+			
+
+			
+				
+				<h3 id="Writer.Close">func (*Writer) <a href="https://golang-china.appspot.com/src/compress/gzip/gzip.go?s=6230:6260#L240">Close</a></h3>
+				<pre>func (z *<a href="https://golang-china.appspot.com/pkg/compress/gzip/#Writer">Writer</a>) Close() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+调用 Close 会关闭 z, 但不会关闭下层 io.Writer 接口.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Writer.Flush">func (*Writer) <a href="https://golang-china.appspot.com/src/compress/gzip/gzip.go?s=5870:5900#L221">Flush</a></h3>
+				<pre>func (z *<a href="https://golang-china.appspot.com/pkg/compress/gzip/#Writer">Writer</a>) Flush() <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a></pre>
+				<p>
+Flush 将缓冲中的压缩数据刷新到下层 io.Writer 接口中.
+</p>
+<p>
+本方法主要用在传输压缩数据的网络连接中, 以保证远端的接收者可以获得足够的数据来重构数据报.
+Flush 会阻塞直到所有缓冲中的数据都写入下层 io.Writer 接口后才返回.
+如果下层的 io.Writetr 接口返回一个错误, Flush 也会返回该错误.
+在 zlib 包的术语中, Flush 方法等价于 Z_SYNC_FLUSH.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Writer.Reset">func (*Writer) <a href="https://golang-china.appspot.com/src/compress/gzip/gzip.go?s=2726:2761#L87">Reset</a></h3>
+				<pre>func (z *<a href="https://golang-china.appspot.com/pkg/compress/gzip/#Writer">Writer</a>) Reset(w <a href="https://golang-china.appspot.com/pkg/io/">io</a>.<a href="https://golang-china.appspot.com/pkg/io/#Writer">Writer</a>)</pre>
+				<p>
+Reset 将 z 重置, 丢弃当前的写入状态, 并将下层输出目标设为 dst.
+效果上等价于将 w 设为使用 dst 和 w 的压缩水平重新调用 NewWriterLevel 返回的 *Writer.
+这让我们可以重用 z 而不是再申请一个新的.
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Writer.Write">func (*Writer) <a href="https://golang-china.appspot.com/src/compress/gzip/gzip.go?s=4281:4326#L151">Write</a></h3>
+				<pre>func (z *<a href="https://golang-china.appspot.com/pkg/compress/gzip/#Writer">Writer</a>) Write(p []<a href="https://golang-china.appspot.com/pkg/builtin/#byte">byte</a>) (<a href="https://golang-china.appspot.com/pkg/builtin/#int">int</a>, <a href="https://golang-china.appspot.com/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Write 将 p 压缩后写入下层 io.Writer 接口.
+压缩后的数据不一定会立刻刷新, 除非 Writer 被关闭或者显式的刷新.
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<!--
+<div id="footer">
+Build version go1.4.2 (appengine-1.9.21).<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="/LICENSE">BSD license</a>.<br>
+<a href="/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+-->
+<div id="footer">
+构建版本 go1.4.2 (appengine-1.9.21).<br>
+除<a href="https://developers.google.com/site-policies#restrictions">特别注明</a>外，
+本页内容均采用知识共享-署名（CC-BY）3.0协议授权，代码采用<a href="https://golang-china.appspot.com/LICENSE">BSD协议</a>授权。<br>
+<a href="https://golang-china.appspot.com/doc/tos.html">服务条款</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">隐私政策</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+
+<!-- TODO(adonovan): load these from <head> using "defer" attribute? -->
+<script type="text/javascript" src="./gzip - Go 编程语言_files/jquery.js"></script>
+<script type="text/javascript" src="./gzip - Go 编程语言_files/jquery.treeview.js"></script>
+<script type="text/javascript" src="./gzip - Go 编程语言_files/jquery.treeview.edit.js"></script>
+
+
+<script type="text/javascript" src="./gzip - Go 编程语言_files/playground.js"></script>
+
+<script type="text/javascript" src="./gzip - Go 编程语言_files/godocs.js"></script>
+
+
+
+</body></html>
