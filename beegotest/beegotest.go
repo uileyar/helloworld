@@ -2,6 +2,7 @@ package main
 
 import "github.com/astaxie/beego"
 
+/*
 func (r *Reader) ReadForm(maxMemory int64) (f *Form, err error) {
 	form := &Form{make(map[string][]string), make(map[string][]*FileHeader)}
 	defer func() {
@@ -73,7 +74,7 @@ func (r *Reader) ReadForm(maxMemory int64) (f *Form, err error) {
 
 	return form, nil
 }
-
+*/
 func main() {
 	beego.Run()
 }

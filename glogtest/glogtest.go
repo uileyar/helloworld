@@ -7,11 +7,9 @@ import (
 	"math/rand"
 	"os"
 	"runtime"
-	"runtime/pprof"
-	"strconv"
 	"time"
 
-	"github.com/golang/glog"
+	"github.com/chinanjjohn2012/glog"
 )
 
 func init() {
@@ -38,34 +36,16 @@ func logPrint(c chan int, i int) {
 	c <- 1
 }
 
-func StartCPUProfile() {
-	filename := "cpu-" + strconv.Itoa(os.Getegid()) + ".pprof"
-	f, err := os.Create(filename)
-	if err != nil {
-		glog.Fatal("record cpu profile failed: ", err)
-	}
-	pprof.StartCPUProfile(f)
-	//time.Sleep(time.Duration(sec) * time.Second)
-
-	fmt.Printf("create cpu profile %s \n", filename)
-}
-
-func StopCPUProfile() {
-	pprof.StopCPUProfile()
-}
-
 func main() {
 
-	StartCPUProfile()
-	defer StopCPUProfile()
-
 	fmt.Println("Hello World!")
-	n := 10000
+	n := 1000
 	c := make(chan int, n)
 	for i := 0; i < n; i++ {
 		go logPrint(c, i)
 	}
 
+	fmt.Println(glog.MoveAndCreateNewFiles("/aaa/bbb/"))
 	for {
 		select {
 		case <-c:
