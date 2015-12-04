@@ -3,9 +3,13 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"log"
 	"net"
 	"net/http"
+	"reflect"
+	"runtime"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 )
@@ -52,10 +56,26 @@ func (w *responseWriterA) Hijack() (net.Conn, *bufio.ReadWriter, error) {
 	return w.ResponseWriter.(http.Hijacker).Hijack()
 }
 
+func nameOfFunction(f interface{}) string {
+	return runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
+}
+
+func arraryTest() {
+	x := [3]int{1, 2, 3}
+	y := x[:]
+	func(arr []int) {
+		arr[0] = 7
+		fmt.Println(arr) //prints [7 2 3]
+	}(y)
+
+	fmt.Println(x) //prints [1 2 3] (not ok if you need [7 2 3])
+}
+
 func main() {
 	//var Writer responW
-	//Writer.Hijack()
-
+	//log.Printf("%v\n", nameOfFunction(Writer))
+	fmt.Println(strings.TrimSpace(" \t\n a lone  gopher \n\t\r\n")) // a lone gopher
+	arraryTest()
 	router := gin.Default()
 	router.GET("/ping", func(c *gin.Context) {
 		c.String(200, "pong")

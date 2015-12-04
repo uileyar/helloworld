@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<ICONS version="1.0">
+<!-- ========= # ========= -->
+<icon title="安全中心" type="Application" name="com_miui_securitycenter__app_icon_securitycenter.png" />
+
+<icon title="百度云" type="Application" name="com_baidu_netdisk__ic_element_appicon_netdisk.png" />
+
+<icon title="便签" type="Application" name="com_miui_notes__icon_app.png" />
+
+<icon title="拨号" type="Application" name="com_android_contacts__ic_launcher_phone.png" />
+
+<icon title="大众点评" type="Application" name="com_dianping_v1__icon.png" />
+
+<icon title="滴滴出行" type="Application" name="com_sdu_didi_psnger__ic_launcher.png" />
+
+<icon title="电子邮件" type="Application" name="com_android_email__ic_launcher_mail.png" />
+
+<icon title="电子邮件文件夹" type="Shortcut" name="com_android_email__ic_launcher_mail.png" />
+
+<icon title="豆瓣FM" type="Application" name="com_douban_radio__ic_launcher.png" />
+
+<icon title="短信" type="Application" name="com_android_mms__ic_launcher_smsmms.png" />
+
+<icon title="二维码扫描" type="Application" name="com_miui_barcodescanner__barcode_scanner.png" />
+
+<icon title="高德地图" type="Application" name="com_autonavi_minimap__v3_icon.png" />
+
+<icon title="个性主题" type="Application" name="com_android_thememanager__icon.png" />
+
+<icon title="广告拦截精灵" type="Application" name="com_webeye_sluice__ic_launcher.png" />
+
+<icon title="计算器" type="Application" name="com_android_calculator2__ic_launcher_calculator.png" />
+
+<icon title="茄子快传" type="Application" name="com_lenovo_anyshare__ic_launcher.png" />
+
+<icon title="今日头条" type="Application" name="com_ss_android_article_news__icon.png" />
+
+<icon title="金山词霸" type="Application" name="com_kingsoft__ic_launcher.png" />
+
+<icon title="京东" type="Application" name="com_jingdong_app_mall__afh.png" />
+
+<icon title="联系人" type="Shortcut" name="com_android_contacts__ic_launcher_shortcut_contact.png" />
+
+<icon title="联系人" type="Application" name="com_android_contacts__ic_launcher_contacts.png" />
+
+<icon title="浏览器" type="Application" name="com_android_browser__ic_launcher_browser.png" />
+
+<icon title="录音机" type="Application" name="com_android_soundrecorder__ic_launcher_soundrecorder.png" />
+
+<icon title="纳米盒" type="Application" name="com_jinxin_namibox__ic_launcher.png" />
+
+<icon title="南京掌上公交" type="Application" name="com_cn_bushelper__icon_gongjiao.png" />
+
+<icon title="日历" type="Application" name="com_android_calendar__ic_launcher_calendar.png" />
+
+<icon title="设置" type="Application" name="com_android_settings__ic_launcher_settings.png" />
+
+<icon title="设置快捷方式" type="Shortcut" name="com_android_settings__ic_launcher_settings.png" />
+
+<icon title="时钟" type="Application" name="com_android_deskclock__ic_launcher_alarmclock.png" />
+
+<icon title="收音机" type="Application" name="com_miui_fm__appicon.png" />
+
+<icon title="手机淘宝" type="Application" name="com_taobao_taobao__icon.png" />
+
+<icon title="手机营业厅" type="Application" name="com_sinovatech_unicom_ui__icon1.png" />
+
+<icon title="搜狗输入法" type="Application" name="com_sohu_inputmethod_sogou__logo.png" />
+
+<icon title="天气" type="Application" name="com_miui_weather2__icon.png" />
+
+<icon title="图库" type="Application" name="com_miui_gallery__ic_launcher_gallery.png" />
+
+<icon title="万能遥控" type="Application" name="com_duokan_phone_remotecontroller__ic_launcher.png" />
+
+<icon title="网眼桌面" type="Application" name="com_webeye_launcher__ic_launcher_home.png" />
+
+<icon title="微信" type="Application" name="com_tencent_mm__icon.png" />
+
+<icon title="文件管理" type="Application" name="com_android_fileexplorer__icon.png" />
+
+<icon title="我的小米" type="Application" name="com_xiaomi_account__icon.png" />
+
+<icon title="喜马拉雅FM" type="Application" name="com_ximalaya_ting_android__ting.png" />
+
+<icon title="系统更新" type="Application" name="com_android_updater__ic_launcher.png" />
+
+<icon title="下载管理" type="Application" name="com_android_providers_downloads_ui__ic_launcher_download.png" />
+
+<icon title="相机" type="Application" name="com_android_camera__ic_launcher_camera.png" />
+
+<icon title="小米安全令牌" type="Application" name="com_xiaomi_android_apps_authenticator2__app_logo.png" />
+
+<icon title="小米金融" type="Application" name="com_xiaomi_jr__ic_launcher_mifinance.png" />
+
+<icon title="小米钱包" type="Application" name="com_mipay_wallet__mipay_ic_mipay.png" />
+
+<icon title="小米商城" type="Application" name="com_xiaomi_shop__app_icon.png" />
+
+<icon title="小米视频" type="Application" name="com_miui_video__ic_launcher.png" />
+
+<icon title="翼校通" type="Application" name="com_gaotai_sy_anroid_jxt__ic_launcher.png" />
+
+<icon title="音乐" type="Application" name="com_miui_player__app_music.png" />
+
+<icon title="印象笔记" type="Application" name="com_evernote__ic_launcher.png" />
+
+<icon title="印象笔记按钮" type="Shortcut" name="com_evernote__evernote_actions_preview.png" />
+
+<icon title="应用商店" type="Application" name="com_xiaomi_market__icon.png" />
+
+<icon title="应用搜索" type="Shortcut" name="com_webeye_launcher__search_app_icon.png" />
+
+<icon title="用户反馈" type="Application" name="com_miui_bugreport__icon.png" />
+
+<icon title="用户反馈Demo" type="Application" name="com_umeng_fb_example__ic_launcher.png" />
+
+<icon title="游戏" type="Application" name="com_xiaomi_gamecenter__icon.png" />
+
+<icon title="语音助手" type="Application" name="com_miui_voiceassist__ic_launcher.png" />
+
+<icon title="阅读" type="Application" name="com_duokan_reader__logo.png" />
+
+<icon title="招商银行" type="Application" name="cmb_pb__icon.png" />
+
+<icon title="支付宝" type="Application" name="com_eg_android_alipaygphone__appicon.png" />
+
+<icon title="指南针" type="Application" name="com_miui_compass__app_icon.png" />
+
+<icon title="DeviceInfo" type="Application" name="com_lenovo_deviceinfo__ic_launcher.png" />
+
+<icon title="GoBindExample" type="Application" name="org_golang_example_android__null.png" />
+
+<icon title="IconNameReader" type="Application" name="com_dooba_iconnamereader__ic_launcher.png" />
+
+<icon title="MIUI论坛" type="Application" name="com_miui_miuibbs__ic_app.png" />
+
+<icon title="QQ" type="Application" name="com_tencent_mobileqq__icon.png" />
+
+<icon title="QQ浏览器" type="Application" name="com_tencent_mtt__application_icon.png" />
+
+<icon title="QQ音乐" type="Application" name="com_tencent_qqmusic__icon.png" />
+
+<icon title="QQ音乐-听歌识曲" type="Shortcut" name="com_tencent_qqmusic__appwidget_recognizer.png" />
+
+<icon title="RunBackTest" type="Application" name="com_example_runbacktest__ic_launcher.png" />
+
+<icon title="UMengFeedback" type="Application" name="com_example_jack_umengfeedback__ic_launcher.png" />
+
+<icon title="wepdemo" type="Application" name="com_demo_android_webeyedemo__icon.png" />
+
+<icon title="WPS Office" type="Application" name="cn_wps_moffice_eng__public_icon.png" />
+
+<icon title="X浏览器" type="Application" name="com_mmbox_xbrowser__ic_launcher.png" />
+</ICONS>
