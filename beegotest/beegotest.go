@@ -77,4 +77,5 @@ func (r *Reader) ReadForm(maxMemory int64) (f *Form, err error) {
 */
 func main() {
 	beego.Run()
+	glog.
 }

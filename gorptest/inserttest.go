@@ -28,18 +28,19 @@ type Account struct {
 	Kind        string `db:", size:10"`
 	Amount      float32
 	Description string `db:", size:200"`
-	Sort        int    `db:", size:200"`
-	Version     time.Timer
+	Sort        int
+	Version     time.Time `db:", default:CURRENT_TIMESTAMP"`
 }
 
 func (u *Account) PreInsert(s gorp.SqlExecutor) error {
 	//u.Account_id = CreateGUID()
 	//u.Version = time.Now()
+
 	var val int
-	if err := s.SelectOne(&val, "select max(sort) from jzb_account"); err == nil {
+	if err := s.SelectOne(&val, "select max(sort) from jzb_accounts"); err == nil {
 		u.Sort = val + 1
 	}
-
+	fmt.Println(u)
 	return nil
 }
 
@@ -49,12 +50,23 @@ func (u *Account) PreUpdate(s gorp.SqlExecutor) error {
 }
 
 func InsertTest() {
-	db, _ := sql.Open("sqlite3", "/tmp/test.db")
-	dbmap := &gorp.DbMap{Db: db, Dialect: gorp.SqliteDialect{}}
-
-	err := dbmap.CreateTablesIfNotExists()
+	db, err := sql.Open("sqlite3", "webapp.db")
 	if err != nil {
 		fmt.Println(err)
 	}
-	dbmap.Db.Close()
+	dbmap := &gorp.DbMap{Db: db, Dialect: gorp.SqliteDialect{}}
+	defer dbmap.Db.Close()
+
+	dbmap.AddTableWithName(Account{}, "jzb_accounts")
+	//err = dbmap.CreateTablesIfNotExists()
+
+	account := &Account{
+		Account_id: "11211fwr",
+		Name:       "1111",
+		Kind:       "1111",
+	}
+	err = dbmap.Insert(account)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
