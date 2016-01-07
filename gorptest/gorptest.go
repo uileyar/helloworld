@@ -11,6 +11,9 @@ import (
 )
 
 func main() {
+	InsertTest()
+}
+func main1() {
 	// initialize the DbMap
 	dbmap := initDb()
 	defer dbmap.Db.Close()
